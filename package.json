@@ -1,1 +1,22 @@
-{}
+{
+  "name": "performanceplatform-client-js",
+  "version": "0.0.1",
+  "description": "A JavaScript client for the Performance Platform. It communicates with the Performance Platform API and can be used on both the front and backend using CommonJS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alphagov/performanceplatform-client-js.git"
+  },
+  "author": {
+    "name": "Government Digital Service developers",
+    "email": "govuk-dev@digital.cabinet-office.gov.uk"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alphagov/performanceplatform-client-js/issues"
+  },
+  "homepage": "https://github.com/alphagov/performanceplatform-client-js"
+}
