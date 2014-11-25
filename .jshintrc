@@ -1,0 +1,56 @@
+{
+  "globals"   : {
+    /* MOCHA */
+    "describe"   : false,
+    "it"         : false,
+    "before"     : false,
+    "beforeEach" : false,
+    "after"      : false,
+    "afterEach"  : false,
+    "sinon"      : false
+  },
+
+  /* Enforcing options */
+  "bitwise"       : false,
+  "camelcase"     : false,
+  "curly"         : true,
+  "eqeqeq"        : true,
+  "forin"         : false,
+  "immed"         : true,
+  "latedef"       : false,
+  "newcap"        : true,
+  "noarg"         : true,
+  "noempty"       : true,
+  "nonew"         : true,
+  "plusplus"      : false,
+  "regexp"        : true,
+  "undef"         : true,
+  "unused"        : true,
+  "strict"        : false,
+  "maxdepth"      : 4,
+  "maxstatements" : 20,
+  "maxcomplexity" : 10,
+
+  /* Relaxing options */
+  "asi"           : false,
+  "boss"          : true,
+  "debug"         : false,
+  "eqnull"        : false,
+  "esnext"        : false,
+  "evil"          : false,
+  "expr"          : true,
+  "funcscope"     : false,
+  "globalstrict"  : false,
+  "iterator"      : false,
+  "lastsemic"     : false,
+  "loopfunc"      : false,
+  "multistr"      : false,
+  "proto"         : false,
+  "scripturl"     : false,
+  "shadow"        : false,
+  "sub"           : true,
+  "supernew"      : false,
+
+  /* Environments */
+  "node"          : true
+}
