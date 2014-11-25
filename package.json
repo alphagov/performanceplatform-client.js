@@ -4,7 +4,7 @@
   "description": "A JavaScript client for the Performance Platform. It communicates with the Performance Platform API and can be used on both the front and backend using CommonJS.",
   "main": "index.js",
   "scripts": {
-    "karma": "karma start test/karma.conf.js",
+    "karma": "PHANTOMJS_BIN=\"./node_modules/phantomjs/bin/phantomjs\" ./node_modules/karma/bin/karma start test/karma.conf.js",
     "unit": "./node_modules/mocha/bin/mocha",
     "test": "npm run-script lint && npm run-script unit && npm run-script karma;",
     "lint": "[ -z \"$LINTFILES\" ] && LINTFILES=\"lib/ test/\"; ./node_modules/jshint/bin/jshint ${LINTFILES} && ./node_modules/jscs/bin/jscs ${LINTFILES};"
@@ -45,6 +45,7 @@
     "karma-phantomjs-launcher": "0.1.4",
     "karma-browserify": "1.0.0",
     "brfs": "1.2.0",
-    "karma-spec-reporter": "0.0.13"
+    "karma-spec-reporter": "0.0.13",
+    "phantomjs": "1.9.12"
   }
 }
