@@ -1,19 +1,23 @@
 var dashboardResponse = require('./fixtures/sample-dashboard.json'),
-  Q = require('q');
+  Q = require('q'),
+  _ = require('underscore');
 
 describe('Dashboard', function () {
   var deferred,
-    Dashboard,
-    Query = require('../lib/querist');
+    Dashboard;
 
   beforeEach(function () {
     deferred = Q.defer();
-    sinon.stub(Query.prototype, 'get').returns(deferred.promise);
+    this.server = sinon.fakeServer.create();
+    //this.server.autoRespond = true;
+    //this.server.autoRespondAfter = 0;
+    this.server.respondWith(/.*/,
+        [200, { 'Content-Type': 'application/json' }, JSON.stringify(dashboardResponse)]);
     Dashboard = require('../lib/dashboard');
   });
 
   afterEach(function () {
-    Query.prototype.get.restore();
+    this.server.restore();
   });
 
   describe('getConfig()', function () {
@@ -22,18 +26,18 @@ describe('Dashboard', function () {
 
       var dashboard = new Dashboard();
       var testSlug = 'test-dashboard-slug';
+      var testConfig = dashboard.getConfig();
+      var self = this;
 
-      deferred.resolve(dashboardResponse);
 
-      return dashboard.getConfig(testSlug)
-        .then(function (dashboardConfig) {
 
-          Query.prototype.get.should.be.calledOnce;
-          Query.prototype.get.getCall(0).args[0]
-            .should.equal('/public/dashboards?slug=' + testSlug);
 
-          dashboardConfig.should.equal(dashboardResponse);
-        });
+      return testConfig
+        .then(function () {
+            console.log(self.server);
+          }
+      );
+
     });
 
   });
