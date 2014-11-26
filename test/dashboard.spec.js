@@ -1,19 +1,17 @@
-var dashboardResponse = require('./fixtures/sample-dashboard.json'),
+var requireSubvert = require('require-subvert')(__dirname),
+  dashboardResponse = require('./fixtures/sample-dashboard.json'),
   Q = require('q');
 
 describe('Dashboard', function () {
-  var deferred,
-    Dashboard,
-    Query = require('../lib/querist');
+  var Dashboard,
+      stub,
+      deferred;
 
   beforeEach(function () {
     deferred = Q.defer();
-    sinon.stub(Query.prototype, 'get').returns(deferred.promise);
-    Dashboard = require('../lib/dashboard');
-  });
-
-  afterEach(function () {
-    Query.prototype.get.restore();
+    stub = sinon.stub().returns(deferred.promise);
+    requireSubvert.subvert('../lib/request-promise', stub);
+    Dashboard = requireSubvert.require('../lib/dashboard');
   });
 
   describe('getConfig()', function () {
@@ -28,9 +26,13 @@ describe('Dashboard', function () {
       return dashboard.getConfig(testSlug)
         .then(function (dashboardConfig) {
 
-          Query.prototype.get.should.be.calledOnce;
-          Query.prototype.get.getCall(0).args[0]
-            .should.equal('/public/dashboards?slug=' + testSlug);
+          stub.should.be.calledOnce;
+          stub.getCall(0).args[0]
+            .should.eql({
+              url:
+                'https://stagecraft.production.performance.service.gov.uk/public/dashboards?slug=' +
+                  testSlug
+            });
 
           dashboardConfig.should.equal(dashboardResponse);
         });
