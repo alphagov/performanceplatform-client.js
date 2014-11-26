@@ -12,7 +12,7 @@ describe('Request-Promise', function () {
   });
 
   it('should error if there’s no url provided', function () {
-    var responsePromise = requestPromise(undefined, undefined);
+    var responsePromise = requestPromise(undefined);
 
     stub.should.not.have.been.called;
 
@@ -21,13 +21,13 @@ describe('Request-Promise', function () {
   });
 
   it('should make a request if a url is provided', function () {
-    requestPromise('http://baseurl.com/path');
+    requestPromise({url: 'http://baseurl.com/path'});
 
     stub.should.have.been.called;
   });
 
   it('should error if theres an error on the request', function () {
-    var responsePromise = requestPromise('http://baseurl.com/', 'path');
+    var responsePromise = requestPromise({url: 'http://baseurl.com/'});
     var requestCallback = stub.getCall(0).args[1];
 
     requestCallback(new Error('Error in the request'));
@@ -36,7 +36,7 @@ describe('Request-Promise', function () {
   });
 
   it('should error if the response is not 200', function () {
-    var responsePromise = requestPromise('http://baseurl.com/', 'path');
+    var responsePromise = requestPromise({url: 'http://baseurl.com/'});
     var requestCallback = stub.getCall(0).args[1];
     var requestRes = { statusCode: 500 };
 
@@ -46,7 +46,7 @@ describe('Request-Promise', function () {
   });
 
   it('should return json if everything went OK', function () {
-    var responsePromise = requestPromise('http://baseurl.com/path', {json: true});
+    var responsePromise = requestPromise({url: 'http://baseurl.com/path', json: true});
     var requestCallback = stub.getCall(0).args[1];
     var requestRes = { statusCode: 200 };
     var requestBody = { hello: 'world' };
@@ -60,7 +60,7 @@ describe('Request-Promise', function () {
   });
 
   it('should extend options in the request', function () {
-    requestPromise('http://baseurl.com/path', {foo: 'bar', json: true});
+    requestPromise({url: 'http://baseurl.com/path', foo: 'bar', json: true});
     var requestOptions = stub.getCall(0).args[0];
 
     requestOptions.should.eql({
