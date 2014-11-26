@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+  - '0.10'
+notifications:
+  email: false
+cache:
+  directories:
+    - node_modules
+branches:
+  only:
+    - master
+after_success:
+  - ./.travis_scripts/push_release_tag.sh
+after_failure:
+  - "cat /home/travis/build/alphagov/performanceplatform-client.js/npm-debug.log"
+env:
+  global:
+    # NOTE: contains GH_TOKEN=xxx from github user gds-pp-ci
+    - NODE_ENV: 'travis'
+    - secure: QxRNL41Wc2qUt1wrJSKCHewgmMxSXj/HCSmpRoVm//uBfGUh1qFc2R4Y7Lu0f8XDg+s85R1zNwvYO/tzGEy3h8CFVxyv2CE7JpQCsK54qLqbjdKdX7kcHN0DS87/bFLt+JTQ/WhpLQSiUat3N3XSetNDmS/L9a0VD3YbEsEHISs=

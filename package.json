@@ -1,1 +1,52 @@
-{}
+{
+  "name": "performanceplatform-client.js",
+  "version": "0.0.1",
+  "description": "A JavaScript client for the Performance Platform. It communicates with the Performance Platform API and can be used on both the front and backend using CommonJS.",
+  "main": "./lib/dashboard.js",
+  "scripts": {
+    "karma": "PHANTOMJS_BIN=\"./node_modules/phantomjs/bin/phantomjs\" ./node_modules/karma/bin/karma start test/karma.conf.js",
+    "unit": "./node_modules/mocha/bin/mocha",
+    "test": "npm run-script lint && npm run-script unit",
+    "lint": "[ -z \"$LINTFILES\" ] && LINTFILES=\"lib/ test/\"; ./node_modules/jshint/bin/jshint ${LINTFILES} && ./node_modules/jscs/bin/jscs ${LINTFILES};"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alphagov/performanceplatform-client.js.git"
+  },
+  "author": {
+    "name": "Government Digital Service developers",
+    "email": "govuk-dev@digital.cabinet-office.gov.uk"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alphagov/performanceplatform-client.js/issues"
+  },
+  "homepage": "https://github.com/alphagov/performanceplatform-client.js",
+  "dependencies": {
+    "browser-request": "0.3.3",
+    "q": "1.1.2",
+    "request": "2.48.0",
+    "underscore": "1.7.0"
+  },
+  "devDependencies": {
+    "brfs": "1.2.0",
+    "chai": "1.10.0",
+    "chai-as-promised": "4.1.1",
+    "jscs": "1.7.3",
+    "jshint": "2.5.10",
+    "karma": "0.12.2",
+    "karma-browserify": "1.0.0",
+    "karma-chai": "0.1.0",
+    "karma-chrome-launcher": "0.1.2",
+    "karma-mocha": "0.1.3",
+    "karma-phantomjs-launcher": "0.1.4",
+    "karma-sinon": "1.0.3",
+    "karma-spec-reporter": "0.0.13",
+    "mocha": "2.0.1",
+    "phantomjs": "1.9.12",
+    "proxyquire": "1.1.0",
+    "require-subvert": "0.1.0",
+    "sinon": "1.12.1",
+    "sinon-chai": "2.6.0"
+  }
+}

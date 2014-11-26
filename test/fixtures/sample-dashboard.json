@@ -1,0 +1,175 @@
+{
+ "business-model": "Fees and charges",
+ "customer-type": "Business",
+ "description": "All limited companies and limited liability partnerships must file their annual accounts so they're publicly available.",
+ "title": "Company accounts filed",
+ "tagline": "",
+ "agency": {
+  "abbr": "CH",
+  "title": "Companies House"
+ },
+ "modules": [
+  {
+   "info": [
+    "Data source: Department for Business, Innovation and Skills"
+   ],
+   "value-attribute": "number_of_transactions",
+   "description": "",
+   "module-type": "kpi",
+   "title": "Transactions per year",
+   "format": {
+    "sigfigs": 3,
+    "magnitude": true,
+    "type": "number"
+   },
+   "classes": "cols3",
+   "slug": "transactions-per-year",
+   "data-source": {
+    "data-group": "transactional-services",
+    "data-type": "summaries",
+    "query-params": {
+     "sort_by": "_timestamp:descending",
+     "filter_by": [
+      "service_id:bis-accounts-filing",
+      "type:seasonally-adjusted"
+     ]
+    }
+   }
+  },
+  {
+   "info": [
+    "Filing an annual return incurs a fee which covers registration costs, accounts filing and all other document filing for limited liability companies, where these services do not have separate fees. <br>The published cost per transaction is a cost per transaction for these product groups, and the overall cost is heavily influenced by the level of electronic take up per transaction type.",
+    "<br />",
+    "Data source: Department for Business, Innovation and Skills",
+    "Total cost is the overall cost per year of providing a service, including staff, IT and accommodation costs; the total cost is automatically calculated from volume and cost per transaction figures, and some rounding errors may occur."
+   ],
+   "value-attribute": "total_cost",
+   "description": "",
+   "module-type": "kpi",
+   "title": "Total cost",
+   "format": {
+    "sigfigs": 3,
+    "magnitude": true,
+    "type": "currency"
+   },
+   "classes": "cols3",
+   "slug": "total-cost",
+   "data-source": {
+    "data-group": "transactional-services",
+    "data-type": "summaries",
+    "query-params": {
+     "sort_by": "_timestamp:descending",
+     "filter_by": [
+      "service_id:bis-accounts-filing",
+      "type:seasonally-adjusted"
+     ]
+    }
+   }
+  },
+  {
+   "info": [
+    "Filing an annual return incurs a fee which covers registration costs, accounts filing and all other document filing for limited liability companies, where these services do not have separate fees. <br>The published cost per transaction is a cost per transaction for these product groups, and the overall cost is heavily influenced by the level of electronic take up per transaction type.",
+    "<br />",
+    "Data source: Department for Business, Innovation and Skills",
+    "<a href=\"https://www.gov.uk/service-manual/measurement/cost-per-transaction.html\">Cost per transaction</a> is the average cost of providing each successfully completed transaction, across all channels. Staff, IT and accommodation costs should be included."
+   ],
+   "value-attribute": "cost_per_transaction",
+   "description": "",
+   "module-type": "kpi",
+   "title": "Cost per transaction",
+   "format": {
+    "pence": true,
+    "type": "currency"
+   },
+   "classes": "cols3",
+   "slug": "cost-per-transaction",
+   "data-source": {
+    "data-group": "transactional-services",
+    "data-type": "summaries",
+    "query-params": {
+     "sort_by": "_timestamp:descending",
+     "filter_by": [
+      "service_id:bis-accounts-filing",
+      "type:seasonally-adjusted"
+     ]
+    }
+   }
+  },
+  {
+   "info": [
+    "Data source: Department for Business, Innovation and Skills"
+   ],
+   "value-attribute": "number_of_transactions",
+   "axis-period": "quarter",
+   "description": "Total number of transactions each quarter",
+   "module-type": "bar_chart_with_number",
+   "title": "Transactions per quarter",
+   "slug": "transactions-per-quarter",
+   "data-source": {
+    "data-group": "transactional-services",
+    "data-type": "summaries",
+    "query-params": {
+     "sort_by": "_timestamp:ascending",
+     "filter_by": [
+      "service_id:bis-accounts-filing",
+      "type:quarterly"
+     ]
+    }
+   }
+  },
+  {
+   "info": [
+    "Data source: Department for Business, Innovation and Skills",
+    "<a href=\"https://www.gov.uk/service-manual/measurement/digital-takeup.html\">Digital take-up</a> measures the percentage of completed applications that are made through a digital channel versus non-digital channels."
+   ],
+   "value-attribute": "digital_takeup",
+   "axis-period": "quarter",
+   "description": "Digital take-up rates each quarter",
+   "module-type": "bar_chart_with_number",
+   "format": {
+    "type": "percent"
+   },
+   "axes": {
+    "y": [
+     {
+      "label": "Percentage digital take-up"
+     }
+    ]
+   },
+   "title": "Digital take-up",
+   "slug": "digital-take-up-per-quarter",
+   "data-source": {
+    "data-group": "transactional-services",
+    "data-type": "summaries",
+    "query-params": {
+     "sort_by": "_timestamp:ascending",
+     "filter_by": [
+      "service_id:bis-accounts-filing",
+      "type:quarterly"
+     ]
+    }
+   }
+  }
+ ],
+ "slug": "bis-accounts-filing",
+ "description-extra": "",
+ "costs": "Filing an annual return incurs a fee which covers registration costs, accounts filing and all other document filing for limited liability companies, where these services do not have separate fees. <br>The published cost per transaction is a cost per transaction for these product groups, and the overall cost is heavily influenced by the level of electronic take up per transaction type.",
+ "strapline": "Dashboard",
+ "published": true,
+ "department": {
+  "abbr": "BIS",
+  "title": "Department for Business, Innovation and Skills"
+ },
+ "page-type": "dashboard",
+ "other-notes": "",
+ "relatedPages": {
+  "improve-dashboard-message": true,
+  "transaction": {
+   "url": "https://www.gov.uk/file-your-company-accounts-and-tax-return",
+   "type": "transaction",
+   "title": "Company accounts filed"
+  },
+  "other": []
+ },
+ "dashboard-type": "high-volume-transaction"
+}
