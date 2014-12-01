@@ -56,9 +56,16 @@ describe('Dashboard', function () {
   });
 
   describe('getKPI()', function () {
-    it('should respond with a resolved KPI modules data', function () {
-      var module = {
+
+    var module, moduleDataResponse;
+
+    beforeEach(function () {
+
+      module = {
+        'title': 'test',
+        'format': 'format',
         'module-type': 'kpi',
+        'value-attribute': 'specific_data',
         'data-source': {
           'data-group': 'transactional-services',
           'data-type': 'summaries',
@@ -72,8 +79,24 @@ describe('Dashboard', function () {
         }
       };
 
-      var moduleDataResponse = [{}, {}, {}];
+      moduleDataResponse = [
+        {
+          '_quarter_start_at': '2013-07-01T00:00:00+00:00',
+          'specific_data': 'foo'
+        },
+        {
+          '_quarter_start_at': '2013-04-01T00:00:00+00:00',
+          'specific_data': 'bar'
+        },
+        {
+          '_quarter_start_at': '2013-01-01T00:00:00+00:00',
+          'specific_data': 'hum'
+        }
+      ];
 
+    });
+
+    it('should respond with a resolved KPI modules data', function () {
       var dashboard = new Dashboard('test-dashboard');
 
       deferred.resolve({
@@ -83,6 +106,56 @@ describe('Dashboard', function () {
       return dashboard.getKPI(module)
         .then(function (kpiData) {
           kpiData.data.should.equal(moduleDataResponse);
+        });
+    });
+
+    it('should return with axes data for the module', function () {
+      var dashboard = new Dashboard('test-dashboard');
+
+      deferred.resolve({
+        data: moduleDataResponse
+      });
+
+      return dashboard.getKPI(module)
+        .then(function (kpiData) {
+          kpiData.axes.x.should.eql({
+            'label': 'Quarter',
+            'key': '_quarter_start_at',
+            'format': 'date'
+          });
+
+          kpiData.axes.y.should.eql([{
+            label: 'test',
+            key: 'specific_data',
+            format: 'format'
+          }]);
+        });
+    });
+
+    it('should respond with tabular data for the module', function () {
+      var dashboard = new Dashboard('test-dashboard');
+
+      deferred.resolve({
+        data: moduleDataResponse
+      });
+
+      return dashboard.getKPI(module)
+        .then(function (kpiData) {
+          kpiData.tabularData.should.eql([
+            [
+              'Quarter',
+              '2013-07-01T00:00:00+00:00',
+              '2013-04-01T00:00:00+00:00',
+              '2013-01-01T00:00:00+00:00'
+            ],
+            [
+              'test',
+              'foo',
+              'bar',
+              'hum'
+            ]
+          ]);
+
         });
     });
   });
