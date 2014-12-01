@@ -1,175 +1,594 @@
 {
- "business-model": "Fees and charges",
- "customer-type": "Business",
- "description": "All limited companies and limited liability partnerships must file their annual accounts so they're publicly available.",
- "title": "Company accounts filed",
- "tagline": "",
- "agency": {
-  "abbr": "CH",
-  "title": "Companies House"
- },
- "modules": [
-  {
-   "info": [
-    "Data source: Department for Business, Innovation and Skills"
-   ],
-   "value-attribute": "number_of_transactions",
-   "description": "",
-   "module-type": "kpi",
-   "title": "Transactions per year",
-   "format": {
-    "sigfigs": 3,
-    "magnitude": true,
-    "type": "number"
-   },
-   "classes": "cols3",
-   "slug": "transactions-per-year",
-   "data-source": {
-    "data-group": "transactional-services",
-    "data-type": "summaries",
-    "query-params": {
-     "sort_by": "_timestamp:descending",
-     "filter_by": [
-      "service_id:bis-accounts-filing",
-      "type:seasonally-adjusted"
-     ]
+  "title": "Vehicle tax renewals",
+  "modules": [
+    {
+      "info": [],
+      "value-attribute": "number_of_transactions",
+      "description": "",
+      "module-type": "kpi",
+      "title": "Transactions per year",
+      "format": {
+        "sigfigs": 3,
+        "magnitude": true,
+        "type": "number"
+      },
+      "classes": "cols3",
+      "slug": "transactions-per-year",
+      "data-source": {
+        "data-group": "transactional-services",
+        "data-type": "summaries",
+        "query-params": {
+          "sort_by": "_timestamp:descending",
+          "filter_by": [
+            "service_id:dft-tax-a-vehicle",
+            "type:seasonally-adjusted"
+          ]
+        }
+      },
+      "data": [
+        {
+          "_day_start_at": "2013-07-01T00:00:00+00:00",
+          "_hour_start_at": "2013-07-01T00:00:00+00:00",
+          "_id": "MjAxMy0wNy0wMSAwMDowMDowMDIwMTQtMDctMDEgMDA6MDA6MDBkZnQtdGF4LWEtdmVoaWNsZQ==",
+          "_month_start_at": "2013-07-01T00:00:00+00:00",
+          "_quarter_start_at": "2013-07-01T00:00:00+00:00",
+          "_timestamp": "2013-07-01T00:00:00+00:00",
+          "_updated_at": "2014-11-17T11:49:01.239000+00:00",
+          "_week_start_at": "2013-07-01T00:00:00+00:00",
+          "_year_start_at": "2013-01-01T00:00:00+00:00",
+          "cost_per_transaction": 1.26,
+          "digital_cost_per_transaction": null,
+          "digital_takeup": 0.5416161428534535,
+          "end_at": "2014-07-01T00:00:00+00:00",
+          "number_of_digital_transactions": 24831133,
+          "number_of_transactions": 45846368,
+          "formatted_value": "45.8m",
+          "period": "year",
+          "service_id": "dft-tax-a-vehicle",
+          "total_cost": 57766423.68,
+          "type": "seasonally-adjusted",
+          "formatted_date_range": "July 2013 to June 2014",
+          "formatted_change_from_previous": "-0.27%"
+        },
+        {
+          "_day_start_at": "2013-04-01T00:00:00+00:00",
+          "_hour_start_at": "2013-04-01T00:00:00+00:00",
+          "_id": "MjAxMy0wNC0wMSAwMDowMDowMDIwMTQtMDQtMDEgMDA6MDA6MDBkZnQtdGF4LWEtdmVoaWNsZQ==",
+          "_month_start_at": "2013-04-01T00:00:00+00:00",
+          "_quarter_start_at": "2013-04-01T00:00:00+00:00",
+          "_timestamp": "2013-04-01T00:00:00+00:00",
+          "_updated_at": "2014-11-17T11:49:01.240000+00:00",
+          "_week_start_at": "2013-04-01T00:00:00+00:00",
+          "_year_start_at": "2013-01-01T00:00:00+00:00",
+          "cost_per_transaction": 1.4,
+          "digital_cost_per_transaction": null,
+          "digital_takeup": 0.533063457950183,
+          "end_at": "2014-04-01T00:00:00+00:00",
+          "number_of_digital_transactions": 24504457,
+          "number_of_transactions": 45969118,
+          "formatted_value": "46m",
+          "period": "year",
+          "service_id": "dft-tax-a-vehicle",
+          "total_cost": 64356765.199999996,
+          "type": "seasonally-adjusted",
+          "formatted_date_range": "Apr 2013 to Mar 2014"
+        },
+        {
+          "_day_start_at": "2013-01-01T00:00:00+00:00",
+          "_hour_start_at": "2013-01-01T00:00:00+00:00",
+          "_id": "MjAxMy0wMS0wMSAwMDowMDowMDIwMTQtMDEtMDEgMDA6MDA6MDBkZnQtdGF4LWEtdmVoaWNsZQ==",
+          "_month_start_at": "2013-01-01T00:00:00+00:00",
+          "_quarter_start_at": "2013-01-01T00:00:00+00:00",
+          "_timestamp": "2013-01-01T00:00:00+00:00",
+          "_updated_at": "2014-11-17T11:49:01.239000+00:00",
+          "_week_start_at": "2012-12-31T00:00:00+00:00",
+          "_year_start_at": "2013-01-01T00:00:00+00:00",
+          "cost_per_transaction": 1.03,
+          "digital_cost_per_transaction": null,
+          "digital_takeup": 0.5425918810104294,
+          "end_at": "2014-01-01T00:00:00+00:00",
+          "number_of_digital_transactions": 23536288,
+          "number_of_transactions": 43377516,
+          "period": "year",
+          "service_id": "dft-tax-a-vehicle",
+          "total_cost": 44678841.480000004,
+          "type": "seasonally-adjusted"
+        },
+        {
+          "_day_start_at": "2012-10-01T00:00:00+00:00",
+          "_hour_start_at": "2012-10-01T00:00:00+00:00",
+          "_id": "MjAxMi0xMC0wMSAwMDowMDowMDIwMTMtMTAtMDEgMDA6MDA6MDBkZnQtdGF4LWEtdmVoaWNsZQ==",
+          "_month_start_at": "2012-10-01T00:00:00+00:00",
+          "_quarter_start_at": "2012-10-01T00:00:00+00:00",
+          "_timestamp": "2012-10-01T00:00:00+00:00",
+          "_updated_at": "2014-11-17T11:49:01.241000+00:00",
+          "_week_start_at": "2012-10-01T00:00:00+00:00",
+          "_year_start_at": "2012-01-01T00:00:00+00:00",
+          "cost_per_transaction": 0.89,
+          "digital_cost_per_transaction": null,
+          "digital_takeup": 0.5374517539516923,
+          "end_at": "2013-10-01T00:00:00+00:00",
+          "number_of_digital_transactions": 23014845,
+          "number_of_transactions": 42822160,
+          "period": "year",
+          "service_id": "dft-tax-a-vehicle",
+          "total_cost": 38111722.4,
+          "type": "seasonally-adjusted"
+        },
+        {
+          "_day_start_at": "2012-07-01T00:00:00+00:00",
+          "_hour_start_at": "2012-07-01T00:00:00+00:00",
+          "_id": "MjAxMi0wNy0wMSAwMDowMDowMDIwMTMtMDctMDEgMDA6MDA6MDBkZnQtdGF4LWEtdmVoaWNsZQ==",
+          "_month_start_at": "2012-07-01T00:00:00+00:00",
+          "_quarter_start_at": "2012-07-01T00:00:00+00:00",
+          "_timestamp": "2012-07-01T00:00:00+00:00",
+          "_updated_at": "2014-11-17T11:49:01.240000+00:00",
+          "_week_start_at": "2012-06-25T00:00:00+00:00",
+          "_year_start_at": "2012-01-01T00:00:00+00:00",
+          "cost_per_transaction": 1.81,
+          "digital_cost_per_transaction": null,
+          "digital_takeup": 0.5290206067414974,
+          "end_at": "2013-07-01T00:00:00+00:00",
+          "number_of_digital_transactions": 22655007,
+          "number_of_transactions": 42824432,
+          "period": "year",
+          "service_id": "dft-tax-a-vehicle",
+          "total_cost": 77512221.92,
+          "type": "seasonally-adjusted"
+        },
+        {
+          "_day_start_at": "2012-04-01T00:00:00+00:00",
+          "_hour_start_at": "2012-04-01T00:00:00+00:00",
+          "_id": "MjAxMi0wNC0wMSAwMDowMDowMDIwMTMtMDQtMDEgMDA6MDA6MDBkZnQtdGF4LWEtdmVoaWNsZQ==",
+          "_month_start_at": "2012-04-01T00:00:00+00:00",
+          "_quarter_start_at": "2012-04-01T00:00:00+00:00",
+          "_timestamp": "2012-04-01T00:00:00+00:00",
+          "_updated_at": "2014-11-17T11:49:01.242000+00:00",
+          "_week_start_at": "2012-03-26T00:00:00+00:00",
+          "_year_start_at": "2012-01-01T00:00:00+00:00",
+          "cost_per_transaction": 1.43,
+          "digital_cost_per_transaction": null,
+          "digital_takeup": 0.5395947519008285,
+          "end_at": "2013-04-01T00:00:00+00:00",
+          "number_of_digital_transactions": 24701745,
+          "number_of_transactions": 45778327,
+          "period": "year",
+          "service_id": "dft-tax-a-vehicle",
+          "total_cost": 65463007.61,
+          "type": "seasonally-adjusted"
+        },
+        {
+          "_day_start_at": "2012-01-01T00:00:00+00:00",
+          "_hour_start_at": "2012-01-01T00:00:00+00:00",
+          "_id": "MjAxMi0wMS0wMSAwMDowMDowMDIwMTMtMDEtMDEgMDA6MDA6MDBkZnQtdGF4LWEtdmVoaWNsZQ==",
+          "_month_start_at": "2012-01-01T00:00:00+00:00",
+          "_quarter_start_at": "2012-01-01T00:00:00+00:00",
+          "_timestamp": "2012-01-01T00:00:00+00:00",
+          "_updated_at": "2014-11-17T11:49:01.242000+00:00",
+          "_week_start_at": "2011-12-26T00:00:00+00:00",
+          "_year_start_at": "2012-01-01T00:00:00+00:00",
+          "cost_per_transaction": null,
+          "digital_cost_per_transaction": null,
+          "digital_takeup": null,
+          "end_at": "2013-01-01T00:00:00+00:00",
+          "number_of_digital_transactions": null,
+          "number_of_transactions": null,
+          "period": "year",
+          "service_id": "dft-tax-a-vehicle",
+          "total_cost": null,
+          "type": "seasonally-adjusted"
+        },
+        {
+          "_day_start_at": "2011-04-01T00:00:00+00:00",
+          "_hour_start_at": "2011-04-01T00:00:00+00:00",
+          "_id": "MjAxMS0wNC0wMSAwMDowMDowMDIwMTItMDQtMDEgMDA6MDA6MDBkZnQtdGF4LWEtdmVoaWNsZQ==",
+          "_month_start_at": "2011-04-01T00:00:00+00:00",
+          "_quarter_start_at": "2011-04-01T00:00:00+00:00",
+          "_timestamp": "2011-04-01T00:00:00+00:00",
+          "_updated_at": "2014-11-17T11:49:01.242000+00:00",
+          "_week_start_at": "2011-03-28T00:00:00+00:00",
+          "_year_start_at": "2011-01-01T00:00:00+00:00",
+          "cost_per_transaction": null,
+          "digital_cost_per_transaction": null,
+          "digital_takeup": 0.5084760497261583,
+          "end_at": "2012-04-01T00:00:00+00:00",
+          "number_of_digital_transactions": 23396000,
+          "number_of_transactions": 46012000,
+          "period": "year",
+          "service_id": "dft-tax-a-vehicle",
+          "total_cost": null,
+          "type": "seasonally-adjusted"
+        }
+      ]
+    },
+    {
+      "info": [],
+      "value-attribute": "total_cost",
+      "description": "",
+      "module-type": "kpi",
+      "title": "Total cost",
+      "format": {
+        "sigfigs": 3,
+        "magnitude": true,
+        "type": "currency"
+      },
+      "classes": "cols3",
+      "slug": "total-cost",
+      "data-source": {
+        "data-group": "transactional-services",
+        "data-type": "summaries",
+        "query-params": {
+          "sort_by": "_timestamp:descending",
+          "filter_by": [
+            "service_id:dft-tax-a-vehicle",
+            "type:seasonally-adjusted"
+          ]
+        }
+      },
+      "data": [
+        {
+          "_day_start_at": "2013-07-01T00:00:00+00:00",
+          "_hour_start_at": "2013-07-01T00:00:00+00:00",
+          "_id": "MjAxMy0wNy0wMSAwMDowMDowMDIwMTQtMDctMDEgMDA6MDA6MDBkZnQtdGF4LWEtdmVoaWNsZQ==",
+          "_month_start_at": "2013-07-01T00:00:00+00:00",
+          "_quarter_start_at": "2013-07-01T00:00:00+00:00",
+          "_timestamp": "2013-07-01T00:00:00+00:00",
+          "_updated_at": "2014-11-17T11:49:01.239000+00:00",
+          "_week_start_at": "2013-07-01T00:00:00+00:00",
+          "_year_start_at": "2013-01-01T00:00:00+00:00",
+          "cost_per_transaction": 1.26,
+          "digital_cost_per_transaction": null,
+          "digital_takeup": 0.5416161428534535,
+          "end_at": "2014-07-01T00:00:00+00:00",
+          "number_of_digital_transactions": 24831133,
+          "number_of_transactions": 45846368,
+          "period": "year",
+          "service_id": "dft-tax-a-vehicle",
+          "total_cost": 57766423.68,
+          "type": "seasonally-adjusted"
+        },
+        {
+          "_day_start_at": "2013-04-01T00:00:00+00:00",
+          "_hour_start_at": "2013-04-01T00:00:00+00:00",
+          "_id": "MjAxMy0wNC0wMSAwMDowMDowMDIwMTQtMDQtMDEgMDA6MDA6MDBkZnQtdGF4LWEtdmVoaWNsZQ==",
+          "_month_start_at": "2013-04-01T00:00:00+00:00",
+          "_quarter_start_at": "2013-04-01T00:00:00+00:00",
+          "_timestamp": "2013-04-01T00:00:00+00:00",
+          "_updated_at": "2014-11-17T11:49:01.240000+00:00",
+          "_week_start_at": "2013-04-01T00:00:00+00:00",
+          "_year_start_at": "2013-01-01T00:00:00+00:00",
+          "cost_per_transaction": 1.4,
+          "digital_cost_per_transaction": null,
+          "digital_takeup": 0.533063457950183,
+          "end_at": "2014-04-01T00:00:00+00:00",
+          "number_of_digital_transactions": 24504457,
+          "number_of_transactions": 45969118,
+          "period": "year",
+          "service_id": "dft-tax-a-vehicle",
+          "total_cost": 64356765.199999996,
+          "type": "seasonally-adjusted"
+        },
+        {
+          "_day_start_at": "2013-01-01T00:00:00+00:00",
+          "_hour_start_at": "2013-01-01T00:00:00+00:00",
+          "_id": "MjAxMy0wMS0wMSAwMDowMDowMDIwMTQtMDEtMDEgMDA6MDA6MDBkZnQtdGF4LWEtdmVoaWNsZQ==",
+          "_month_start_at": "2013-01-01T00:00:00+00:00",
+          "_quarter_start_at": "2013-01-01T00:00:00+00:00",
+          "_timestamp": "2013-01-01T00:00:00+00:00",
+          "_updated_at": "2014-11-17T11:49:01.239000+00:00",
+          "_week_start_at": "2012-12-31T00:00:00+00:00",
+          "_year_start_at": "2013-01-01T00:00:00+00:00",
+          "cost_per_transaction": 1.03,
+          "digital_cost_per_transaction": null,
+          "digital_takeup": 0.5425918810104294,
+          "end_at": "2014-01-01T00:00:00+00:00",
+          "number_of_digital_transactions": 23536288,
+          "number_of_transactions": 43377516,
+          "period": "year",
+          "service_id": "dft-tax-a-vehicle",
+          "total_cost": 44678841.480000004,
+          "type": "seasonally-adjusted"
+        },
+        {
+          "_day_start_at": "2012-10-01T00:00:00+00:00",
+          "_hour_start_at": "2012-10-01T00:00:00+00:00",
+          "_id": "MjAxMi0xMC0wMSAwMDowMDowMDIwMTMtMTAtMDEgMDA6MDA6MDBkZnQtdGF4LWEtdmVoaWNsZQ==",
+          "_month_start_at": "2012-10-01T00:00:00+00:00",
+          "_quarter_start_at": "2012-10-01T00:00:00+00:00",
+          "_timestamp": "2012-10-01T00:00:00+00:00",
+          "_updated_at": "2014-11-17T11:49:01.241000+00:00",
+          "_week_start_at": "2012-10-01T00:00:00+00:00",
+          "_year_start_at": "2012-01-01T00:00:00+00:00",
+          "cost_per_transaction": 0.89,
+          "digital_cost_per_transaction": null,
+          "digital_takeup": 0.5374517539516923,
+          "end_at": "2013-10-01T00:00:00+00:00",
+          "number_of_digital_transactions": 23014845,
+          "number_of_transactions": 42822160,
+          "period": "year",
+          "service_id": "dft-tax-a-vehicle",
+          "total_cost": 38111722.4,
+          "type": "seasonally-adjusted"
+        },
+        {
+          "_day_start_at": "2012-07-01T00:00:00+00:00",
+          "_hour_start_at": "2012-07-01T00:00:00+00:00",
+          "_id": "MjAxMi0wNy0wMSAwMDowMDowMDIwMTMtMDctMDEgMDA6MDA6MDBkZnQtdGF4LWEtdmVoaWNsZQ==",
+          "_month_start_at": "2012-07-01T00:00:00+00:00",
+          "_quarter_start_at": "2012-07-01T00:00:00+00:00",
+          "_timestamp": "2012-07-01T00:00:00+00:00",
+          "_updated_at": "2014-11-17T11:49:01.240000+00:00",
+          "_week_start_at": "2012-06-25T00:00:00+00:00",
+          "_year_start_at": "2012-01-01T00:00:00+00:00",
+          "cost_per_transaction": 1.81,
+          "digital_cost_per_transaction": null,
+          "digital_takeup": 0.5290206067414974,
+          "end_at": "2013-07-01T00:00:00+00:00",
+          "number_of_digital_transactions": 22655007,
+          "number_of_transactions": 42824432,
+          "period": "year",
+          "service_id": "dft-tax-a-vehicle",
+          "total_cost": 77512221.92,
+          "type": "seasonally-adjusted"
+        },
+        {
+          "_day_start_at": "2012-04-01T00:00:00+00:00",
+          "_hour_start_at": "2012-04-01T00:00:00+00:00",
+          "_id": "MjAxMi0wNC0wMSAwMDowMDowMDIwMTMtMDQtMDEgMDA6MDA6MDBkZnQtdGF4LWEtdmVoaWNsZQ==",
+          "_month_start_at": "2012-04-01T00:00:00+00:00",
+          "_quarter_start_at": "2012-04-01T00:00:00+00:00",
+          "_timestamp": "2012-04-01T00:00:00+00:00",
+          "_updated_at": "2014-11-17T11:49:01.242000+00:00",
+          "_week_start_at": "2012-03-26T00:00:00+00:00",
+          "_year_start_at": "2012-01-01T00:00:00+00:00",
+          "cost_per_transaction": 1.43,
+          "digital_cost_per_transaction": null,
+          "digital_takeup": 0.5395947519008285,
+          "end_at": "2013-04-01T00:00:00+00:00",
+          "number_of_digital_transactions": 24701745,
+          "number_of_transactions": 45778327,
+          "period": "year",
+          "service_id": "dft-tax-a-vehicle",
+          "total_cost": 65463007.61,
+          "type": "seasonally-adjusted"
+        },
+        {
+          "_day_start_at": "2012-01-01T00:00:00+00:00",
+          "_hour_start_at": "2012-01-01T00:00:00+00:00",
+          "_id": "MjAxMi0wMS0wMSAwMDowMDowMDIwMTMtMDEtMDEgMDA6MDA6MDBkZnQtdGF4LWEtdmVoaWNsZQ==",
+          "_month_start_at": "2012-01-01T00:00:00+00:00",
+          "_quarter_start_at": "2012-01-01T00:00:00+00:00",
+          "_timestamp": "2012-01-01T00:00:00+00:00",
+          "_updated_at": "2014-11-17T11:49:01.242000+00:00",
+          "_week_start_at": "2011-12-26T00:00:00+00:00",
+          "_year_start_at": "2012-01-01T00:00:00+00:00",
+          "cost_per_transaction": null,
+          "digital_cost_per_transaction": null,
+          "digital_takeup": null,
+          "end_at": "2013-01-01T00:00:00+00:00",
+          "number_of_digital_transactions": null,
+          "number_of_transactions": null,
+          "period": "year",
+          "service_id": "dft-tax-a-vehicle",
+          "total_cost": null,
+          "type": "seasonally-adjusted"
+        },
+        {
+          "_day_start_at": "2011-04-01T00:00:00+00:00",
+          "_hour_start_at": "2011-04-01T00:00:00+00:00",
+          "_id": "MjAxMS0wNC0wMSAwMDowMDowMDIwMTItMDQtMDEgMDA6MDA6MDBkZnQtdGF4LWEtdmVoaWNsZQ==",
+          "_month_start_at": "2011-04-01T00:00:00+00:00",
+          "_quarter_start_at": "2011-04-01T00:00:00+00:00",
+          "_timestamp": "2011-04-01T00:00:00+00:00",
+          "_updated_at": "2014-11-17T11:49:01.242000+00:00",
+          "_week_start_at": "2011-03-28T00:00:00+00:00",
+          "_year_start_at": "2011-01-01T00:00:00+00:00",
+          "cost_per_transaction": null,
+          "digital_cost_per_transaction": null,
+          "digital_takeup": 0.5084760497261583,
+          "end_at": "2012-04-01T00:00:00+00:00",
+          "number_of_digital_transactions": 23396000,
+          "number_of_transactions": 46012000,
+          "period": "year",
+          "service_id": "dft-tax-a-vehicle",
+          "total_cost": null,
+          "type": "seasonally-adjusted"
+        }
+      ]
+    },
+    {
+      "info": [],
+      "value-attribute": "cost_per_transaction",
+      "description": "",
+      "module-type": "kpi",
+      "title": "Cost per transaction",
+      "format": {
+        "pence": true,
+        "type": "currency"
+      },
+      "classes": "cols3",
+      "slug": "cost-per-transaction",
+      "data-source": {
+        "data-group": "transactional-services",
+        "data-type": "summaries",
+        "query-params": {
+          "sort_by": "_timestamp:descending",
+          "filter_by": [
+            "service_id:dft-tax-a-vehicle",
+            "type:seasonally-adjusted"
+          ]
+        }
+      },
+      "data": [
+        {
+          "_day_start_at": "2013-07-01T00:00:00+00:00",
+          "_hour_start_at": "2013-07-01T00:00:00+00:00",
+          "_id": "MjAxMy0wNy0wMSAwMDowMDowMDIwMTQtMDctMDEgMDA6MDA6MDBkZnQtdGF4LWEtdmVoaWNsZQ==",
+          "_month_start_at": "2013-07-01T00:00:00+00:00",
+          "_quarter_start_at": "2013-07-01T00:00:00+00:00",
+          "_timestamp": "2013-07-01T00:00:00+00:00",
+          "_updated_at": "2014-11-17T11:49:01.239000+00:00",
+          "_week_start_at": "2013-07-01T00:00:00+00:00",
+          "_year_start_at": "2013-01-01T00:00:00+00:00",
+          "cost_per_transaction": 1.26,
+          "digital_cost_per_transaction": null,
+          "digital_takeup": 0.5416161428534535,
+          "end_at": "2014-07-01T00:00:00+00:00",
+          "number_of_digital_transactions": 24831133,
+          "number_of_transactions": 45846368,
+          "period": "year",
+          "service_id": "dft-tax-a-vehicle",
+          "total_cost": 57766423.68,
+          "type": "seasonally-adjusted"
+        },
+        {
+          "_day_start_at": "2013-04-01T00:00:00+00:00",
+          "_hour_start_at": "2013-04-01T00:00:00+00:00",
+          "_id": "MjAxMy0wNC0wMSAwMDowMDowMDIwMTQtMDQtMDEgMDA6MDA6MDBkZnQtdGF4LWEtdmVoaWNsZQ==",
+          "_month_start_at": "2013-04-01T00:00:00+00:00",
+          "_quarter_start_at": "2013-04-01T00:00:00+00:00",
+          "_timestamp": "2013-04-01T00:00:00+00:00",
+          "_updated_at": "2014-11-17T11:49:01.240000+00:00",
+          "_week_start_at": "2013-04-01T00:00:00+00:00",
+          "_year_start_at": "2013-01-01T00:00:00+00:00",
+          "cost_per_transaction": 1.4,
+          "digital_cost_per_transaction": null,
+          "digital_takeup": 0.533063457950183,
+          "end_at": "2014-04-01T00:00:00+00:00",
+          "number_of_digital_transactions": 24504457,
+          "number_of_transactions": 45969118,
+          "period": "year",
+          "service_id": "dft-tax-a-vehicle",
+          "total_cost": 64356765.199999996,
+          "type": "seasonally-adjusted"
+        },
+        {
+          "_day_start_at": "2013-01-01T00:00:00+00:00",
+          "_hour_start_at": "2013-01-01T00:00:00+00:00",
+          "_id": "MjAxMy0wMS0wMSAwMDowMDowMDIwMTQtMDEtMDEgMDA6MDA6MDBkZnQtdGF4LWEtdmVoaWNsZQ==",
+          "_month_start_at": "2013-01-01T00:00:00+00:00",
+          "_quarter_start_at": "2013-01-01T00:00:00+00:00",
+          "_timestamp": "2013-01-01T00:00:00+00:00",
+          "_updated_at": "2014-11-17T11:49:01.239000+00:00",
+          "_week_start_at": "2012-12-31T00:00:00+00:00",
+          "_year_start_at": "2013-01-01T00:00:00+00:00",
+          "cost_per_transaction": 1.03,
+          "digital_cost_per_transaction": null,
+          "digital_takeup": 0.5425918810104294,
+          "end_at": "2014-01-01T00:00:00+00:00",
+          "number_of_digital_transactions": 23536288,
+          "number_of_transactions": 43377516,
+          "period": "year",
+          "service_id": "dft-tax-a-vehicle",
+          "total_cost": 44678841.480000004,
+          "type": "seasonally-adjusted"
+        },
+        {
+          "_day_start_at": "2012-10-01T00:00:00+00:00",
+          "_hour_start_at": "2012-10-01T00:00:00+00:00",
+          "_id": "MjAxMi0xMC0wMSAwMDowMDowMDIwMTMtMTAtMDEgMDA6MDA6MDBkZnQtdGF4LWEtdmVoaWNsZQ==",
+          "_month_start_at": "2012-10-01T00:00:00+00:00",
+          "_quarter_start_at": "2012-10-01T00:00:00+00:00",
+          "_timestamp": "2012-10-01T00:00:00+00:00",
+          "_updated_at": "2014-11-17T11:49:01.241000+00:00",
+          "_week_start_at": "2012-10-01T00:00:00+00:00",
+          "_year_start_at": "2012-01-01T00:00:00+00:00",
+          "cost_per_transaction": 0.89,
+          "digital_cost_per_transaction": null,
+          "digital_takeup": 0.5374517539516923,
+          "end_at": "2013-10-01T00:00:00+00:00",
+          "number_of_digital_transactions": 23014845,
+          "number_of_transactions": 42822160,
+          "period": "year",
+          "service_id": "dft-tax-a-vehicle",
+          "total_cost": 38111722.4,
+          "type": "seasonally-adjusted"
+        },
+        {
+          "_day_start_at": "2012-07-01T00:00:00+00:00",
+          "_hour_start_at": "2012-07-01T00:00:00+00:00",
+          "_id": "MjAxMi0wNy0wMSAwMDowMDowMDIwMTMtMDctMDEgMDA6MDA6MDBkZnQtdGF4LWEtdmVoaWNsZQ==",
+          "_month_start_at": "2012-07-01T00:00:00+00:00",
+          "_quarter_start_at": "2012-07-01T00:00:00+00:00",
+          "_timestamp": "2012-07-01T00:00:00+00:00",
+          "_updated_at": "2014-11-17T11:49:01.240000+00:00",
+          "_week_start_at": "2012-06-25T00:00:00+00:00",
+          "_year_start_at": "2012-01-01T00:00:00+00:00",
+          "cost_per_transaction": 1.81,
+          "digital_cost_per_transaction": null,
+          "digital_takeup": 0.5290206067414974,
+          "end_at": "2013-07-01T00:00:00+00:00",
+          "number_of_digital_transactions": 22655007,
+          "number_of_transactions": 42824432,
+          "period": "year",
+          "service_id": "dft-tax-a-vehicle",
+          "total_cost": 77512221.92,
+          "type": "seasonally-adjusted"
+        },
+        {
+          "_day_start_at": "2012-04-01T00:00:00+00:00",
+          "_hour_start_at": "2012-04-01T00:00:00+00:00",
+          "_id": "MjAxMi0wNC0wMSAwMDowMDowMDIwMTMtMDQtMDEgMDA6MDA6MDBkZnQtdGF4LWEtdmVoaWNsZQ==",
+          "_month_start_at": "2012-04-01T00:00:00+00:00",
+          "_quarter_start_at": "2012-04-01T00:00:00+00:00",
+          "_timestamp": "2012-04-01T00:00:00+00:00",
+          "_updated_at": "2014-11-17T11:49:01.242000+00:00",
+          "_week_start_at": "2012-03-26T00:00:00+00:00",
+          "_year_start_at": "2012-01-01T00:00:00+00:00",
+          "cost_per_transaction": 1.43,
+          "digital_cost_per_transaction": null,
+          "digital_takeup": 0.5395947519008285,
+          "end_at": "2013-04-01T00:00:00+00:00",
+          "number_of_digital_transactions": 24701745,
+          "number_of_transactions": 45778327,
+          "period": "year",
+          "service_id": "dft-tax-a-vehicle",
+          "total_cost": 65463007.61,
+          "type": "seasonally-adjusted"
+        },
+        {
+          "_day_start_at": "2012-01-01T00:00:00+00:00",
+          "_hour_start_at": "2012-01-01T00:00:00+00:00",
+          "_id": "MjAxMi0wMS0wMSAwMDowMDowMDIwMTMtMDEtMDEgMDA6MDA6MDBkZnQtdGF4LWEtdmVoaWNsZQ==",
+          "_month_start_at": "2012-01-01T00:00:00+00:00",
+          "_quarter_start_at": "2012-01-01T00:00:00+00:00",
+          "_timestamp": "2012-01-01T00:00:00+00:00",
+          "_updated_at": "2014-11-17T11:49:01.242000+00:00",
+          "_week_start_at": "2011-12-26T00:00:00+00:00",
+          "_year_start_at": "2012-01-01T00:00:00+00:00",
+          "cost_per_transaction": null,
+          "digital_cost_per_transaction": null,
+          "digital_takeup": null,
+          "end_at": "2013-01-01T00:00:00+00:00",
+          "number_of_digital_transactions": null,
+          "number_of_transactions": null,
+          "period": "year",
+          "service_id": "dft-tax-a-vehicle",
+          "total_cost": null,
+          "type": "seasonally-adjusted"
+        },
+        {
+          "_day_start_at": "2011-04-01T00:00:00+00:00",
+          "_hour_start_at": "2011-04-01T00:00:00+00:00",
+          "_id": "MjAxMS0wNC0wMSAwMDowMDowMDIwMTItMDQtMDEgMDA6MDA6MDBkZnQtdGF4LWEtdmVoaWNsZQ==",
+          "_month_start_at": "2011-04-01T00:00:00+00:00",
+          "_quarter_start_at": "2011-04-01T00:00:00+00:00",
+          "_timestamp": "2011-04-01T00:00:00+00:00",
+          "_updated_at": "2014-11-17T11:49:01.242000+00:00",
+          "_week_start_at": "2011-03-28T00:00:00+00:00",
+          "_year_start_at": "2011-01-01T00:00:00+00:00",
+          "cost_per_transaction": null,
+          "digital_cost_per_transaction": null,
+          "digital_takeup": 0.5084760497261583,
+          "end_at": "2012-04-01T00:00:00+00:00",
+          "number_of_digital_transactions": 23396000,
+          "number_of_transactions": 46012000,
+          "period": "year",
+          "service_id": "dft-tax-a-vehicle",
+          "total_cost": null,
+          "type": "seasonally-adjusted"
+        }
+      ]
     }
-   }
-  },
-  {
-   "info": [
-    "Filing an annual return incurs a fee which covers registration costs, accounts filing and all other document filing for limited liability companies, where these services do not have separate fees. <br>The published cost per transaction is a cost per transaction for these product groups, and the overall cost is heavily influenced by the level of electronic take up per transaction type.",
-    "<br />",
-    "Data source: Department for Business, Innovation and Skills",
-    "Total cost is the overall cost per year of providing a service, including staff, IT and accommodation costs; the total cost is automatically calculated from volume and cost per transaction figures, and some rounding errors may occur."
-   ],
-   "value-attribute": "total_cost",
-   "description": "",
-   "module-type": "kpi",
-   "title": "Total cost",
-   "format": {
-    "sigfigs": 3,
-    "magnitude": true,
-    "type": "currency"
-   },
-   "classes": "cols3",
-   "slug": "total-cost",
-   "data-source": {
-    "data-group": "transactional-services",
-    "data-type": "summaries",
-    "query-params": {
-     "sort_by": "_timestamp:descending",
-     "filter_by": [
-      "service_id:bis-accounts-filing",
-      "type:seasonally-adjusted"
-     ]
-    }
-   }
-  },
-  {
-   "info": [
-    "Filing an annual return incurs a fee which covers registration costs, accounts filing and all other document filing for limited liability companies, where these services do not have separate fees. <br>The published cost per transaction is a cost per transaction for these product groups, and the overall cost is heavily influenced by the level of electronic take up per transaction type.",
-    "<br />",
-    "Data source: Department for Business, Innovation and Skills",
-    "<a href=\"https://www.gov.uk/service-manual/measurement/cost-per-transaction.html\">Cost per transaction</a> is the average cost of providing each successfully completed transaction, across all channels. Staff, IT and accommodation costs should be included."
-   ],
-   "value-attribute": "cost_per_transaction",
-   "description": "",
-   "module-type": "kpi",
-   "title": "Cost per transaction",
-   "format": {
-    "pence": true,
-    "type": "currency"
-   },
-   "classes": "cols3",
-   "slug": "cost-per-transaction",
-   "data-source": {
-    "data-group": "transactional-services",
-    "data-type": "summaries",
-    "query-params": {
-     "sort_by": "_timestamp:descending",
-     "filter_by": [
-      "service_id:bis-accounts-filing",
-      "type:seasonally-adjusted"
-     ]
-    }
-   }
-  },
-  {
-   "info": [
-    "Data source: Department for Business, Innovation and Skills"
-   ],
-   "value-attribute": "number_of_transactions",
-   "axis-period": "quarter",
-   "description": "Total number of transactions each quarter",
-   "module-type": "bar_chart_with_number",
-   "title": "Transactions per quarter",
-   "slug": "transactions-per-quarter",
-   "data-source": {
-    "data-group": "transactional-services",
-    "data-type": "summaries",
-    "query-params": {
-     "sort_by": "_timestamp:ascending",
-     "filter_by": [
-      "service_id:bis-accounts-filing",
-      "type:quarterly"
-     ]
-    }
-   }
-  },
-  {
-   "info": [
-    "Data source: Department for Business, Innovation and Skills",
-    "<a href=\"https://www.gov.uk/service-manual/measurement/digital-takeup.html\">Digital take-up</a> measures the percentage of completed applications that are made through a digital channel versus non-digital channels."
-   ],
-   "value-attribute": "digital_takeup",
-   "axis-period": "quarter",
-   "description": "Digital take-up rates each quarter",
-   "module-type": "bar_chart_with_number",
-   "format": {
-    "type": "percent"
-   },
-   "axes": {
-    "y": [
-     {
-      "label": "Percentage digital take-up"
-     }
-    ]
-   },
-   "title": "Digital take-up",
-   "slug": "digital-take-up-per-quarter",
-   "data-source": {
-    "data-group": "transactional-services",
-    "data-type": "summaries",
-    "query-params": {
-     "sort_by": "_timestamp:ascending",
-     "filter_by": [
-      "service_id:bis-accounts-filing",
-      "type:quarterly"
-     ]
-    }
-   }
-  }
- ],
- "slug": "bis-accounts-filing",
- "description-extra": "",
- "costs": "Filing an annual return incurs a fee which covers registration costs, accounts filing and all other document filing for limited liability companies, where these services do not have separate fees. <br>The published cost per transaction is a cost per transaction for these product groups, and the overall cost is heavily influenced by the level of electronic take up per transaction type.",
- "strapline": "Dashboard",
- "published": true,
- "department": {
-  "abbr": "BIS",
-  "title": "Department for Business, Innovation and Skills"
- },
- "page-type": "dashboard",
- "other-notes": "",
- "relatedPages": {
-  "improve-dashboard-message": true,
-  "transaction": {
-   "url": "https://www.gov.uk/file-your-company-accounts-and-tax-return",
-   "type": "transaction",
-   "title": "Company accounts filed"
-  },
-  "other": []
- },
- "dashboard-type": "high-volume-transaction"
+  ]
 }
