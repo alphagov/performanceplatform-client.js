@@ -7,7 +7,8 @@
     "beforeEach" : false,
     "after"      : false,
     "afterEach"  : false,
-    "sinon"      : false
+    "sinon"      : false,
+    "expect"     : false
   },
 
   /* Enforcing options */
@@ -28,8 +29,8 @@
   "unused"        : true,
   "strict"        : false,
   "maxdepth"      : 4,
-  "maxstatements" : 20,
-  "maxcomplexity" : 10,
+  "maxstatements" : 35,
+  "maxcomplexity" : 15,
 
   /* Relaxing options */
   "asi"           : false,
