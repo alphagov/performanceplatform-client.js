@@ -322,6 +322,137 @@
           "stage": "thank-you"
         }
       ]
+    },
+    {
+      "category": "channel",
+      "info": [
+        "Data source: DWP database",
+        "Shows the number of successful claims for Carer's Allowance, broken down by channel",
+        "Digital: applications made online",
+        "Paper form: applications made using a paper form"
+      ],
+      "value-attribute": "count:sum",
+      "description": "<span class=\"group0\">Paper form</span> and <span class=\"group1\">digital</span> applications over time",
+      "module-type": "grouped_timeseries",
+      "title": "Applications breakdown",
+      "date-picker": {"start-date": "2013-10-01T00:00:00Z"},
+      "axes": {
+        "y": [
+          {
+            "label": "Paper form",
+            "groupId": "paper",
+            "format": "integer"
+          },
+          {
+            "label": "Digital",
+            "groupId": "digital",
+            "format": "integer"
+          }
+        ],
+        "x": {
+          "label": "Date",
+          "key": [
+            "_start_at",
+            "_end_at"
+          ],
+          "format": "date"
+        }
+      },
+      "use_stack": true,
+      "show-line-labels": true,
+      "slug": "volumetrics",
+      "data-source": {
+        "data-group": "carers-allowance",
+        "data-type": "transactions-by-channel",
+        "query-params": {
+          "duration": 52,
+          "collect": ["count:sum"],
+          "group_by": "channel",
+          "period": "week"
+        }
+      },
+      "data": [
+        {
+          "_count": 52,
+          "_group_count": 52,
+          "channel": "digital",
+          "label": "Digital",
+          "count:sum": 130711,
+          "values": [
+            {
+              "_count": 1,
+              "_end_at": "2014-12-01T00:00:00+00:00",
+              "_start_at": "2014-11-24T00:00:00+00:00",
+              "count:sum": 3012,
+              "formatted_value": "3,012",
+              "formatted_date_range": "24 to 30 Nov 2014",
+              "formatted_change_from_previous": "-502",
+              "formatted_proportion_of_total": "47.3%"
+            },
+            {
+              "_count": 1,
+              "_end_at": "2014-11-24T00:00:00+00:00",
+              "_start_at": "2014-11-17T00:00:00+00:00",
+              "count:sum": 3514,
+              "formatted_value": "3,514",
+              "formatted_date_range": "17 to 23 Nov 2014",
+              "formatted_proportion_of_total": "31.9%"
+            },
+            {
+              "_count": 1,
+              "_end_at": "2014-11-17T00:00:00+00:00",
+              "_start_at": "2014-11-10T00:00:00+00:00",
+              "count:sum": 3577
+            },
+            {
+              "_count": 1,
+              "_end_at": "2014-11-10T00:00:00+00:00",
+              "_start_at": "2014-11-03T00:00:00+00:00",
+              "count:sum": 3564
+            }
+          ]
+        },
+        {
+          "_count": 52,
+          "_group_count": 52,
+          "channel": "paper",
+          "label": "Paper form",
+          "count:sum": 124753,
+          "values": [
+            {
+              "_count": 1,
+              "_end_at": "2014-12-01T00:00:00+00:00",
+              "_start_at": "2014-11-24T00:00:00+00:00",
+              "count:sum": 4049,
+              "formatted_value": "4,049",
+              "formatted_date_range": "24 to 30 Nov 2014",
+              "formatted_change_from_previous": "+1,538",
+              "formatted_proportion_of_total": "21.3%"
+            },
+            {
+              "_count": 1,
+              "_end_at": "2014-11-24T00:00:00+00:00",
+              "_start_at": "2014-11-17T00:00:00+00:00",
+              "count:sum": 2511,
+              "formatted_value": "2,511",
+              "formatted_date_range": "17 to 23 Nov 2014",
+              "formatted_proportion_of_total": "28.4%"
+            },
+            {
+              "_count": 1,
+              "_end_at": "2014-11-17T00:00:00+00:00",
+              "_start_at": "2014-11-10T00:00:00+00:00",
+              "count:sum": 3577
+            },
+            {
+              "_count": 1,
+              "_end_at": "2014-11-10T00:00:00+00:00",
+              "_start_at": "2014-11-03T00:00:00+00:00",
+              "count:sum": 2013
+            }
+          ]
+        }
+      ]
     }
   ]
 }
