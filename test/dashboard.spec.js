@@ -90,7 +90,7 @@ describe('Dashboard', function () {
 
   });
 
-  describe('getKPI()', function () {
+  describe('getModule()', function () {
 
 
     it('should respond with a resolved KPI modules data', function () {
@@ -100,7 +100,7 @@ describe('Dashboard', function () {
         data: moduleDataResponse
       });
 
-      return dashboard.getKPI(module)
+      return dashboard.getModule(module)
         .then(function (kpiData) {
           kpiData.data.should.equal(moduleDataResponse);
         });
@@ -113,7 +113,7 @@ describe('Dashboard', function () {
         data: moduleDataResponse
       });
 
-      return dashboard.getKPI(module)
+      return dashboard.getModule(module)
         .then(function (kpiData) {
           kpiData.axes.x.should.eql({
             'label': 'Quarter',
@@ -155,7 +155,7 @@ describe('Dashboard', function () {
 
       var moduleWithAxes = _.extend(module, setAxes);
 
-      return dashboard.getKPI(moduleWithAxes)
+      return dashboard.getModule(moduleWithAxes)
         .then(function (kpiData) {
           kpiData.axes.should.eql(setAxes.axes);
         });
@@ -168,7 +168,7 @@ describe('Dashboard', function () {
         data: moduleDataResponse
       });
 
-      return dashboard.getKPI(module)
+      return dashboard.getModule(module)
         .then(function (kpiData) {
           kpiData.tabularData.should.eql([
             [
@@ -192,15 +192,15 @@ describe('Dashboard', function () {
   describe('getDashboardMetrics()', function () {
     it('returns a resolved dashboard and metrics', function () {
       var getConfigPromise = Q.defer();
-      var getKPIPromise = Q.defer();
+      var getModulePromise = Q.defer();
       sinon.stub(Dashboard.prototype, 'getConfig').returns(getConfigPromise.promise);
-      sinon.stub(Dashboard.prototype, 'getKPI').returns(getKPIPromise.promise);
+      sinon.stub(Dashboard.prototype, 'getModule').returns(getModulePromise.promise);
 
       var dashboard = new Dashboard('test-dashboard');
 
       getConfigPromise.resolve(dashboardResponse);
 
-      getKPIPromise.resolve(moduleDataResponse);
+      getModulePromise.resolve(moduleDataResponse);
 
       return dashboard.getDashboardMetrics()
         .then(function (resolvedDashboard) {
