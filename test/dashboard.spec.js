@@ -63,7 +63,6 @@ describe('Dashboard', function () {
 
       dashboard.options.should.eql({
         json: true,
-        useQuerystring: true,
         slug: 'test-slug'
       });
     });
@@ -88,7 +87,6 @@ describe('Dashboard', function () {
                 'https://stagecraft.production.performance.service.gov.uk/public/dashboards?slug=' +
                   testSlug,
               json: true,
-              useQuerystring: true,
               slug: 'test-dashboard-slug'
             });
 
