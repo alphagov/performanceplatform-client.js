@@ -17,7 +17,9 @@ describe('Dashboard', function () {
     Dashboard = requireSubvert.require('../lib/dashboard');
     module = {
       'title': 'test',
-      'format': 'format',
+      'format': {
+        'type': 'number'
+      },
       'module-type': 'kpi',
       'value-attribute': 'specific_data',
       'data-source': {
@@ -36,15 +38,21 @@ describe('Dashboard', function () {
     moduleDataResponse = [
       {
         '_quarter_start_at': '2013-07-01T00:00:00+00:00',
-        'specific_data': 'foo'
+        '_timestamp': '2013-07-01T00:00:00+00:00',
+        'end_at': '2014-07-01T00:00:00+00:00',
+        'specific_data': 1
       },
       {
         '_quarter_start_at': '2013-04-01T00:00:00+00:00',
-        'specific_data': 'bar'
+        '_timestamp': '2013-07-01T00:00:00+00:00',
+        'end_at': '2014-07-01T00:00:00+00:00',
+        'specific_data': 2
       },
       {
         '_quarter_start_at': '2013-01-01T00:00:00+00:00',
-        'specific_data': 'hum'
+        '_timestamp': '2013-07-01T00:00:00+00:00',
+        'end_at': '2014-07-01T00:00:00+00:00',
+        'specific_data': 1
       }
     ];
   });
@@ -124,7 +132,9 @@ describe('Dashboard', function () {
           kpiData.axes.y.should.eql([{
             label: 'test',
             key: 'specific_data',
-            format: 'format'
+            format: {
+              'type': 'number'
+            }
           }]);
         });
     });
@@ -179,13 +189,113 @@ describe('Dashboard', function () {
             ],
             [
               'test',
-              'foo',
-              'bar',
-              'hum'
+              1,
+              2,
+              1
             ]
           ]);
 
         });
+    });
+
+    describe('formatted keys', function () {
+      it('should add extra formatting keys', function () {
+        var dashboard = new Dashboard('test-dashboard');
+
+        deferred.resolve({
+          data: moduleDataResponse
+        });
+
+        return dashboard.getModule(module)
+          .then(function (kpiData) {
+            kpiData.data[0].should.have.keys(
+              [
+                'formatted_change_from_previous',
+                'formatted_value',
+                '_quarter_start_at',
+                'specific_data',
+                '_timestamp',
+                'end_at',
+                'formatted_date_range',
+                'formatted_end_at',
+                'formatted_end_at'
+              ]
+            );
+          });
+      });
+
+      it('should only add a delta key if theres a previous model', function () {
+        var dashboard = new Dashboard('test-dashboard');
+
+        deferred.resolve({
+          data: moduleDataResponse
+        });
+
+        return dashboard.getModule(module)
+          .then(function (kpiData) {
+            kpiData.data[2].should.have.keys(
+              [
+                'formatted_value',
+                '_quarter_start_at',
+                'specific_data',
+                '_timestamp',
+                'end_at',
+                'formatted_date_range',
+                'formatted_end_at',
+                'formatted_end_at'
+              ]
+            );
+          });
+      });
+
+      it('should only add a delta key if the data format is currency or a number', function () {
+        var dashboard = new Dashboard('test-dashboard');
+
+        deferred.resolve({
+          data: moduleDataResponse
+        });
+
+        module.format.type = 'text';
+
+        return dashboard.getModule(module)
+          .then(function (kpiData) {
+            kpiData.data[2].should.have.keys(
+              [
+                'formatted_value',
+                '_quarter_start_at',
+                'specific_data',
+                '_timestamp',
+                'end_at',
+                'formatted_date_range',
+                'formatted_end_at',
+                'formatted_end_at'
+              ]
+            );
+          });
+      });
+
+      it('formats the data', function () {
+        var dashboard = new Dashboard('test-dashboard');
+
+        deferred.resolve({
+          data: moduleDataResponse
+        });
+
+        return dashboard.getModule(module)
+          .then(function (kpiData) {
+            kpiData.data[0].should.eql({
+              _quarter_start_at: '2013-07-01T00:00:00+00:00',
+              _timestamp: '2013-07-01T00:00:00+00:00',
+              end_at: '2014-07-01T00:00:00+00:00',
+              formatted_change_from_previous: '−50.00%',
+              formatted_date_range: '1 July 2013 to 30 June 2014',
+              formatted_end_at: '1 July 2014',
+              formatted_start_at: '1 July 2013',
+              formatted_value: '1',
+              specific_data: 1
+            });
+          });
+      });
     });
   });
 
@@ -210,43 +320,61 @@ describe('Dashboard', function () {
             [
               {
                 '_quarter_start_at': '2013-07-01T00:00:00+00:00',
-                'specific_data': 'foo'
+                'specific_data': 1,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
               },
               {
                 '_quarter_start_at': '2013-04-01T00:00:00+00:00',
-                'specific_data': 'bar'
+                'specific_data': 2,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
               },
               {
                 '_quarter_start_at': '2013-01-01T00:00:00+00:00',
-                'specific_data': 'hum'
+                'specific_data': 1,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
               }
             ],
             [
               {
                 '_quarter_start_at': '2013-07-01T00:00:00+00:00',
-                'specific_data': 'foo'
+                'specific_data': 1,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
               },
               {
                 '_quarter_start_at': '2013-04-01T00:00:00+00:00',
-                'specific_data': 'bar'
+                'specific_data': 2,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
               },
               {
                 '_quarter_start_at': '2013-01-01T00:00:00+00:00',
-                'specific_data': 'hum'
+                'specific_data': 1,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
               }
             ],
             [
               {
                 '_quarter_start_at': '2013-07-01T00:00:00+00:00',
-                'specific_data': 'foo'
+                'specific_data': 1,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
               },
               {
                 '_quarter_start_at': '2013-04-01T00:00:00+00:00',
-                'specific_data': 'bar'
+                'specific_data': 2,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
               },
               {
                 '_quarter_start_at': '2013-01-01T00:00:00+00:00',
-                'specific_data': 'hum'
+                'specific_data': 1,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
               }
             ]
           ]);
