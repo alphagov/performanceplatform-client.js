@@ -17,7 +17,9 @@ describe('Dashboard', function () {
     Dashboard = requireSubvert.require('../lib/dashboard');
     module = {
       'title': 'test',
-      'format': 'format',
+      'format': {
+        'type': 'number'
+      },
       'module-type': 'kpi',
       'value-attribute': 'specific_data',
       'data-source': {
@@ -36,15 +38,21 @@ describe('Dashboard', function () {
     moduleDataResponse = [
       {
         '_quarter_start_at': '2013-07-01T00:00:00+00:00',
-        'specific_data': 'foo'
+        '_timestamp': '2013-07-01T00:00:00+00:00',
+        'end_at': '2014-07-01T00:00:00+00:00',
+        'specific_data': 1
       },
       {
         '_quarter_start_at': '2013-04-01T00:00:00+00:00',
-        'specific_data': 'bar'
+        '_timestamp': '2013-07-01T00:00:00+00:00',
+        'end_at': '2014-07-01T00:00:00+00:00',
+        'specific_data': 2
       },
       {
         '_quarter_start_at': '2013-01-01T00:00:00+00:00',
-        'specific_data': 'hum'
+        '_timestamp': '2013-07-01T00:00:00+00:00',
+        'end_at': '2014-07-01T00:00:00+00:00',
+        'specific_data': 1
       }
     ];
   });
@@ -55,7 +63,6 @@ describe('Dashboard', function () {
 
       dashboard.options.should.eql({
         json: true,
-        useQuerystring: true,
         slug: 'test-slug'
       });
     });
@@ -80,7 +87,6 @@ describe('Dashboard', function () {
                 'https://stagecraft.production.performance.service.gov.uk/public/dashboards?slug=' +
                   testSlug,
               json: true,
-              useQuerystring: true,
               slug: 'test-dashboard-slug'
             });
 
@@ -90,7 +96,7 @@ describe('Dashboard', function () {
 
   });
 
-  describe('getKPI()', function () {
+  describe('getModule()', function () {
 
 
     it('should respond with a resolved KPI modules data', function () {
@@ -100,7 +106,7 @@ describe('Dashboard', function () {
         data: moduleDataResponse
       });
 
-      return dashboard.getKPI(module)
+      return dashboard.getModule(module)
         .then(function (kpiData) {
           kpiData.data.should.equal(moduleDataResponse);
         });
@@ -113,7 +119,7 @@ describe('Dashboard', function () {
         data: moduleDataResponse
       });
 
-      return dashboard.getKPI(module)
+      return dashboard.getModule(module)
         .then(function (kpiData) {
           kpiData.axes.x.should.eql({
             'label': 'Quarter',
@@ -124,7 +130,9 @@ describe('Dashboard', function () {
           kpiData.axes.y.should.eql([{
             label: 'test',
             key: 'specific_data',
-            format: 'format'
+            format: {
+              'type': 'number'
+            }
           }]);
         });
     });
@@ -155,7 +163,7 @@ describe('Dashboard', function () {
 
       var moduleWithAxes = _.extend(module, setAxes);
 
-      return dashboard.getKPI(moduleWithAxes)
+      return dashboard.getModule(moduleWithAxes)
         .then(function (kpiData) {
           kpiData.axes.should.eql(setAxes.axes);
         });
@@ -168,7 +176,7 @@ describe('Dashboard', function () {
         data: moduleDataResponse
       });
 
-      return dashboard.getKPI(module)
+      return dashboard.getModule(module)
         .then(function (kpiData) {
           kpiData.tabularData.should.eql([
             [
@@ -179,28 +187,128 @@ describe('Dashboard', function () {
             ],
             [
               'test',
-              'foo',
-              'bar',
-              'hum'
+              1,
+              2,
+              1
             ]
           ]);
 
         });
+    });
+
+    describe('formatted keys', function () {
+      it('should add extra formatting keys', function () {
+        var dashboard = new Dashboard('test-dashboard');
+
+        deferred.resolve({
+          data: moduleDataResponse
+        });
+
+        return dashboard.getModule(module)
+          .then(function (kpiData) {
+            kpiData.data[0].should.have.keys(
+              [
+                'formatted_change_from_previous',
+                'formatted_value',
+                '_quarter_start_at',
+                'specific_data',
+                '_timestamp',
+                'end_at',
+                'formatted_date_range',
+                'formatted_end_at',
+                'formatted_end_at'
+              ]
+            );
+          });
+      });
+
+      it('should only add a delta key if theres a previous model', function () {
+        var dashboard = new Dashboard('test-dashboard');
+
+        deferred.resolve({
+          data: moduleDataResponse
+        });
+
+        return dashboard.getModule(module)
+          .then(function (kpiData) {
+            kpiData.data[2].should.have.keys(
+              [
+                'formatted_value',
+                '_quarter_start_at',
+                'specific_data',
+                '_timestamp',
+                'end_at',
+                'formatted_date_range',
+                'formatted_end_at',
+                'formatted_end_at'
+              ]
+            );
+          });
+      });
+
+      it('should only add a delta key if the data format is currency or a number', function () {
+        var dashboard = new Dashboard('test-dashboard');
+
+        deferred.resolve({
+          data: moduleDataResponse
+        });
+
+        module.format.type = 'text';
+
+        return dashboard.getModule(module)
+          .then(function (kpiData) {
+            kpiData.data[2].should.have.keys(
+              [
+                'formatted_value',
+                '_quarter_start_at',
+                'specific_data',
+                '_timestamp',
+                'end_at',
+                'formatted_date_range',
+                'formatted_end_at',
+                'formatted_end_at'
+              ]
+            );
+          });
+      });
+
+      it('formats the data', function () {
+        var dashboard = new Dashboard('test-dashboard');
+
+        deferred.resolve({
+          data: moduleDataResponse
+        });
+
+        return dashboard.getModule(module)
+          .then(function (kpiData) {
+            kpiData.data[0].should.eql({
+              _quarter_start_at: '2013-07-01T00:00:00+00:00',
+              _timestamp: '2013-07-01T00:00:00+00:00',
+              end_at: '2014-07-01T00:00:00+00:00',
+              formatted_change_from_previous: '−50.00%',
+              formatted_date_range: '1 July 2013 to 30 June 2014',
+              formatted_end_at: '1 July 2014',
+              formatted_start_at: '1 July 2013',
+              formatted_value: '1',
+              specific_data: 1
+            });
+          });
+      });
     });
   });
 
   describe('getDashboardMetrics()', function () {
     it('returns a resolved dashboard and metrics', function () {
       var getConfigPromise = Q.defer();
-      var getKPIPromise = Q.defer();
+      var getModulePromise = Q.defer();
       sinon.stub(Dashboard.prototype, 'getConfig').returns(getConfigPromise.promise);
-      sinon.stub(Dashboard.prototype, 'getKPI').returns(getKPIPromise.promise);
+      sinon.stub(Dashboard.prototype, 'getModule').returns(getModulePromise.promise);
 
       var dashboard = new Dashboard('test-dashboard');
 
       getConfigPromise.resolve(dashboardResponse);
 
-      getKPIPromise.resolve(moduleDataResponse);
+      getModulePromise.resolve(moduleDataResponse);
 
       return dashboard.getDashboardMetrics()
         .then(function (resolvedDashboard) {
@@ -210,43 +318,61 @@ describe('Dashboard', function () {
             [
               {
                 '_quarter_start_at': '2013-07-01T00:00:00+00:00',
-                'specific_data': 'foo'
+                'specific_data': 1,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
               },
               {
                 '_quarter_start_at': '2013-04-01T00:00:00+00:00',
-                'specific_data': 'bar'
+                'specific_data': 2,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
               },
               {
                 '_quarter_start_at': '2013-01-01T00:00:00+00:00',
-                'specific_data': 'hum'
+                'specific_data': 1,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
               }
             ],
             [
               {
                 '_quarter_start_at': '2013-07-01T00:00:00+00:00',
-                'specific_data': 'foo'
+                'specific_data': 1,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
               },
               {
                 '_quarter_start_at': '2013-04-01T00:00:00+00:00',
-                'specific_data': 'bar'
+                'specific_data': 2,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
               },
               {
                 '_quarter_start_at': '2013-01-01T00:00:00+00:00',
-                'specific_data': 'hum'
+                'specific_data': 1,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
               }
             ],
             [
               {
                 '_quarter_start_at': '2013-07-01T00:00:00+00:00',
-                'specific_data': 'foo'
+                'specific_data': 1,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
               },
               {
                 '_quarter_start_at': '2013-04-01T00:00:00+00:00',
-                'specific_data': 'bar'
+                'specific_data': 2,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
               },
               {
                 '_quarter_start_at': '2013-01-01T00:00:00+00:00',
-                'specific_data': 'hum'
+                'specific_data': 1,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
               }
             ]
           ]);
