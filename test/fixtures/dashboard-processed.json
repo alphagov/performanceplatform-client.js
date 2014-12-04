@@ -52,7 +52,7 @@
           "formatted_date_end": "June 2014",
           "formatted_change_from_previous": {
             "change": "-0.27%",
-            "direction": "decrease"
+            "trend": "decrease"
           }
         },
         {
@@ -81,7 +81,7 @@
           "formatted_date_end": "Mar 2014",
           "formatted_change_from_previous": {
             "change": "+0.5%",
-            "direction": "increase"
+            "trend": "increase"
           }
         }
       ]
@@ -311,7 +311,7 @@
           "formatted_date_end": "30 Nov 2014",
           "formatted_change_from_previous": {
             "change": "-5s",
-            "direction": "decrease"
+            "trend": "decrease"
           }
         },
         {
@@ -408,7 +408,7 @@
               "formatted_date_end": "30 Nov 2014",
               "formatted_change_from_previous": {
                 "change": "-502",
-                "direction": "decrease"
+                "trend": "decrease"
               }
             },
             {
@@ -422,7 +422,7 @@
               "formatted_date_end": "23 Nov 2014",
               "formatted_change_from_previous": {
                 "change": "-100",
-                "direction": "decrease"
+                "trend": "decrease"
               }
             },
             {
@@ -457,7 +457,7 @@
               "formatted_date_end": "30 Nov 2014",
               "formatted_change_from_previous": {
                 "change": "+1,538",
-                "direction": "increase"
+                "trend": "increase"
               }
             },
             {
@@ -471,7 +471,7 @@
               "formatted_date_end": "23 Nov 2014",
               "formatted_change_from_previous": {
                 "change": "-100",
-                "direction": "decrease"
+                "trend": "decrease"
               }
             },
             {
