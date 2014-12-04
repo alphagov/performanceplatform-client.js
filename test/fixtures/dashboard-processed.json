@@ -42,13 +42,18 @@
           "end_at": "2014-07-01T00:00:00+00:00",
           "number_of_digital_transactions": 24831133,
           "number_of_transactions": 45846368,
-          "formatted_value": "45.8m",
           "period": "year",
           "service_id": "dft-tax-a-vehicle",
           "total_cost": 57766423.68,
           "type": "seasonally-adjusted",
+          "formatted_value": "45.8m",
           "formatted_date_range": "July 2013 to June 2014",
-          "formatted_change_from_previous": "-0.27%"
+          "formatted_date_start": "July 2013",
+          "formatted_date_end": "June 2014",
+          "formatted_change_from_previous": {
+            "change": "-0.27%",
+            "direction": "decrease"
+          }
         },
         {
           "_day_start_at": "2013-04-01T00:00:00+00:00",
@@ -72,6 +77,12 @@
           "total_cost": 64356765.199999996,
           "type": "seasonally-adjusted",
           "formatted_date_range": "Apr 2013 to Mar 2014"
+          "formatted_date_start": "Apr 2013",
+          "formatted_date_end": "Mar 2014",
+          "formatted_change_from_previous": {
+            "change": "+0.5%",
+            "direction": "increase"
+          }
         }
       ]
     },
@@ -296,7 +307,12 @@
           "stage": "thank-you",
           "formatted_value": "37m 51s",
           "formatted_date_range": "24 to 30 Nov 2014",
-          "formatted_change_from_previous": "-5s"
+          "formatted_date_start": "24 Nov 2014",
+          "formatted_date_end": "30 Nov 2014",
+          "formatted_change_from_previous": {
+            "change": "-5s",
+            "direction": "decrease"
+          }
         },
         {
           "_count": 1,
@@ -305,7 +321,9 @@
           "avgSessionDuration:sum": 2275589.560752995,
           "stage": "thank-you",
           "formatted_value": "37m 56s",
-          "formatted_date_range": "17 to 23 Nov 2014"
+          "formatted_date_range": "17 to 23 Nov 2014",
+          "formatted_date_start": "17 Nov 2014",
+          "formatted_date_end": "23 Nov 2014"
         },
         {
           "_count": 1,
@@ -386,8 +404,12 @@
               "count:sum": 3012,
               "formatted_value": "3,012",
               "formatted_date_range": "24 to 30 Nov 2014",
-              "formatted_change_from_previous": "-502",
-              "formatted_proportion_of_total": "47.3%"
+              "formatted_date_start": "24 Nov 2014",
+              "formatted_date_end": "30 Nov 2014",
+              "formatted_change_from_previous": {
+                "change": "-502",
+                "direction": "decrease"
+              }
             },
             {
               "_count": 1,
@@ -396,7 +418,12 @@
               "count:sum": 3514,
               "formatted_value": "3,514",
               "formatted_date_range": "17 to 23 Nov 2014",
-              "formatted_proportion_of_total": "31.9%"
+              "formatted_date_start": "17 Nov 2014",
+              "formatted_date_end": "23 Nov 2014",
+              "formatted_change_from_previous": {
+                "change": "-100",
+                "direction": "decrease"
+              }
             },
             {
               "_count": 1,
@@ -426,8 +453,12 @@
               "count:sum": 4049,
               "formatted_value": "4,049",
               "formatted_date_range": "24 to 30 Nov 2014",
-              "formatted_change_from_previous": "+1,538",
-              "formatted_proportion_of_total": "21.3%"
+              "formatted_date_start": "24 Nov 2014",
+              "formatted_date_end": "30 Nov 2014",
+              "formatted_change_from_previous": {
+                "change": "+1,538",
+                "direction": "increase"
+              }
             },
             {
               "_count": 1,
@@ -436,7 +467,12 @@
               "count:sum": 2511,
               "formatted_value": "2,511",
               "formatted_date_range": "17 to 23 Nov 2014",
-              "formatted_proportion_of_total": "28.4%"
+              "formatted_date_start": "17 Nov 2014",
+              "formatted_date_end": "23 Nov 2014",
+              "formatted_change_from_previous": {
+                "change": "-100",
+                "direction": "decrease"
+              }
             },
             {
               "_count": 1,
