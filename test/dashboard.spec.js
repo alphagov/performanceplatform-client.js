@@ -285,7 +285,10 @@ describe('Dashboard', function () {
               _quarter_start_at: '2013-07-01T00:00:00+00:00',
               _timestamp: '2013-07-01T00:00:00+00:00',
               end_at: '2014-07-01T00:00:00+00:00',
-              formatted_change_from_previous: '−50.00%',
+              formatted_change_from_previous: {
+                change: '−50.00%',
+                trend: 'decrease'
+              },
               formatted_date_range: '1 July 2013 to 30 June 2014',
               formatted_end_at: '1 July 2014',
               formatted_start_at: '1 July 2013',
