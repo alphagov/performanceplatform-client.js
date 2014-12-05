@@ -76,7 +76,7 @@
           "service_id": "dft-tax-a-vehicle",
           "total_cost": 64356765.199999996,
           "type": "seasonally-adjusted",
-          "formatted_date_range": "Apr 2013 to Mar 2014"
+          "formatted_date_range": "Apr 2013 to Mar 2014",
           "formatted_date_start": "Apr 2013",
           "formatted_date_end": "Mar 2014",
           "formatted_change_from_previous": {
