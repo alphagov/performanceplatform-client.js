@@ -130,9 +130,7 @@ describe('Dashboard', function () {
           kpiData.axes.y.should.eql([{
             label: 'test',
             key: 'specific_data',
-            format: {
-              'type': 'number'
-            }
+            format: 'number'
           }]);
         });
     });
