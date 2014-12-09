@@ -99,7 +99,7 @@ describe('Dashboard', function () {
   describe('getModule()', function () {
 
 
-    it('should respond with a resolved KPI modules data', function () {
+    it('should respond with a resolved modules data', function () {
       var dashboard = new Dashboard('test-dashboard');
 
       deferred.resolve({
@@ -107,33 +107,8 @@ describe('Dashboard', function () {
       });
 
       return dashboard.getModule(module)
-        .then(function (kpiData) {
-          kpiData.data.should.equal(moduleDataResponse);
-        });
-    });
-
-    it('should return with axes data for the kpi module', function () {
-      var dashboard = new Dashboard('test-dashboard');
-
-      deferred.resolve({
-        data: moduleDataResponse
-      });
-
-      return dashboard.getModule(module)
-        .then(function (kpiData) {
-          kpiData.axes.x.should.eql({
-            'label': 'Quarter',
-            'key': ['_quarter_start_at', 'end_at'],
-            'format': 'date'
-          });
-
-          kpiData.axes.y.should.eql([{
-            label: 'test',
-            key: 'specific_data',
-            format: {
-              type: 'number'
-            }
-          }]);
+        .then(function (moduleData) {
+          moduleData.data.should.equal(moduleDataResponse);
         });
     });
 
@@ -289,6 +264,70 @@ describe('Dashboard', function () {
               formatted_value: '1',
               specific_data: 1
             });
+          });
+      });
+    });
+
+    describe('module axes', function () {
+      it('should return with axes data for the KPI module', function () {
+        var dashboard = new Dashboard('test-dashboard');
+
+        deferred.resolve({
+          data: moduleDataResponse
+        });
+
+        return dashboard.getModule(module)
+          .then(function (moduleData) {
+            moduleData.axes.x.should.eql({
+              'label': 'Quarter',
+              'key': ['_quarter_start_at', 'end_at'],
+              'format': 'date'
+            });
+
+            moduleData.axes.y.should.eql([{
+              label: 'test',
+              key: 'specific_data',
+              format: {
+                type: 'number'
+              }
+            }]);
+          });
+      });
+
+      it('should return with axes data for the SINLE_TIMESERIES module', function () {
+        var dashboard = new Dashboard('test-dashboard');
+
+        module.axes = {
+          x: {
+            label: 'Date',
+            key: ['_start_at', '_end_at'],
+            format: 'date'
+          }
+        };
+        module['module-type'] = 'single_timeseries';
+        module['format-options'] = {
+          'type': 'number'
+        };
+
+        deferred.resolve({
+          data: moduleDataResponse
+        });
+
+        return dashboard.getModule(module)
+          .then(function (moduleData) {
+
+            moduleData.axes.x.should.eql({
+              'label': 'Date',
+              'key': ['_start_at', '_end_at'],
+              'format': 'date'
+            });
+
+            moduleData.axes.y.should.eql([{
+              key: 'specific_data',
+              format: {
+                type: 'number'
+              }
+            }]);
           });
       });
     });
