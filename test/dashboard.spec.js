@@ -179,15 +179,15 @@ describe('Dashboard', function () {
           kpiData.tabularData.should.eql([
             [
               'Quarter',
-              '2013-07-01T00:00:00+00:00',
-              '2013-04-01T00:00:00+00:00',
-              '2013-01-01T00:00:00+00:00'
+              '1 July 2013 to 30 June 2014',
+              '1 April 2013 to 30 June 2014',
+              '1 January 2013 to 30 June 2014'
             ],
             [
               'test',
-              1,
-              2,
-              1
+              '1',
+              '2',
+              '1'
             ]
           ]);
 
