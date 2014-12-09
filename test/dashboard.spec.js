@@ -130,7 +130,9 @@ describe('Dashboard', function () {
           kpiData.axes.y.should.eql([{
             label: 'test',
             key: 'specific_data',
-            format: 'number'
+            format: {
+              type: 'number'
+            }
           }]);
         });
     });
@@ -145,15 +147,17 @@ describe('Dashboard', function () {
       var setAxes = {
         axes: {
           x: {
-            label: 'test',
-            key: 'test',
-            format: 'format'
+            label: 'Quarter',
+            key: ['_quarter_start_at', 'end_at'],
+            format: 'date'
           },
           y: [
             {
               label: 'test',
-              key: 'test',
-              format: 'format'
+              key: 'specific_data',
+              format: {
+                type: 'number'
+              }
             }
           ]
         }
