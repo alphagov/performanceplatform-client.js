@@ -112,7 +112,7 @@ describe('Dashboard', function () {
         });
     });
 
-    it('should return with axes data for the module', function () {
+    it('should return with axes data for the kpi module', function () {
       var dashboard = new Dashboard('test-dashboard');
 
       deferred.resolve({
@@ -123,7 +123,7 @@ describe('Dashboard', function () {
         .then(function (kpiData) {
           kpiData.axes.x.should.eql({
             'label': 'Quarter',
-            'key': '_quarter_start_at',
+            'key': ['_quarter_start_at', 'end_at'],
             'format': 'date'
           });
 
