@@ -134,7 +134,15 @@
           "period": "year",
           "service_id": "dft-tax-a-vehicle",
           "total_cost": 57766423.68,
-          "type": "seasonally-adjusted"
+          "type": "seasonally-adjusted",
+          "formatted_value": "£57.8m",
+          "formatted_date_range": "July 2013 to June 2014",
+          "formatted_start_at": "1 July 2013",
+          "formatted_end_at": "1 June 2014",
+          "formatted_change_from_previous": {
+            "change": "-10.24%",
+            "trend": "decrease"
+          }
         },
         {
           "_day_start_at": "2013-04-01T00:00:00+00:00",
@@ -155,7 +163,15 @@
           "period": "year",
           "service_id": "dft-tax-a-vehicle",
           "total_cost": 64356765.199999996,
-          "type": "seasonally-adjusted"
+          "type": "seasonally-adjusted",
+          "formatted_value": "£14.9m",
+          "formatted_date_range": "Apr 2013 to Mar 2014",
+          "formatted_start_at": "Apr 2013",
+          "formatted_end_at": "Mar 2014",
+          "formatted_change_from_previous": {
+            "change": "0%",
+            "trend": "no-change"
+          }
         },
         {
           "_day_start_at": "2013-01-01T00:00:00+00:00",
@@ -223,7 +239,15 @@
           "period": "year",
           "service_id": "dft-tax-a-vehicle",
           "total_cost": 57766423.68,
-          "type": "seasonally-adjusted"
+          "type": "seasonally-adjusted",
+          "formatted_value": "£1.26",
+          "formatted_date_range": "1 July 2013 to 30 June 2014",
+          "formatted_start_at": "1 July 2013",
+          "formatted_end_at": "1 June 2014",
+          "formatted_change_from_previous": {
+            "change": "-10.00%",
+            "trend": "decrease"
+          }
         },
         {
           "_day_start_at": "2013-04-01T00:00:00+00:00",
@@ -244,7 +268,15 @@
           "period": "year",
           "service_id": "dft-tax-a-vehicle",
           "total_cost": 64356765.199999996,
-          "type": "seasonally-adjusted"
+          "type": "seasonally-adjusted",
+          "formatted_value": "£62",
+          "formatted_date_range": "Apr 2013 to Mar 2014",
+          "formatted_start_at": "Apr 2013",
+          "formatted_end_at": "Mar 2014",
+          "formatted_change_from_previous": {
+            "change": "0%",
+            "trend": "no-change"
+          }
         },
         {
           "_day_start_at": "2013-01-01T00:00:00+00:00",
@@ -329,6 +361,10 @@
           "formatted_date_range": "17 to 23 Nov 2014",
           "formatted_start_at": "17 Nov 2014",
           "formatted_end_at": "23 Nov 2014",
+          "formatted_change_from_previous": {
+            "change": "+15s",
+            "trend": "increase"
+          },
           "period": "week"
         },
         {
