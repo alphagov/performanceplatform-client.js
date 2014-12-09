@@ -210,15 +210,12 @@ describe('Dashboard', function () {
           .then(function (kpiData) {
             kpiData.data[0].should.have.keys(
               [
-                'formatted_change_from_previous',
                 'formatted_value',
                 '_quarter_start_at',
                 'specific_data',
                 '_timestamp',
                 'end_at',
-                'formatted_date_range',
-                'formatted_end_at',
-                'formatted_end_at'
+                'formatted_date_range'
               ]
             );
           });
@@ -240,9 +237,7 @@ describe('Dashboard', function () {
                 'specific_data',
                 '_timestamp',
                 'end_at',
-                'formatted_date_range',
-                'formatted_end_at',
-                'formatted_end_at'
+                'formatted_date_range'
               ]
             );
           });
@@ -266,9 +261,7 @@ describe('Dashboard', function () {
                 'specific_data',
                 '_timestamp',
                 'end_at',
-                'formatted_date_range',
-                'formatted_end_at',
-                'formatted_end_at'
+                'formatted_date_range'
               ]
             );
           });
