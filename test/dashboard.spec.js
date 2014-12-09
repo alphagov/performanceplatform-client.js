@@ -1,7 +1,7 @@
 var requireSubvert = require('require-subvert')(__dirname),
   dashboardResponse = require('./fixtures/dashboard-response.json'),
   Q = require('q'),
-  _ = require('underscore');
+  _ = require('lodash');
 
 describe('Dashboard', function () {
   var Dashboard,
