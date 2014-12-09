@@ -215,7 +215,8 @@ describe('Dashboard', function () {
                 'specific_data',
                 '_timestamp',
                 'end_at',
-                'formatted_date_range'
+                'formatted_date_range',
+                'formatted_change_from_previous'
               ]
             );
           });
@@ -285,8 +286,6 @@ describe('Dashboard', function () {
                 trend: 'decrease'
               },
               formatted_date_range: '1 July 2013 to 30 June 2014',
-              formatted_end_at: '1 July 2014',
-              formatted_start_at: '1 July 2013',
               formatted_value: '1',
               specific_data: 1
             });
