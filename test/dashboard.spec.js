@@ -330,6 +330,32 @@ describe('Dashboard', function () {
             }]);
           });
       });
+
+      it('should return with axes data for the REALTIME module', function () {
+        var dashboard = new Dashboard('test-dashboard');
+
+        module['module-type'] = 'realtime';
+
+        deferred.resolve({
+          data: moduleDataResponse
+        });
+
+        return dashboard.getModule(module)
+          .then(function (moduleData) {
+
+            moduleData.axes.x.should.eql({
+              'label': 'Time',
+              'key': '_timestamp',
+              'format': 'time'
+            });
+
+            moduleData.axes.y.should.eql([{
+              key: 'unique_visitors',
+              format: 'integer',
+              label: 'Number of unique visitors'
+            }]);
+          });
+      });
     });
   });
 
