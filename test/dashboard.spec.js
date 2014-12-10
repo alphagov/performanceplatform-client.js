@@ -141,8 +141,8 @@ describe('Dashboard', function () {
       var moduleWithAxes = _.extend(module, setAxes);
 
       return dashboard.getModule(moduleWithAxes)
-        .then(function (kpiData) {
-          kpiData.axes.should.eql(setAxes.axes);
+        .then(function (moduleData) {
+          moduleData.axes.should.eql(setAxes.axes);
         });
     });
 
@@ -154,8 +154,8 @@ describe('Dashboard', function () {
       });
 
       return dashboard.getModule(module)
-        .then(function (kpiData) {
-          kpiData.tabularData.should.eql([
+        .then(function (moduleData) {
+          moduleData.tabularData.should.eql([
             [
               'Quarter',
               '1 July 2013 to 30 June 2014',
@@ -182,8 +182,8 @@ describe('Dashboard', function () {
         });
 
         return dashboard.getModule(module)
-          .then(function (kpiData) {
-            kpiData.data[0].should.have.keys(
+          .then(function (moduleData) {
+            moduleData.data[0].should.have.keys(
               [
                 'formatted_value',
                 '_quarter_start_at',
@@ -191,7 +191,9 @@ describe('Dashboard', function () {
                 '_timestamp',
                 'end_at',
                 'formatted_date_range',
-                'formatted_change_from_previous'
+                'formatted_change_from_previous',
+                'formatted_end_at',
+                'formatted_start_at'
               ]
             );
           });
@@ -205,15 +207,17 @@ describe('Dashboard', function () {
         });
 
         return dashboard.getModule(module)
-          .then(function (kpiData) {
-            kpiData.data[2].should.have.keys(
+          .then(function (moduleData) {
+            moduleData.data[2].should.have.keys(
               [
                 'formatted_value',
                 '_quarter_start_at',
                 'specific_data',
                 '_timestamp',
                 'end_at',
-                'formatted_date_range'
+                'formatted_date_range',
+                'formatted_end_at',
+                'formatted_start_at'
               ]
             );
           });
@@ -229,15 +233,17 @@ describe('Dashboard', function () {
         module.format.type = 'text';
 
         return dashboard.getModule(module)
-          .then(function (kpiData) {
-            kpiData.data[2].should.have.keys(
+          .then(function (moduleData) {
+            moduleData.data[2].should.have.keys(
               [
                 'formatted_value',
                 '_quarter_start_at',
                 'specific_data',
                 '_timestamp',
                 'end_at',
-                'formatted_date_range'
+                'formatted_date_range',
+                'formatted_end_at',
+                'formatted_start_at'
               ]
             );
           });
@@ -251,8 +257,8 @@ describe('Dashboard', function () {
         });
 
         return dashboard.getModule(module)
-          .then(function (kpiData) {
-            kpiData.data[0].should.eql({
+          .then(function (moduleData) {
+            moduleData.data[0].should.eql({
               _quarter_start_at: '2013-07-01T00:00:00+00:00',
               _timestamp: '2013-07-01T00:00:00+00:00',
               end_at: '2014-07-01T00:00:00+00:00',
@@ -262,7 +268,9 @@ describe('Dashboard', function () {
               },
               formatted_date_range: '1 July 2013 to 30 June 2014',
               formatted_value: '1',
-              specific_data: 1
+              specific_data: 1,
+              formatted_end_at: '1 July 2014',
+              formatted_start_at: '1 July 2013'
             });
           });
       });
@@ -327,6 +335,32 @@ describe('Dashboard', function () {
               format: {
                 type: 'number'
               }
+            }]);
+          });
+      });
+
+      it('should return with axes data for the REALTIME module', function () {
+        var dashboard = new Dashboard('test-dashboard');
+
+        module['module-type'] = 'realtime';
+
+        deferred.resolve({
+          data: moduleDataResponse
+        });
+
+        return dashboard.getModule(module)
+          .then(function (moduleData) {
+
+            moduleData.axes.x.should.eql({
+              'label': 'Time',
+              'key': '_timestamp',
+              'format': 'time'
+            });
+
+            moduleData.axes.y.should.eql([{
+              key: 'unique_visitors',
+              format: 'integer',
+              label: 'Number of unique visitors'
             }]);
           });
       });
