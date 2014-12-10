@@ -191,7 +191,9 @@ describe('Dashboard', function () {
                 '_timestamp',
                 'end_at',
                 'formatted_date_range',
-                'formatted_change_from_previous'
+                'formatted_change_from_previous',
+                'formatted_end_at',
+                'formatted_start_at'
               ]
             );
           });
@@ -213,7 +215,9 @@ describe('Dashboard', function () {
                 'specific_data',
                 '_timestamp',
                 'end_at',
-                'formatted_date_range'
+                'formatted_date_range',
+                'formatted_end_at',
+                'formatted_start_at'
               ]
             );
           });
@@ -237,7 +241,9 @@ describe('Dashboard', function () {
                 'specific_data',
                 '_timestamp',
                 'end_at',
-                'formatted_date_range'
+                'formatted_date_range',
+                'formatted_end_at',
+                'formatted_start_at'
               ]
             );
           });
@@ -262,7 +268,9 @@ describe('Dashboard', function () {
               },
               formatted_date_range: '1 July 2013 to 30 June 2014',
               formatted_value: '1',
-              specific_data: 1
+              specific_data: 1,
+              formatted_end_at: '1 July 2014',
+              formatted_start_at: '1 July 2013'
             });
           });
       });
