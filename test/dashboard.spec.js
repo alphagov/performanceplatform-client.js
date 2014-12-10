@@ -141,8 +141,8 @@ describe('Dashboard', function () {
       var moduleWithAxes = _.extend(module, setAxes);
 
       return dashboard.getModule(moduleWithAxes)
-        .then(function (kpiData) {
-          kpiData.axes.should.eql(setAxes.axes);
+        .then(function (moduleData) {
+          moduleData.axes.should.eql(setAxes.axes);
         });
     });
 
@@ -154,8 +154,8 @@ describe('Dashboard', function () {
       });
 
       return dashboard.getModule(module)
-        .then(function (kpiData) {
-          kpiData.tabularData.should.eql([
+        .then(function (moduleData) {
+          moduleData.tabularData.should.eql([
             [
               'Quarter',
               '1 July 2013 to 30 June 2014',
@@ -182,8 +182,8 @@ describe('Dashboard', function () {
         });
 
         return dashboard.getModule(module)
-          .then(function (kpiData) {
-            kpiData.data[0].should.have.keys(
+          .then(function (moduleData) {
+            moduleData.data[0].should.have.keys(
               [
                 'formatted_value',
                 '_quarter_start_at',
@@ -205,8 +205,8 @@ describe('Dashboard', function () {
         });
 
         return dashboard.getModule(module)
-          .then(function (kpiData) {
-            kpiData.data[2].should.have.keys(
+          .then(function (moduleData) {
+            moduleData.data[2].should.have.keys(
               [
                 'formatted_value',
                 '_quarter_start_at',
@@ -229,8 +229,8 @@ describe('Dashboard', function () {
         module.format.type = 'text';
 
         return dashboard.getModule(module)
-          .then(function (kpiData) {
-            kpiData.data[2].should.have.keys(
+          .then(function (moduleData) {
+            moduleData.data[2].should.have.keys(
               [
                 'formatted_value',
                 '_quarter_start_at',
@@ -251,8 +251,8 @@ describe('Dashboard', function () {
         });
 
         return dashboard.getModule(module)
-          .then(function (kpiData) {
-            kpiData.data[0].should.eql({
+          .then(function (moduleData) {
+            moduleData.data[0].should.eql({
               _quarter_start_at: '2013-07-01T00:00:00+00:00',
               _timestamp: '2013-07-01T00:00:00+00:00',
               end_at: '2014-07-01T00:00:00+00:00',
