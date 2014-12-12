@@ -249,6 +249,25 @@ describe('Dashboard', function () {
           });
       });
 
+      it('adds a period key if one is available in the query-params', function () {
+        var dashboard = new Dashboard('test-dashboard');
+
+        deferred.resolve({
+          data: moduleDataResponse
+        });
+
+        module['data-source'] = {
+          'query-params': {
+            period: 'week'
+          }
+        };
+
+        return dashboard.getModule(module)
+          .then(function (moduleData) {
+            moduleData.data[0].period.should.equal('week');
+          });
+      });
+
       it('formats the data', function () {
         var dashboard = new Dashboard('test-dashboard');
 
