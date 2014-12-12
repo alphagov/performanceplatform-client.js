@@ -158,9 +158,9 @@ describe('Dashboard', function () {
           moduleData.tabularData.should.eql([
             [
               'Quarter',
-              '1 July 2013 to 30 June 2014',
+              '1 January 2013 to 30 June 2014',
               '1 April 2013 to 30 June 2014',
-              '1 January 2013 to 30 June 2014'
+              '1 July 2013 to 30 June 2014'
             ],
             [
               'test',
@@ -259,18 +259,18 @@ describe('Dashboard', function () {
         return dashboard.getModule(module)
           .then(function (moduleData) {
             moduleData.data[0].should.eql({
-              _quarter_start_at: '2013-07-01T00:00:00+00:00',
+              _quarter_start_at: '2013-01-01T00:00:00+00:00',
               _timestamp: '2013-07-01T00:00:00+00:00',
               end_at: '2014-07-01T00:00:00+00:00',
               formatted_change_from_previous: {
                 change: '−50.00%',
                 trend: 'decrease'
               },
-              formatted_date_range: '1 July 2013 to 30 June 2014',
+              formatted_date_range: '1 January 2013 to 30 June 2014',
               formatted_value: '1',
               specific_data: 1,
               formatted_end_at: '1 July 2014',
-              formatted_start_at: '1 July 2013'
+              formatted_start_at: '1 January 2013'
             });
           });
       });
