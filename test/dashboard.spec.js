@@ -468,6 +468,72 @@ describe('Dashboard', function () {
         });
 
     });
+
+  });
+
+  describe('Data sorting', function () {
+
+    beforeEach(function (done) {
+
+      var singleTimeSeriesModule = {
+        'info': ['Data source: Google Analytics'],
+        'value-attribute': 'avgSessionDuration:sum',
+        'description': 'The mean length of time taken for users to complete an application.',
+        'module-type': 'single_timeseries',
+        'title': 'Time taken to complete transaction',
+        'axes': {
+          'y': [{'label': 'Average session time'}],
+          'x': {'label': 'Date', 'key': ['_start_at', '_end_at'], 'format': 'date'}
+        },
+        'format-options': {'type': 'duration', 'unit': 'm'},
+        'slug': 'time-taken-to-complete-transaction',
+        'data-source': {
+          'data-group': 'carers-allowance',
+          'data-type': 'time-taken-to-complete',
+          'query-params': {
+            'duration': 52,
+            'collect': ['avgSessionDuration:sum'],
+            'group_by': 'stage',
+            'period': 'week',
+            'filter_by': ['stage:thank-you']
+          }
+        }
+      },
+      singleTimeSeriesData = [
+        {
+          '_count': 0,
+          '_end_at': '2013-12-23T00:00:00+00:00',
+          '_start_at': '2013-12-16T00:00:00+00:00',
+          'avgSessionDuration:sum': null,
+          'stage': 'thank-you'
+        },
+        {
+          '_count': 0,
+          '_end_at': '2013-12-30T00:00:00+00:00',
+          '_start_at': '2013-12-23T00:00:00+00:00',
+          'avgSessionDuration:sum': null,
+          'stage': 'thank-you'
+        }
+      ];
+
+      var dashboard = new Dashboard('test-dashboard');
+
+      dashboard.getModule(singleTimeSeriesModule)
+        .then(_.bind(function (moduleData) {
+          this.moduleData = moduleData;
+          done();
+        }, this));
+      deferred.resolve({
+        data: singleTimeSeriesData
+      });
+
+    });
+
+    it('sorts the data by date (descending) if necessary', function () {
+      this.moduleData.data[0]._end_at.should.equal('2013-12-30T00:00:00+00:00');
+      this.moduleData.data[1]._end_at.should.equal('2013-12-23T00:00:00+00:00');
+    });
+
   });
 
 });
