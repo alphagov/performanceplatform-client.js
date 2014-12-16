@@ -5,8 +5,8 @@ var requireSubvert = require('require-subvert')(__dirname),
 
 describe('Dashboard', function () {
   var Dashboard,
-      stub,
-      deferred;
+    stub,
+    deferred;
 
   var module, moduleDataResponse;
 
@@ -85,7 +85,7 @@ describe('Dashboard', function () {
             .should.eql({
               url:
                 'https://stagecraft.production.performance.service.gov.uk/public/dashboards?slug=' +
-                  testSlug,
+              testSlug,
               json: true,
               slug: 'test-dashboard-slug'
             });
@@ -223,7 +223,8 @@ describe('Dashboard', function () {
           });
       });
 
-      it('should only add a delta key if the data format is currency or a number', function () {
+      it('should not add a delta key if the data format is not currency, number or duration',
+        function () {
         var dashboard = new Dashboard('test-dashboard');
 
         deferred.resolve({
