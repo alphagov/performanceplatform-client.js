@@ -225,30 +225,30 @@ describe('Dashboard', function () {
 
       it('should not add a delta key if the data format is not currency, number or duration',
         function () {
-        var dashboard = new Dashboard('test-dashboard');
+          var dashboard = new Dashboard('test-dashboard');
 
-        deferred.resolve({
-          data: moduleDataResponse
-        });
-
-        module.format.type = 'text';
-
-        return dashboard.getModule(module)
-          .then(function (moduleData) {
-            moduleData.data[2].should.have.keys(
-              [
-                'formatted_value',
-                '_quarter_start_at',
-                'specific_data',
-                '_timestamp',
-                'end_at',
-                'formatted_date_range',
-                'formatted_end_at',
-                'formatted_start_at'
-              ]
-            );
+          deferred.resolve({
+            data: moduleDataResponse
           });
-      });
+
+          module.format.type = 'text';
+
+          return dashboard.getModule(module)
+            .then(function (moduleData) {
+              moduleData.data[2].should.have.keys(
+                [
+                  'formatted_value',
+                  '_quarter_start_at',
+                  'specific_data',
+                  '_timestamp',
+                  'end_at',
+                  'formatted_date_range',
+                  'formatted_end_at',
+                  'formatted_start_at'
+                ]
+              );
+            });
+        });
 
       it('adds a period key if one is available in the query-params', function () {
         var dashboard = new Dashboard('test-dashboard');
@@ -477,45 +477,45 @@ describe('Dashboard', function () {
     beforeEach(function (done) {
 
       var singleTimeSeriesModule = {
-        'info': ['Data source: Google Analytics'],
-        'value-attribute': 'avgSessionDuration:sum',
-        'description': 'The mean length of time taken for users to complete an application.',
-        'module-type': 'single_timeseries',
-        'title': 'Time taken to complete transaction',
-        'axes': {
-          'y': [{'label': 'Average session time'}],
-          'x': {'label': 'Date', 'key': ['_start_at', '_end_at'], 'format': 'date'}
-        },
-        'format-options': {'type': 'duration', 'unit': 'm'},
-        'slug': 'time-taken-to-complete-transaction',
-        'data-source': {
-          'data-group': 'carers-allowance',
-          'data-type': 'time-taken-to-complete',
-          'query-params': {
-            'duration': 52,
-            'collect': ['avgSessionDuration:sum'],
-            'group_by': 'stage',
-            'period': 'week',
-            'filter_by': ['stage:thank-you']
+          'info': ['Data source: Google Analytics'],
+          'value-attribute': 'avgSessionDuration:sum',
+          'description': 'The mean length of time taken for users to complete an application.',
+          'module-type': 'single_timeseries',
+          'title': 'Time taken to complete transaction',
+          'axes': {
+            'y': [{'label': 'Average session time'}],
+            'x': {'label': 'Date', 'key': ['_start_at', '_end_at'], 'format': 'date'}
+          },
+          'format-options': {'type': 'duration', 'unit': 'm'},
+          'slug': 'time-taken-to-complete-transaction',
+          'data-source': {
+            'data-group': 'carers-allowance',
+            'data-type': 'time-taken-to-complete',
+            'query-params': {
+              'duration': 52,
+              'collect': ['avgSessionDuration:sum'],
+              'group_by': 'stage',
+              'period': 'week',
+              'filter_by': ['stage:thank-you']
+            }
           }
-        }
-      },
-      singleTimeSeriesData = [
-        {
-          '_count': 0,
-          '_end_at': '2013-12-23T00:00:00+00:00',
-          '_start_at': '2013-12-16T00:00:00+00:00',
-          'avgSessionDuration:sum': null,
-          'stage': 'thank-you'
         },
-        {
-          '_count': 0,
-          '_end_at': '2013-12-30T00:00:00+00:00',
-          '_start_at': '2013-12-23T00:00:00+00:00',
-          'avgSessionDuration:sum': null,
-          'stage': 'thank-you'
-        }
-      ];
+        singleTimeSeriesData = [
+          {
+            '_count': 0,
+            '_end_at': '2013-12-23T00:00:00+00:00',
+            '_start_at': '2013-12-16T00:00:00+00:00',
+            'avgSessionDuration:sum': null,
+            'stage': 'thank-you'
+          },
+          {
+            '_count': 0,
+            '_end_at': '2013-12-30T00:00:00+00:00',
+            '_start_at': '2013-12-23T00:00:00+00:00',
+            'avgSessionDuration:sum': null,
+            'stage': 'thank-you'
+          }
+        ];
 
       var dashboard = new Dashboard('test-dashboard');
 
@@ -533,6 +533,60 @@ describe('Dashboard', function () {
     it('sorts the data by date (descending) if necessary', function () {
       this.moduleData.data[0]._end_at.should.equal('2013-12-30T00:00:00+00:00');
       this.moduleData.data[1]._end_at.should.equal('2013-12-23T00:00:00+00:00');
+    });
+
+  });
+
+
+  describe('Patch querystring', function () {
+
+    var singleTimeSeriesModule;
+
+    beforeEach(function () {
+
+      singleTimeSeriesModule = _.clone({
+        'info': ['Data source: Google Analytics'],
+        'value-attribute': 'users:sum',
+        'matching-attribute': 'dataType',
+        'description': 'Total number of unique site visits per week',
+        'module-type': 'single_timeseries',
+        'title': 'Site traffic',
+        'axes': {'y': [{'label': 'Number of visitors'}], 'x': {'label': 'Date'}},
+        'axis-period': 'week',
+        'slug': 'site-traffic',
+        'data-source': {
+          'data-group': 'student-finance',
+          'data-type': 'site-traffic',
+          'query-params': {'collect': ['users:sum'], 'group_by': 'dataType', 'period': 'week'}
+        }
+      });
+
+      this.dashboard = new Dashboard('test-dashboard');
+
+    });
+
+    it('adds a duration if period is present', function () {
+      deferred.resolve({
+        data: moduleDataResponse
+      });
+      return this.dashboard.getModule(singleTimeSeriesModule)
+        .then(function (moduleData) {
+          var qs = stub.args[0][0].qs;
+          qs.duration.should.equal(9);
+          moduleData.data.length.should.equal(3);
+        });
+    });
+
+    it('limits results to 2 if period is not present', function () {
+      deferred.resolve({
+        data: moduleDataResponse
+      });
+      delete singleTimeSeriesModule['data-source']['query-params'].period;
+      return this.dashboard.getModule(singleTimeSeriesModule)
+        .then(function () {
+          var qs = stub.args[0][0].qs;
+          qs.limit.should.equal(2);
+        });
     });
 
   });
