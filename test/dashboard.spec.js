@@ -359,6 +359,39 @@ describe('Dashboard', function () {
           });
       });
 
+      it('should assume axis unit is integer if not specified', function () {
+        var dashboard = new Dashboard('test-dashboard');
+        module.axes = {
+          'y': [{
+            'label': 'User satisfaction',
+            'key': 'satisfaction:sum',
+            'format': 'percent'
+          }, {'key': 'respondents', 'label': 'Number of respondents'}],
+          'x': {'label': 'Date', 'key': ['_start_at', '_end_at'], 'format': 'date'}
+        };
+        module['module-type'] = 'single_timeseries';
+
+        deferred.resolve({
+          data: moduleDataResponse
+        });
+
+        return dashboard.getModule(module)
+          .then(function (moduleData) {
+            moduleData.axes.y.should.eql([{
+              'label': 'User satisfaction',
+              'key': 'specific_data',
+              'format': 'percent'
+            },
+              {
+                'key': 'respondents',
+                'label': 'Number of respondents',
+                'format': {
+                  type: 'integer'
+                }
+              }]);
+          });
+      });
+
       it('should return with axes data for the REALTIME module', function () {
         var dashboard = new Dashboard('test-dashboard');
 
