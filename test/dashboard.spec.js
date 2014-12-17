@@ -5,8 +5,8 @@ var requireSubvert = require('require-subvert')(__dirname),
 
 describe('Dashboard', function () {
   var Dashboard,
-      stub,
-      deferred;
+    stub,
+    deferred;
 
   var module, moduleDataResponse;
 
@@ -85,7 +85,7 @@ describe('Dashboard', function () {
             .should.eql({
               url:
                 'https://stagecraft.production.performance.service.gov.uk/public/dashboards?slug=' +
-                  testSlug,
+              testSlug,
               json: true,
               slug: 'test-dashboard-slug'
             });
@@ -158,9 +158,9 @@ describe('Dashboard', function () {
           moduleData.tabularData.should.eql([
             [
               'Quarter',
-              '1 January 2013 to 30 June 2014',
+              '1 July 2013 to 30 June 2014',
               '1 April 2013 to 30 June 2014',
-              '1 July 2013 to 30 June 2014'
+              '1 January 2013 to 30 June 2014'
             ],
             [
               'test',
@@ -223,31 +223,32 @@ describe('Dashboard', function () {
           });
       });
 
-      it('should only add a delta key if the data format is currency or a number', function () {
-        var dashboard = new Dashboard('test-dashboard');
+      it('should not add a delta key if the data format is not currency, number or duration',
+        function () {
+          var dashboard = new Dashboard('test-dashboard');
 
-        deferred.resolve({
-          data: moduleDataResponse
-        });
-
-        module.format.type = 'text';
-
-        return dashboard.getModule(module)
-          .then(function (moduleData) {
-            moduleData.data[2].should.have.keys(
-              [
-                'formatted_value',
-                '_quarter_start_at',
-                'specific_data',
-                '_timestamp',
-                'end_at',
-                'formatted_date_range',
-                'formatted_end_at',
-                'formatted_start_at'
-              ]
-            );
+          deferred.resolve({
+            data: moduleDataResponse
           });
-      });
+
+          module.format.type = 'text';
+
+          return dashboard.getModule(module)
+            .then(function (moduleData) {
+              moduleData.data[2].should.have.keys(
+                [
+                  'formatted_value',
+                  '_quarter_start_at',
+                  'specific_data',
+                  '_timestamp',
+                  'end_at',
+                  'formatted_date_range',
+                  'formatted_end_at',
+                  'formatted_start_at'
+                ]
+              );
+            });
+        });
 
       it('adds a period key if one is available in the query-params', function () {
         var dashboard = new Dashboard('test-dashboard');
@@ -278,18 +279,18 @@ describe('Dashboard', function () {
         return dashboard.getModule(module)
           .then(function (moduleData) {
             moduleData.data[0].should.eql({
-              _quarter_start_at: '2013-01-01T00:00:00+00:00',
+              _quarter_start_at: '2013-07-01T00:00:00+00:00',
               _timestamp: '2013-07-01T00:00:00+00:00',
               end_at: '2014-07-01T00:00:00+00:00',
               formatted_change_from_previous: {
                 change: '−50.00%',
                 trend: 'decrease'
               },
-              formatted_date_range: '1 January 2013 to 30 June 2014',
+              formatted_date_range: '1 July 2013 to 30 June 2014',
               formatted_value: '1',
               specific_data: 1,
-              formatted_end_at: '1 July 2014',
-              formatted_start_at: '1 January 2013'
+              formatted_end_at: '30 June 2014',
+              formatted_start_at: '1 July 2013'
             });
           });
       });
@@ -355,6 +356,39 @@ describe('Dashboard', function () {
                 type: 'number'
               }
             }]);
+          });
+      });
+
+      it('should assume axis unit is integer if not specified', function () {
+        var dashboard = new Dashboard('test-dashboard');
+        module.axes = {
+          'y': [{
+            'label': 'User satisfaction',
+            'key': 'satisfaction:sum',
+            'format': 'percent'
+          }, {'key': 'respondents', 'label': 'Number of respondents'}],
+          'x': {'label': 'Date', 'key': ['_start_at', '_end_at'], 'format': 'date'}
+        };
+        module['module-type'] = 'single_timeseries';
+
+        deferred.resolve({
+          data: moduleDataResponse
+        });
+
+        return dashboard.getModule(module)
+          .then(function (moduleData) {
+            moduleData.axes.y.should.eql([{
+              'label': 'User satisfaction',
+              'key': 'specific_data',
+              'format': 'percent'
+            },
+              {
+                'key': 'respondents',
+                'label': 'Number of respondents',
+                'format': {
+                  type: 'integer'
+                }
+              }]);
           });
       });
 
@@ -468,6 +502,126 @@ describe('Dashboard', function () {
         });
 
     });
+
+  });
+
+  describe('Data sorting', function () {
+
+    beforeEach(function (done) {
+
+      var singleTimeSeriesModule = {
+          'info': ['Data source: Google Analytics'],
+          'value-attribute': 'avgSessionDuration:sum',
+          'description': 'The mean length of time taken for users to complete an application.',
+          'module-type': 'single_timeseries',
+          'title': 'Time taken to complete transaction',
+          'axes': {
+            'y': [{'label': 'Average session time'}],
+            'x': {'label': 'Date', 'key': ['_start_at', '_end_at'], 'format': 'date'}
+          },
+          'format-options': {'type': 'duration', 'unit': 'm'},
+          'slug': 'time-taken-to-complete-transaction',
+          'data-source': {
+            'data-group': 'carers-allowance',
+            'data-type': 'time-taken-to-complete',
+            'query-params': {
+              'duration': 52,
+              'collect': ['avgSessionDuration:sum'],
+              'group_by': 'stage',
+              'period': 'week',
+              'filter_by': ['stage:thank-you']
+            }
+          }
+        },
+        singleTimeSeriesData = [
+          {
+            '_count': 0,
+            '_end_at': '2013-12-23T00:00:00+00:00',
+            '_start_at': '2013-12-16T00:00:00+00:00',
+            'avgSessionDuration:sum': null,
+            'stage': 'thank-you'
+          },
+          {
+            '_count': 0,
+            '_end_at': '2013-12-30T00:00:00+00:00',
+            '_start_at': '2013-12-23T00:00:00+00:00',
+            'avgSessionDuration:sum': null,
+            'stage': 'thank-you'
+          }
+        ];
+
+      var dashboard = new Dashboard('test-dashboard');
+
+      dashboard.getModule(singleTimeSeriesModule)
+        .then(_.bind(function (moduleData) {
+          this.moduleData = moduleData;
+          done();
+        }, this));
+      deferred.resolve({
+        data: singleTimeSeriesData
+      });
+
+    });
+
+    it('sorts the data by date (descending) if necessary', function () {
+      this.moduleData.data[0]._end_at.should.equal('2013-12-30T00:00:00+00:00');
+      this.moduleData.data[1]._end_at.should.equal('2013-12-23T00:00:00+00:00');
+    });
+
+  });
+
+
+  describe('Patch querystring', function () {
+
+    var singleTimeSeriesModule;
+
+    beforeEach(function () {
+
+      singleTimeSeriesModule = _.clone({
+        'info': ['Data source: Google Analytics'],
+        'value-attribute': 'users:sum',
+        'matching-attribute': 'dataType',
+        'description': 'Total number of unique site visits per week',
+        'module-type': 'single_timeseries',
+        'title': 'Site traffic',
+        'axes': {'y': [{'label': 'Number of visitors'}], 'x': {'label': 'Date'}},
+        'axis-period': 'week',
+        'slug': 'site-traffic',
+        'data-source': {
+          'data-group': 'student-finance',
+          'data-type': 'site-traffic',
+          'query-params': {'collect': ['users:sum'], 'group_by': 'dataType', 'period': 'week'}
+        }
+      });
+
+      this.dashboard = new Dashboard('test-dashboard');
+
+    });
+
+    it('adds a duration if period is present', function () {
+      deferred.resolve({
+        data: moduleDataResponse
+      });
+      return this.dashboard.getModule(singleTimeSeriesModule)
+        .then(function (moduleData) {
+          var qs = stub.args[0][0].qs;
+          qs.duration.should.equal(9);
+          moduleData.data.length.should.equal(3);
+        });
+    });
+
+    it('limits results to 2 if period is not present', function () {
+      deferred.resolve({
+        data: moduleDataResponse
+      });
+      delete singleTimeSeriesModule['data-source']['query-params'].period;
+      return this.dashboard.getModule(singleTimeSeriesModule)
+        .then(function () {
+          var qs = stub.args[0][0].qs;
+          qs.limit.should.equal(2);
+        });
+    });
+
   });
 
 });
