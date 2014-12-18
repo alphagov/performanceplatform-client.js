@@ -186,6 +186,7 @@ describe('Dashboard', function () {
             moduleData.data[0].should.have.keys(
               [
                 'formatted_value',
+                'period',
                 '_quarter_start_at',
                 'specific_data',
                 '_timestamp',
@@ -211,6 +212,7 @@ describe('Dashboard', function () {
             moduleData.data[2].should.have.keys(
               [
                 'formatted_value',
+                'period',
                 '_quarter_start_at',
                 'specific_data',
                 '_timestamp',
@@ -238,6 +240,7 @@ describe('Dashboard', function () {
               moduleData.data[2].should.have.keys(
                 [
                   'formatted_value',
+                  'period',
                   '_quarter_start_at',
                   'specific_data',
                   '_timestamp',
@@ -259,13 +262,13 @@ describe('Dashboard', function () {
 
         module['data-source'] = {
           'query-params': {
-            period: 'week'
+            period: 'a year'
           }
         };
 
         return dashboard.getModule(module)
           .then(function (moduleData) {
-            moduleData.data[0].period.should.equal('week');
+            moduleData.data[0].period.should.equal('a year');
           });
       });
 
@@ -288,6 +291,7 @@ describe('Dashboard', function () {
               },
               formatted_date_range: '1 July 2013 to 30 June 2014',
               formatted_value: '1',
+              period: 'a year',
               specific_data: 1,
               formatted_end_at: '30 June 2014',
               formatted_start_at: '1 July 2013'
