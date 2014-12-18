@@ -567,6 +567,87 @@
           "formatted_value": "1,492"
         }
       ]
+    },
+    {
+      "trim": false,
+      "info": [
+        "Data source: GOV.UK user feedback database",
+        "<a href='/service-manual/measurement/user-satisfaction' rel='external'>User satisfaction</a> is measured by surveying users at the point of transaction completion. It is measured on a five-point scale, from most satisfied to least satisfied. The mean of these responses is converted to a percentage for display purposes."
+      ],
+      "value-attribute": "rating",
+      "axis-period": "month",
+      "description": "Overall satisfaction score includes all ratings weighted from 100% for 'very satisfied' to 0% for 'very dissatisfied'",
+      "module-type": "user_satisfaction_graph",
+      "title": "User satisfaction",
+      "slug": "user-satisfaction",
+      "data-source": {
+        "data-group": "prison-visits",
+        "data-type": "customer-satisfaction",
+        "query-params": {
+          "duration": 26,
+          "period": "week"
+        }
+      },
+      "data": [
+        {
+          "_day_start_at": "2014-12-15T00:00:00+00:00",
+          "_end_at": "2014-12-22T00:00:00+00:00",
+          "_hour_start_at": "2014-12-15T00:00:00+00:00",
+          "_id": "MjAxNC0xMi0xNVQwMDowMDowMCswMDowMF8yMDE0LTEyLTIyVDAwOjAwOjAwKzAwOjAw",
+          "_month_start_at": "2014-12-01T00:00:00+00:00",
+          "_quarter_start_at": "2014-10-01T00:00:00+00:00",
+          "_start_at": "2014-12-15T00:00:00+00:00",
+          "_timestamp": "2014-12-15T00:00:00+00:00",
+          "_updated_at": "2014-12-18T00:30:07.012000+00:00",
+          "_week_start_at": "2014-12-15T00:00:00+00:00",
+          "_year_start_at": "2014-01-01T00:00:00+00:00",
+          "num_repsonses": 71.0,
+          "rating_1": 7.0,
+          "rating_2": 0.0,
+          "rating_3": 0.0,
+          "rating_4": 13.0,
+          "rating_5": 51.0,
+          "score": 0.8556338028169015,
+          "formatted_value": "85.6%",
+          "formatted_date_range": "15 to 22 Dec 2014",
+          "formatted_start_at": "15 Dec 2014",
+          "formatted_end_at": "22 Dec 2014",
+          "formatted_change_from_previous": {
+            "change": "-1.4%",
+            "trend": "decrease"
+          },
+          "period": "week"
+        },
+        {
+          "_day_start_at": "2014-12-08T00:00:00+00:00",
+          "_end_at": "2014-12-15T00:00:00+00:00",
+          "_hour_start_at": "2014-12-08T00:00:00+00:00",
+          "_id": "MjAxNC0xMi0wOFQwMDowMDowMCswMDowMF8yMDE0LTEyLTE1VDAwOjAwOjAwKzAwOjAw",
+          "_month_start_at": "2014-12-01T00:00:00+00:00",
+          "_quarter_start_at": "2014-10-01T00:00:00+00:00",
+          "_start_at": "2014-12-08T00:00:00+00:00",
+          "_timestamp": "2014-12-08T00:00:00+00:00",
+          "_updated_at": "2014-12-17T18:07:21.186000+00:00",
+          "_week_start_at": "2014-12-08T00:00:00+00:00",
+          "_year_start_at": "2014-01-01T00:00:00+00:00",
+          "num_repsonses": 71.0,
+          "rating_1": 0.0,
+          "rating_2": 4.0,
+          "rating_3": 4.0,
+          "rating_4": 17.0,
+          "rating_5": 46.0,
+          "score": 0.869718309859155,
+          "formatted_value": "87.0%",
+          "formatted_date_range": "8 to 14 Dec 2014",
+          "formatted_start_at": "8 Dec 2014",
+          "formatted_end_at": "14 Dec 2014",
+          "formatted_change_from_previous": {
+            "change": "-100",
+            "trend": "decrease"
+          },
+          "period": "week"
+        }
+      ]
     }
   ]
 }
