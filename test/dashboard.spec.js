@@ -268,7 +268,7 @@ describe('Dashboard', function () {
 
         return dashboard.getModule(module)
           .then(function (moduleData) {
-            moduleData.data[0].period.should.equal('a year');
+            moduleData.data[0].period.should.equal('year');
           });
       });
 
@@ -291,7 +291,7 @@ describe('Dashboard', function () {
               },
               formatted_date_range: '1 July 2013 to 30 June 2014',
               formatted_value: '1',
-              period: 'a year',
+              period: 'year',
               specific_data: 1,
               formatted_end_at: '30 June 2014',
               formatted_start_at: '1 July 2013'
