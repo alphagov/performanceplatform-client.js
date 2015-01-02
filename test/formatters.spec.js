@@ -540,6 +540,10 @@ describe('Formatter', function () {
       formatter.format('', 'url').should.equal('');
     });
 
+    it('does not attempt to format things that look like normal text', function () {
+      formatter.format('this is normal text', 'url').should.equal('this is normal text');
+    });
+
     it('formats a URL with query parameters', function () {
       formatter.format('http://example.com/?q=search&f=123', 'url')
         .should.equal('<a href="http://example.com/?q=search&f=123">' +
