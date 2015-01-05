@@ -15,7 +15,7 @@ describe('Dashboard', function () {
     stub = sinon.stub().returns(deferred.promise);
     requireSubvert.subvert('../lib/request-promise', stub);
     Dashboard = requireSubvert.require('../lib/Dashboard');
-    Module.prototype.resolve = stub;
+    sinon.stub(Module.prototype, 'resolve').returns(deferred.promise);
     module = {
       'title': 'test',
       'format': {
@@ -56,6 +56,10 @@ describe('Dashboard', function () {
         'specific_data': 1
       }
     ];
+  });
+
+  afterEach(function () {
+    Module.prototype.resolve.restore();
   });
 
   describe('init', function () {
