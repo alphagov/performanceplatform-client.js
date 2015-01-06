@@ -118,4 +118,99 @@ describe('Dashboard', function () {
 
   });
 
+  describe('resolve()', function () {
+    var getConfigPromise,
+        getModulePromise;
+
+    beforeEach(function () {
+      getConfigPromise = Q.defer();
+      getModulePromise = Q.defer();
+      sinon.stub(Dashboard.prototype, 'getConfig').returns(getConfigPromise.promise);
+      sinon.stub(Dashboard.prototype, 'getModule').returns(getModulePromise.promise);
+    });
+
+    afterEach(function () {
+      Dashboard.prototype.getConfig.restore();
+      Dashboard.prototype.getModule.restore();
+    });
+
+    it('should respond with all supported modules and data for a dashboard', function () {
+
+      var dashboard = new Dashboard('test-dashboard');
+
+      getConfigPromise.resolve(dashboardResponse);
+
+      getModulePromise.resolve(moduleDataResponse);
+
+      return dashboard.resolve()
+        .then(function (resolvedDashboard) {
+          resolvedDashboard.title.should.equal('Company accounts filed');
+          resolvedDashboard.modules.length.should.equal(3);
+          resolvedDashboard.modules.should.eql([
+            [
+              {
+                '_quarter_start_at': '2013-07-01T00:00:00+00:00',
+                'specific_data': 1,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
+              },
+              {
+                '_quarter_start_at': '2013-04-01T00:00:00+00:00',
+                'specific_data': 2,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
+              },
+              {
+                '_quarter_start_at': '2013-01-01T00:00:00+00:00',
+                'specific_data': 1,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
+              }
+            ],
+            [
+              {
+                '_quarter_start_at': '2013-07-01T00:00:00+00:00',
+                'specific_data': 1,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
+              },
+              {
+                '_quarter_start_at': '2013-04-01T00:00:00+00:00',
+                'specific_data': 2,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
+              },
+              {
+                '_quarter_start_at': '2013-01-01T00:00:00+00:00',
+                'specific_data': 1,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
+              }
+            ],
+            [
+              {
+                '_quarter_start_at': '2013-07-01T00:00:00+00:00',
+                'specific_data': 1,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
+              },
+              {
+                '_quarter_start_at': '2013-04-01T00:00:00+00:00',
+                'specific_data': 2,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
+              },
+              {
+                '_quarter_start_at': '2013-01-01T00:00:00+00:00',
+                'specific_data': 1,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
+              }
+            ]
+          ]);
+        });
+    });
+
+  });
+
 });
