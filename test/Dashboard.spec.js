@@ -134,7 +134,7 @@ describe('Dashboard', function () {
       Dashboard.prototype.getModule.restore();
     });
 
-    it('should respond with all supported modules and data for a dashboard', function () {
+    it('should respond with all modules and data for a dashboard', function () {
 
       var dashboard = new Dashboard('test-dashboard');
 
@@ -145,8 +145,48 @@ describe('Dashboard', function () {
       return dashboard.resolve()
         .then(function (resolvedDashboard) {
           resolvedDashboard.title.should.equal('Company accounts filed');
-          resolvedDashboard.modules.length.should.equal(3);
+          resolvedDashboard.modules.length.should.equal(5);
           resolvedDashboard.modules.should.eql([
+            [
+              {
+                '_quarter_start_at': '2013-07-01T00:00:00+00:00',
+                'specific_data': 1,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
+              },
+              {
+                '_quarter_start_at': '2013-04-01T00:00:00+00:00',
+                'specific_data': 2,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
+              },
+              {
+                '_quarter_start_at': '2013-01-01T00:00:00+00:00',
+                'specific_data': 1,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
+              }
+            ],
+            [
+              {
+                '_quarter_start_at': '2013-07-01T00:00:00+00:00',
+                'specific_data': 1,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
+              },
+              {
+                '_quarter_start_at': '2013-04-01T00:00:00+00:00',
+                'specific_data': 2,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
+              },
+              {
+                '_quarter_start_at': '2013-01-01T00:00:00+00:00',
+                'specific_data': 1,
+                '_timestamp': '2013-07-01T00:00:00+00:00',
+                'end_at': '2014-07-01T00:00:00+00:00'
+              }
+            ],
             [
               {
                 '_quarter_start_at': '2013-07-01T00:00:00+00:00',
