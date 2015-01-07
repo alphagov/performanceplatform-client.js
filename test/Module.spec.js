@@ -95,14 +95,44 @@ describe('Module', function () {
 
   });
 
+  describe('isSupported', function () {
+
+    it('retuns true for supported modules', function () {
+      mod.isSupported('realtime').should.equal(true);
+      mod.isSupported('kpi').should.equal(true);
+      mod.isSupported('single_timeseries').should.equal(true);
+      mod.isSupported('user_satisfaction_graph').should.equal(true);
+    });
+
+    it('returns false for unsupported modules', function () {
+      mod.isSupported('something_unsupported').should.equal(false);
+    });
+
+  });
+
   describe('getData', function () {
+
     it('calls getData on the dataSource', function () {
       mod.getData();
+
       Datasource.prototype.getData.should.have.been.calledOnce;
     });
+
+    it('sets the response to the dataSource property', function () {
+      deferred.resolve({
+        data: moduleData
+      });
+
+
+      return mod.getData().then(function () {
+        mod.dataSource.data.should.equal(moduleData);
+      });
+    });
+
   });
 
   describe('resolve()', function () {
+
     it('gets the data for a module and sets it to the dataSource property', function () {
       deferred.resolve({
         data: moduleData
@@ -113,5 +143,13 @@ describe('Module', function () {
           mod.dataSource.data.should.eql(moduleData);
         });
     });
+
+    it('rejects the promise if the module is not supported (so cant resolve)', function () {
+
+      mod.moduleConfig['module-type'] = 'something_unsupported';
+
+      return mod.resolve().should.be.rejected;
+    });
+
   });
 });
