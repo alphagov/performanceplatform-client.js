@@ -73,24 +73,100 @@ describe('Module', function () {
       mod.dataSource.should.be.instanceOf(Datasource);
     });
 
-    it('sets a module axes', function () {
-      mod.axes.should.eql({
-        x: {
-          format: 'date',
-          key: [
-            '_quarter_start_at',
-            'end_at'
-          ],
-          label: 'Quarter'
-        },
-        y: [{
+    describe('module axes', function () {
+
+      it('should return with axes data for the KPI module', function () {
+        mod.axes.x.should.eql({
+          'label': 'Quarter',
+          'key': ['_quarter_start_at', 'end_at'],
+          'format': 'date'
+        });
+
+        mod.axes.y.should.eql([{
+          label: 'test',
+          key: 'specific_data',
           format: {
             type: 'number'
-          },
-          key: 'specific_data',
-          label: 'test'
-        }]
+          }
+        }]);
       });
+
+      it('should return with axes data for the SINLE_TIMESERIES module', function () {
+        moduleConfig.axes = {
+          x: {
+            label: 'Date',
+            key: ['_start_at', '_end_at'],
+            format: 'date'
+          }
+        };
+        moduleConfig['module-type'] = 'single_timeseries';
+        moduleConfig['format-options'] = {
+          'type': 'number'
+        };
+
+        mod = new Module(moduleConfig);
+
+        mod.axes.x.should.eql({
+          'label': 'Date',
+          'key': ['_start_at', '_end_at'],
+          'format': 'date'
+        });
+
+        mod.axes.y.should.eql([{
+          key: 'specific_data',
+          format: {
+            type: 'number'
+          }
+        }]);
+      });
+
+      it('should assume axis unit is integer if not specified', function () {
+        moduleConfig.axes = {
+          'y': [{
+            'label': 'User satisfaction',
+            'key': 'satisfaction:sum',
+            'format': 'percent'
+          }, {'key': 'respondents', 'label': 'Number of respondents'}],
+          'x': {'label': 'Date', 'key': ['_start_at', '_end_at'], 'format': 'date'}
+        };
+        moduleConfig['module-type'] = 'single_timeseries';
+
+        mod = new Module(moduleConfig);
+
+        mod.axes.y.should.eql([
+          {
+            'label': 'User satisfaction',
+            'key': 'specific_data',
+            'format': 'percent'
+          },
+          {
+            'key': 'respondents',
+            'label': 'Number of respondents',
+            'format': {
+              type: 'integer'
+            }
+          }
+        ]);
+      });
+
+      it('should return with axes data for the REALTIME module', function () {
+        moduleConfig['module-type'] = 'realtime';
+
+        mod = new Module(moduleConfig);
+
+        mod.axes.x.should.eql({
+          'label': 'Time',
+          'key': '_timestamp',
+          'format': 'time'
+        });
+
+        mod.axes.y.should.eql([{
+          key: 'unique_visitors',
+          format: 'integer',
+          label: 'Number of unique visitors'
+        }]);
+      });
+
     });
 
   });
