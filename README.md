@@ -4,17 +4,57 @@
 
 A JavaScript client for the Performance Platform. It communicates with the Performance Platform API and can be used on both the front and backend using CommonJS.
 
-Available on the npm registry.
+# Installation
+
+The client is available on the npm registry
+
+```
+npm install --save performanceplatform-client.js
+```
 
 # Usage
 
-```javascript
-var Dashboard = require('performanceplatform-client.js');
+The client is composed of three sections. Dashboard, Module and Datasource. Each one can be used independently.
 
-new Dashboard().getConfig('dashboard-slug')
-.then(function (dashboardConfig) {
-  var dashboard = JSON.parse(dashboardConfig);
-  // Do something with the dashboard data
-  // ...
+## Dashboard
+
+```
+
+var Dashboard = require('performanceplatform-client.js').Dashboard,
+    dashboard = new Dashboard('prison-visits');
+
+dashboard.resolve().then(function (dashboardAndData) {
+  // this has returned a dashboard, it's config plus all modules resolved with their data
+  console.log(JSON.stringify(dashboardAndData));
 });
+
+```
+
+## Module
+
+```
+
+var Module = require('performanceplatform-client.js').Module,
+    module = new Module(moduleConfig);
+
+module.resolve().then(function (moduleData) {
+  // this has the data for the module
+  // rejects promise if the module isn't supported
+  console.log(JSON.stringify(moduleData));
+});
+
+```
+
+## Datasource
+
+```
+
+var Datasource = require('performanceplatform-client.js').Datasource,
+    dataSource = new Datasource(dataSourceConfig);
+
+dataSource.getData().then(function (data) {
+  // returns the data for a datasource
+  console.log(JSON.stringify(data));
+});
+
 ```
