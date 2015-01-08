@@ -2,7 +2,7 @@
   "name": "performanceplatform-client.js",
   "version": "0.0.1",
   "description": "A JavaScript client for the Performance Platform. It communicates with the Performance Platform API and can be used on both the front and backend using CommonJS.",
-  "main": "./lib/dashboard.js",
+  "main": "index.js",
   "scripts": {
     "karma": "PHANTOMJS_BIN=\"./node_modules/phantomjs/bin/phantomjs\" ./node_modules/karma/bin/karma start test/karma.conf.js",
     "unit": "./node_modules/mocha/bin/mocha",
