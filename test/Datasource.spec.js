@@ -69,6 +69,41 @@ describe('Datasource', function () {
       });
     });
 
+    describe('querystring', function () {
+
+      it('adds a duration if period is present', function () {
+        dataSourceConfig = {
+          'data-group': 'student-finance',
+          'data-type': 'site-traffic',
+          'query-params': {
+            'collect': ['users:sum'],
+            'group_by': 'dataType',
+            'period': 'week'
+          }
+        };
+
+        dataSource = new Datasource(dataSourceConfig);
+
+        dataSource.options.qs.duration.should.equal(9);
+      });
+
+      it('limits results to 2 if period is not present', function () {
+        dataSourceConfig = {
+          'data-group': 'student-finance',
+          'data-type': 'site-traffic',
+          'query-params': {
+            'collect': ['users:sum'],
+            'group_by': 'dataType'
+          }
+        };
+
+        dataSource = new Datasource(dataSourceConfig);
+
+        dataSource.options.qs.limit.should.equal(2);
+      });
+
+    });
+
   });
 
   describe('getData', function () {
