@@ -58,3 +58,15 @@ dataSource.getData().then(function (data) {
 });
 
 ```
+
+
+## Table
+
+```
+var Table = require('performanceplatform-client.js').Table
+
+var table = new Table(module);
+
+table.render();
+
+```
