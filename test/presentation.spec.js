@@ -59,29 +59,6 @@ var moduleData = {
 
 describe('presentation helpers', function () {
 
-  describe('tabularData()', function () {
-
-    it('should respond with tabular data for the module', function () {
-      var tabularData = presentation.tabularData(moduleData);
-
-      tabularData.should.eql([
-        [
-          'Quarter',
-          '1 July 2013 to 30 June 2014',
-          '1 April 2013 to 30 June 2014',
-          '1 January 2013 to 30 June 2014'
-        ],
-        [
-          'test',
-          1,
-          2,
-          1
-        ]
-      ]);
-    });
-
-  });
-
   describe('formatKeys()', function () {
 
     it('should add extra formatting keys', function () {
