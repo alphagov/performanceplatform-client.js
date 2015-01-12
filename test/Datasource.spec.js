@@ -65,8 +65,17 @@ describe('Datasource', function () {
           limit: 2,
           sort_by: '_timestamp:descending'
         },
-        url: 'https://www.performance.service.gov.uk/data/transactional-services/summaries'
+        url: 'https://www.performance.service.gov.uk/data/transactional-services/summaries',
+        backdrop: 'https://www.performance.service.gov.uk/'
       });
+    });
+
+    it('allows optional options', function () {
+      dataSource = new Datasource(dataSourceConfig, {
+        backdrop: 'test.com'
+      });
+
+      dataSource.options.backdrop.should.equal('test.com');
     });
 
     describe('querystring', function () {

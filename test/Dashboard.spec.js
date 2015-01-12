@@ -68,8 +68,22 @@ describe('Dashboard', function () {
 
       dashboard.options.should.eql({
         json: true,
-        slug: 'test-slug'
+        slug: 'test-slug',
+        backdrop: 'https://www.performance.service.gov.uk/',
+        stagecraft: 'https://stagecraft.production.performance.service.gov.uk/'
       });
+    });
+
+    it('allows you to set optional options', function () {
+      var dashboard = new Dashboard('test-slug', {backdrop: 'foo.com', stagecraft: 'bar.com'});
+
+      dashboard.options.should.eql({
+        json: true,
+        slug: 'test-slug',
+        backdrop: 'foo.com',
+        stagecraft: 'bar.com'
+      });
+
     });
   });
 
@@ -92,7 +106,9 @@ describe('Dashboard', function () {
                 'https://stagecraft.production.performance.service.gov.uk/public/dashboards?slug=' +
               testSlug,
               json: true,
-              slug: 'test-dashboard-slug'
+              slug: 'test-dashboard-slug',
+              backdrop: 'https://www.performance.service.gov.uk/',
+              stagecraft: 'https://stagecraft.production.performance.service.gov.uk/'
             });
 
           dashboardConfig.should.equal(dashboardResponse);
