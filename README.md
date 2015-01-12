@@ -70,3 +70,14 @@ var table = new Table(module);
 table.render();
 
 ```
+
+## Delta
+
+```
+var Delta = require('performanceplatform-client.js').Delta
+
+var delta = new Delta(module);
+
+console.log(delta.data);
+
+```
