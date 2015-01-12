@@ -1,4 +1,4 @@
-var presentation = require('../lib/presentation');
+var Delta = require('../../lib/views/Delta');
 var moduleData = {
   moduleConfig: {
     'title': 'test',
@@ -57,14 +57,40 @@ var moduleData = {
   }
 };
 
-describe('presentation helpers', function () {
+describe('Delta', function () {
+  var delta;
 
-  describe('formatKeys()', function () {
+  beforeEach(function () {
+    delta = new Delta(moduleData);
+  });
+
+  describe('init', function () {
+
+    beforeEach(function () {
+      sinon.stub(Delta.prototype, 'createDeltas');
+      delta = new Delta(moduleData);
+    });
+
+    afterEach(function () {
+      Delta.prototype.createDeltas.restore();
+    });
+
+    it('should set config, data and axes from the module', function () {
+      delta.moduleConfig.should.eql(moduleData.moduleConfig);
+      delta.data.should.eql(moduleData.dataSource.data);
+      delta.axes.should.eql(moduleData.axes);
+    });
+
+    it('should call createDeltas()', function () {
+      Delta.prototype.createDeltas.should.have.been.called;
+    });
+
+  });
+
+  describe('createDeltas()', function () {
 
     it('should add extra formatting keys', function () {
-      var formatKeys = presentation.formatKeys(moduleData);
-
-      formatKeys[0].should.have.keys(
+      delta.data[0].should.have.keys(
         [
           'formatted_value',
           'period',
@@ -81,9 +107,7 @@ describe('presentation helpers', function () {
     });
 
     it('should only add a delta key if theres a previous model', function () {
-      var formatKeys = presentation.formatKeys(moduleData);
-
-      formatKeys[2].should.have.keys(
+      delta.data[2].should.have.keys(
         [
           'formatted_value',
           'period',
@@ -101,9 +125,9 @@ describe('presentation helpers', function () {
     it('should not add a delta key if the data format is not currency, number or duration',
       function () {
         moduleData.moduleConfig.format.type = 'text';
-        var formatKeys = presentation.formatKeys(moduleData);
+        delta = new Delta(moduleData);
 
-        formatKeys[2].should.have.keys(
+        delta.data[2].should.have.keys(
           [
             'formatted_value',
             'period',
@@ -124,16 +148,13 @@ describe('presentation helpers', function () {
           period: 'a year'
         }
       };
+      delta = new Delta(moduleData);
 
-      var formatKeys = presentation.formatKeys(moduleData);
-
-      formatKeys[0].period.should.equal('year');
+      delta.data[0].period.should.equal('year');
     });
 
     it('formats the data', function () {
-      var formatKeys = presentation.formatKeys(moduleData);
-
-      formatKeys[0].should.eql({
+      delta.data[0].should.eql({
         _quarter_start_at: '2013-07-01T00:00:00+00:00',
         _timestamp: '2013-07-01T00:00:00+00:00',
         end_at: '2014-07-01T00:00:00+00:00',
@@ -194,11 +215,10 @@ describe('presentation helpers', function () {
             'stage': 'thank-you'
           }
         ];
+        delta = new Delta(moduleData);
 
-        var formatKeys = presentation.formatKeys(moduleData);
-
-        formatKeys[0]._end_at.should.equal('2013-12-30T00:00:00+00:00');
-        formatKeys[1]._end_at.should.equal('2013-12-23T00:00:00+00:00');
+        delta.data[0]._end_at.should.equal('2013-12-30T00:00:00+00:00');
+        delta.data[1]._end_at.should.equal('2013-12-23T00:00:00+00:00');
       });
 
     });
