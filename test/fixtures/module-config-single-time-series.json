@@ -1,40 +1,47 @@
 {
   "moduleConfig": {
-    "info": [
-      "Data source: Department for Work and Pensions",
-      "<a href='/service-manual/measurement/digital-takeup' rel='external'>Digital take-up</a> measures the percentage of completed applications that are made through a digital channel versus non-digital channels."
-    ],
-    "value-attribute": "rate",
-    "description": "Proportion of bookings made using the digital service",
+    "info": ["Data source: Student Loans Company"],
+    "value-attribute": "satisfaction:sum",
+    "axis-period": "month",
+    "description": "Overall rating for the full time application by those who have submitted their application online for the 2014/15 academic year.",
     "module-type": "single_timeseries",
-    "title": "Digital take-up",
+    "title": "User satisfaction",
     "axes": {
       "y": [
         {
-          "label": "Completion percentage",
-          "format": {"type": "percent"},
-          "key": "rate"
+          "label": "User satisfaction",
+          "key": "satisfaction:sum",
+          "format": {"type": "percent"}
+        },
+        {
+          "key": "respondents",
+          "label": "Number of respondents",
+          "format": {"type": "integer"}
         }
       ],
       "x": {
-        "format": "date",
+        "label": "Date",
         "key": [
           "_start_at",
           "_end_at"
         ],
-        "label": "Date"
+        "format": "date"
       }
     },
     "modules": [],
     "format-options": {"type": "percent"},
-    "slug": "digital-takeup",
+    "slug": "user-satisfaction",
     "data-source": {
-      "data-group": "prison-visits",
-      "data-type": "digital-takeup",
+      "data-group": "student-finance",
+      "data-type": "user-satisfaction",
       "query-params": {
-        "sort_by": "_timestamp:descending",
+        "collect": [
+          "satisfaction:sum",
+          "respondents:set"
+        ],
+        "period": "month",
         "flatten": true,
-        "limit": 2
+        "duration": 12
       }
     }
   },
@@ -42,55 +49,115 @@
     "options": {
       "json": true,
       "backdrop": "https://www.performance.service.gov.uk/",
-      "url": "https://www.performance.service.gov.uk/data/prison-visits/digital-takeup?sort_by=_timestamp%3Adescending&flatten=true&limit=2"
+      "url": "https://www.performance.service.gov.uk/data/student-finance/user-satisfaction?collect=satisfaction%3Asum&collect=respondents%3Aset&period=month&flatten=true&duration=12"
     },
     "data": [
       {
-        "_day_start_at": "2014-12-15T00:00:00+00:00",
-        "_end_at": "2014-12-22T00:00:00+00:00",
-        "_hour_start_at": "2014-12-15T00:00:00+00:00",
-        "_id": "MjAxNC0xMi0xNVQwMDowMDowMCswMDowMF8yMDE0LTEyLTIyVDAwOjAwOjAwKzAwOjAw",
-        "_month_start_at": "2014-12-01T00:00:00+00:00",
-        "_quarter_start_at": "2014-10-01T00:00:00+00:00",
-        "_start_at": "2014-12-15T00:00:00+00:00",
-        "_timestamp": "2014-12-15T00:00:00+00:00",
-        "_updated_at": "2014-12-18T12:48:27.819000+00:00",
-        "_week_start_at": "2014-12-15T00:00:00+00:00",
-        "_year_start_at": "2014-01-01T00:00:00+00:00",
-        "rate": null
+        "_count": 1,
+        "_end_at": "2014-02-01T00:00:00+00:00",
+        "_start_at": "2014-01-01T00:00:00+00:00",
+        "respondents:set": [233],
+        "satisfaction:sum": 0.785
       },
       {
-        "_day_start_at": "2014-12-08T00:00:00+00:00",
-        "_end_at": "2014-12-15T00:00:00+00:00",
-        "_hour_start_at": "2014-12-08T00:00:00+00:00",
-        "_id": "MjAxNC0xMi0wOFQwMDowMDowMCswMDowMF8yMDE0LTEyLTE1VDAwOjAwOjAwKzAwOjAw",
-        "_month_start_at": "2014-12-01T00:00:00+00:00",
-        "_quarter_start_at": "2014-10-01T00:00:00+00:00",
-        "_start_at": "2014-12-08T00:00:00+00:00",
-        "_timestamp": "2014-12-08T00:00:00+00:00",
-        "_updated_at": "2014-12-18T12:48:27.818000+00:00",
-        "_week_start_at": "2014-12-08T00:00:00+00:00",
-        "_year_start_at": "2014-01-01T00:00:00+00:00",
-        "rate": null
+        "_count": 1,
+        "_end_at": "2014-03-01T00:00:00+00:00",
+        "_start_at": "2014-02-01T00:00:00+00:00",
+        "respondents:set": [272],
+        "satisfaction:sum": 0.785
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-04-01T00:00:00+00:00",
+        "_start_at": "2014-03-01T00:00:00+00:00",
+        "respondents:set": [116],
+        "satisfaction:sum": 0.746
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-05-01T00:00:00+00:00",
+        "_start_at": "2014-04-01T00:00:00+00:00",
+        "respondents:set": [171],
+        "satisfaction:sum": 0.713
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-06-01T00:00:00+00:00",
+        "_start_at": "2014-05-01T00:00:00+00:00",
+        "respondents:set": [149],
+        "satisfaction:sum": 0.762
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-07-01T00:00:00+00:00",
+        "_start_at": "2014-06-01T00:00:00+00:00",
+        "respondents:set": [144],
+        "satisfaction:sum": 0.696
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-08-01T00:00:00+00:00",
+        "_start_at": "2014-07-01T00:00:00+00:00",
+        "respondents:set": [204],
+        "satisfaction:sum": 0.765
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-09-01T00:00:00+00:00",
+        "_start_at": "2014-08-01T00:00:00+00:00",
+        "respondents:set": [225],
+        "satisfaction:sum": 0.782
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-10-01T00:00:00+00:00",
+        "_start_at": "2014-09-01T00:00:00+00:00",
+        "respondents:set": [220],
+        "satisfaction:sum": 0.773
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-11-01T00:00:00+00:00",
+        "_start_at": "2014-10-01T00:00:00+00:00",
+        "respondents:set": [226],
+        "satisfaction:sum": 0.743
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-12-01T00:00:00+00:00",
+        "_start_at": "2014-11-01T00:00:00+00:00",
+        "respondents:set": [248],
+        "satisfaction:sum": 0.829
+      },
+      {
+        "_count": 0,
+        "_end_at": "2015-01-01T00:00:00+00:00",
+        "_start_at": "2014-12-01T00:00:00+00:00",
+        "respondents:set": null,
+        "satisfaction:sum": null
       }
-    ],
-    "warning": "Warning: This data-set is unpublished. Data may be subject to change or be inaccurate."
+    ]
   },
   "axes": {
     "y": [
       {
-        "label": "Completion percentage",
-        "format": {"type": "percent"},
-        "key": "rate"
+        "label": "User satisfaction",
+        "key": "satisfaction:sum",
+        "format": {"type": "percent"}
+      },
+      {
+        "key": "respondents",
+        "label": "Number of respondents",
+        "format": {"type": "integer"}
       }
     ],
     "x": {
-      "format": "date",
+      "label": "Date",
       "key": [
         "_start_at",
         "_end_at"
       ],
-      "label": "Date"
+      "format": "date"
     }
   }
 }
