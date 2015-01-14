@@ -128,13 +128,6 @@
         "_start_at": "2014-11-01T00:00:00+00:00",
         "respondents:set": [248],
         "satisfaction:sum": 0.829
-      },
-      {
-        "_count": 0,
-        "_end_at": "2015-01-01T00:00:00+00:00",
-        "_start_at": "2014-12-01T00:00:00+00:00",
-        "respondents:set": null,
-        "satisfaction:sum": null
       }
     ]
   },
