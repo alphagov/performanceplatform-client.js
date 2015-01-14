@@ -1,0 +1,71 @@
+{
+  "moduleConfig": {
+    "info": [
+      "Data source: Google Analytics",
+      "Shows the estimated number of users currently on the GOV.UK start page for the service."
+    ],
+    "data-source": {
+      "data-group": "tax-disc",
+      "data-type": "realtime",
+      "query-params": {
+        "limit": 2,
+        "sort_by": "_timestamp:descending",
+        "flatten": true
+      }
+    },
+    "module-type": "realtime",
+    "title": "Live service usage",
+    "modules": [],
+    "slug": "live-service-usage",
+    "description": "Users currently on the GOV.UK start page for the service"
+  },
+  "dataSource": {
+    "options": {
+      "json": true,
+      "backdrop": "https://www.performance.service.gov.uk/",
+      "url": "https://www.performance.service.gov.uk/data/tax-disc/realtime?limit=2&sort_by=_timestamp%3Adescending&flatten=true"
+    },
+    "data": [
+      {
+        "_day_start_at": "2015-01-14T00:00:00+00:00",
+        "_hour_start_at": "2015-01-14T14:00:00+00:00",
+        "_id": "2015-01-14T14:51:20+00:00",
+        "_month_start_at": "2015-01-01T00:00:00+00:00",
+        "_quarter_start_at": "2015-01-01T00:00:00+00:00",
+        "_timestamp": "2015-01-14T14:51:20+00:00",
+        "_updated_at": "2015-01-14T14:51:20.720000+00:00",
+        "_week_start_at": "2015-01-12T00:00:00+00:00",
+        "_year_start_at": "2015-01-01T00:00:00+00:00",
+        "for_url": "ga:pagePath=~^/vehicle-tax$",
+        "unique_visitors": 482
+      },
+      {
+        "_day_start_at": "2015-01-14T00:00:00+00:00",
+        "_hour_start_at": "2015-01-14T14:00:00+00:00",
+        "_id": "2015-01-14T14:49:19+00:00",
+        "_month_start_at": "2015-01-01T00:00:00+00:00",
+        "_quarter_start_at": "2015-01-01T00:00:00+00:00",
+        "_timestamp": "2015-01-14T14:49:19+00:00",
+        "_updated_at": "2015-01-14T14:49:20.084000+00:00",
+        "_week_start_at": "2015-01-12T00:00:00+00:00",
+        "_year_start_at": "2015-01-01T00:00:00+00:00",
+        "for_url": "ga:pagePath=~^/vehicle-tax$",
+        "unique_visitors": 485
+      }
+    ]
+  },
+  "axes": {
+    "x": {
+      "label": "Time",
+      "key": "_timestamp",
+      "format": "time"
+    },
+    "y": [
+      {
+        "label": "Number of unique visitors",
+        "key": "unique_visitors",
+        "format": "integer"
+      }
+    ]
+  }
+}
