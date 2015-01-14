@@ -1,0 +1,155 @@
+{
+  "moduleConfig": {
+    "trim": false,
+    "migrated": true,
+    "value-attribute": "score",
+    "axis-period": "month",
+    "description": "Overall satisfaction score includes all ratings weighted from 100% for 'very satisfied' to 0% for 'very dissatisfied'",
+    "module-type": "user_satisfaction_graph",
+    "title": "User satisfaction",
+    "axes": {
+      "y": [
+        {
+          "format": "percent",
+          "key": "score",
+          "label": "User satisfaction"
+        },
+        {
+          "format": "integer",
+          "key": "rating_1",
+          "label": "Very dissatisfied"
+        },
+        {
+          "format": "integer",
+          "key": "rating_2",
+          "label": "Dissatisfied"
+        },
+        {
+          "format": "integer",
+          "key": "rating_3",
+          "label": "Neither satisfied or dissatisfied"
+        },
+        {
+          "format": "integer",
+          "key": "rating_4",
+          "label": "Satisfied"
+        },
+        {
+          "format": "integer",
+          "key": "rating_5",
+          "label": "Very satisfied"
+        }
+      ],
+      "x": {
+        "format": "date",
+        "key": "_start_at",
+        "label": "Date"
+      }
+    },
+    "modules": [],
+    "info": [
+      "Data source: GOV.UK user feedback database",
+      "<a href='/service-manual/measurement/user-satisfaction' rel='external'>User satisfaction</a> is measured by surveying users at the point of transaction completion. It is measured on a five-point scale, from most satisfied to least satisfied. The mean of these responses is converted to a percentage for display purposes."
+    ],
+    "total-attribute": "num_responses",
+    "slug": "user-satisfaction",
+    "data-source": {
+      "data-group": "prison-visits",
+      "data-type": "user-satisfaction-score",
+      "query-params": {
+        "sort_by": "_timestamp:descending",
+        "flatten": true,
+        "limit": 2
+      }
+    }
+  },
+  "dataSource": {
+    "options": {
+      "json": true,
+      "backdrop": "https://www.performance.service.gov.uk/",
+      "url": "https://www.performance.service.gov.uk/data/prison-visits/user-satisfaction-score?sort_by=_timestamp%3Adescending&flatten=true&limit=2"
+    },
+    "data": [
+      {
+        "_day_start_at": "2015-01-12T00:00:00+00:00",
+        "_end_at": "2015-01-19T00:00:00+00:00",
+        "_hour_start_at": "2015-01-12T00:00:00+00:00",
+        "_id": "MjAxNS0wMS0xMlQwMDowMDowMCswMDowMF8yMDE1LTAxLTE5VDAwOjAwOjAwKzAwOjAw",
+        "_month_start_at": "2015-01-01T00:00:00+00:00",
+        "_quarter_start_at": "2015-01-01T00:00:00+00:00",
+        "_start_at": "2015-01-12T00:00:00+00:00",
+        "_timestamp": "2015-01-12T00:00:00+00:00",
+        "_updated_at": "2015-01-14T00:33:31.653000+00:00",
+        "_week_start_at": "2015-01-12T00:00:00+00:00",
+        "_year_start_at": "2015-01-01T00:00:00+00:00",
+        "num_responses": 30,
+        "rating_1": 3,
+        "rating_2": 0,
+        "rating_3": 0,
+        "rating_4": 5,
+        "rating_5": 22,
+        "score": 0.8583333333333334
+      },
+      {
+        "_day_start_at": "2015-01-05T00:00:00+00:00",
+        "_end_at": "2015-01-12T00:00:00+00:00",
+        "_hour_start_at": "2015-01-05T00:00:00+00:00",
+        "_id": "MjAxNS0wMS0wNVQwMDowMDowMCswMDowMF8yMDE1LTAxLTEyVDAwOjAwOjAwKzAwOjAw",
+        "_month_start_at": "2015-01-01T00:00:00+00:00",
+        "_quarter_start_at": "2015-01-01T00:00:00+00:00",
+        "_start_at": "2015-01-05T00:00:00+00:00",
+        "_timestamp": "2015-01-05T00:00:00+00:00",
+        "_updated_at": "2015-01-12T00:33:33.853000+00:00",
+        "_week_start_at": "2015-01-05T00:00:00+00:00",
+        "_year_start_at": "2015-01-01T00:00:00+00:00",
+        "num_responses": 69,
+        "rating_1": 5,
+        "rating_2": 1,
+        "rating_3": 1,
+        "rating_4": 13,
+        "rating_5": 49,
+        "score": 0.8623188405797102
+      }
+    ],
+    "warning": "Warning: This data-set is unpublished. Data may be subject to change or be inaccurate."
+  },
+  "axes": {
+    "y": [
+      {
+        "format": "percent",
+        "key": "score",
+        "label": "User satisfaction"
+      },
+      {
+        "format": "integer",
+        "key": "rating_1",
+        "label": "Very dissatisfied"
+      },
+      {
+        "format": "integer",
+        "key": "rating_2",
+        "label": "Dissatisfied"
+      },
+      {
+        "format": "integer",
+        "key": "rating_3",
+        "label": "Neither satisfied or dissatisfied"
+      },
+      {
+        "format": "integer",
+        "key": "rating_4",
+        "label": "Satisfied"
+      },
+      {
+        "format": "integer",
+        "key": "rating_5",
+        "label": "Very satisfied"
+      }
+    ],
+    "x": {
+      "format": "date",
+      "key": "_start_at",
+      "label": "Date"
+    }
+  }
+}

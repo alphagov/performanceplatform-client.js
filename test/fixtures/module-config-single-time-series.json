@@ -1,0 +1,96 @@
+{
+  "moduleConfig": {
+    "info": [
+      "Data source: Department for Work and Pensions",
+      "<a href='/service-manual/measurement/digital-takeup' rel='external'>Digital take-up</a> measures the percentage of completed applications that are made through a digital channel versus non-digital channels."
+    ],
+    "value-attribute": "rate",
+    "description": "Proportion of bookings made using the digital service",
+    "module-type": "single_timeseries",
+    "title": "Digital take-up",
+    "axes": {
+      "y": [
+        {
+          "label": "Completion percentage",
+          "format": {"type": "percent"},
+          "key": "rate"
+        }
+      ],
+      "x": {
+        "format": "date",
+        "key": [
+          "_start_at",
+          "_end_at"
+        ],
+        "label": "Date"
+      }
+    },
+    "modules": [],
+    "format-options": {"type": "percent"},
+    "slug": "digital-takeup",
+    "data-source": {
+      "data-group": "prison-visits",
+      "data-type": "digital-takeup",
+      "query-params": {
+        "sort_by": "_timestamp:descending",
+        "flatten": true,
+        "limit": 2
+      }
+    }
+  },
+  "dataSource": {
+    "options": {
+      "json": true,
+      "backdrop": "https://www.performance.service.gov.uk/",
+      "url": "https://www.performance.service.gov.uk/data/prison-visits/digital-takeup?sort_by=_timestamp%3Adescending&flatten=true&limit=2"
+    },
+    "data": [
+      {
+        "_day_start_at": "2014-12-15T00:00:00+00:00",
+        "_end_at": "2014-12-22T00:00:00+00:00",
+        "_hour_start_at": "2014-12-15T00:00:00+00:00",
+        "_id": "MjAxNC0xMi0xNVQwMDowMDowMCswMDowMF8yMDE0LTEyLTIyVDAwOjAwOjAwKzAwOjAw",
+        "_month_start_at": "2014-12-01T00:00:00+00:00",
+        "_quarter_start_at": "2014-10-01T00:00:00+00:00",
+        "_start_at": "2014-12-15T00:00:00+00:00",
+        "_timestamp": "2014-12-15T00:00:00+00:00",
+        "_updated_at": "2014-12-18T12:48:27.819000+00:00",
+        "_week_start_at": "2014-12-15T00:00:00+00:00",
+        "_year_start_at": "2014-01-01T00:00:00+00:00",
+        "rate": null
+      },
+      {
+        "_day_start_at": "2014-12-08T00:00:00+00:00",
+        "_end_at": "2014-12-15T00:00:00+00:00",
+        "_hour_start_at": "2014-12-08T00:00:00+00:00",
+        "_id": "MjAxNC0xMi0wOFQwMDowMDowMCswMDowMF8yMDE0LTEyLTE1VDAwOjAwOjAwKzAwOjAw",
+        "_month_start_at": "2014-12-01T00:00:00+00:00",
+        "_quarter_start_at": "2014-10-01T00:00:00+00:00",
+        "_start_at": "2014-12-08T00:00:00+00:00",
+        "_timestamp": "2014-12-08T00:00:00+00:00",
+        "_updated_at": "2014-12-18T12:48:27.818000+00:00",
+        "_week_start_at": "2014-12-08T00:00:00+00:00",
+        "_year_start_at": "2014-01-01T00:00:00+00:00",
+        "rate": null
+      }
+    ],
+    "warning": "Warning: This data-set is unpublished. Data may be subject to change or be inaccurate."
+  },
+  "axes": {
+    "y": [
+      {
+        "label": "Completion percentage",
+        "format": {"type": "percent"},
+        "key": "rate"
+      }
+    ],
+    "x": {
+      "format": "date",
+      "key": [
+        "_start_at",
+        "_end_at"
+      ],
+      "label": "Date"
+    }
+  }
+}
