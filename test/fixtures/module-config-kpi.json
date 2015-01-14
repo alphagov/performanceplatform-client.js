@@ -1,11 +1,13 @@
 {
   "moduleConfig": {
-    "title": "test",
+    "title": "Transactions per year",
     "format": {
+      "sigfigs": 3,
+      "magnitude": true,
       "type": "number"
     },
     "module-type": "kpi",
-    "value-attribute": "specific_data",
+    "value-attribute": "number_of_transactions",
     "data-source": {
       "data-group": "transactional-services",
       "data-type": "summaries",
@@ -16,42 +18,67 @@
           "type:seasonally-adjusted"
         ]
       }
+    },
+    "format-options": {
+      "type": "duration",
+      "unit": "m"
     }
   },
   "dataSource": {
     "data": [
       {
+        "_day_start_at": "2013-07-01T00:00:00+00:00",
+        "_hour_start_at": "2013-07-01T00:00:00+00:00",
+        "_id": "MjAxMy0wNy0wMSAwMDowMDowMDIwMTQtMDctMDEgMDA6MDA6MDBkZnQtdGF4LWEtdmVoaWNsZQ==",
+        "_month_start_at": "2013-07-01T00:00:00+00:00",
         "_quarter_start_at": "2013-07-01T00:00:00+00:00",
         "_timestamp": "2013-07-01T00:00:00+00:00",
+        "_updated_at": "2014-11-17T11:49:01.239000+00:00",
+        "_week_start_at": "2013-07-01T00:00:00+00:00",
+        "_year_start_at": "2013-01-01T00:00:00+00:00",
+        "cost_per_transaction": 1.26,
+        "digital_cost_per_transaction": null,
+        "digital_takeup": 0.5416161428534535,
         "end_at": "2014-07-01T00:00:00+00:00",
-        "specific_data": 1
+        "number_of_digital_transactions": 24831133,
+        "number_of_transactions": 45846368
       },
       {
+        "_day_start_at": "2013-04-01T00:00:00+00:00",
+        "_hour_start_at": "2013-04-01T00:00:00+00:00",
+        "_id": "MjAxMy0wNC0wMSAwMDowMDowMDIwMTQtMDQtMDEgMDA6MDA6MDBkZnQtdGF4LWEtdmVoaWNsZQ==",
+        "_month_start_at": "2013-04-01T00:00:00+00:00",
         "_quarter_start_at": "2013-04-01T00:00:00+00:00",
-        "_timestamp": "2013-07-01T00:00:00+00:00",
-        "end_at": "2014-07-01T00:00:00+00:00",
-        "specific_data": 2
-      },
-      {
-        "_quarter_start_at": "2013-01-01T00:00:00+00:00",
-        "_timestamp": "2013-07-01T00:00:00+00:00",
-        "end_at": "2014-07-01T00:00:00+00:00",
-        "specific_data": 1
+        "_timestamp": "2013-04-01T00:00:00+00:00",
+        "_updated_at": "2014-11-17T11:49:01.240000+00:00",
+        "_week_start_at": "2013-04-01T00:00:00+00:00",
+        "_year_start_at": "2013-01-01T00:00:00+00:00",
+        "cost_per_transaction": 1.4,
+        "digital_cost_per_transaction": null,
+        "digital_takeup": 0.533063457950183,
+        "end_at": "2014-04-01T00:00:00+00:00",
+        "number_of_digital_transactions": 24504457,
+        "number_of_transactions": 45969118
       }
     ]
   },
   "axes": {
-    "x": {
-      "label": "Quarter",
-      "key": ["_quarter_start_at", "end_at"],
-      "format": "date"
-    },
     "y": [{
-      "label": "test",
-      "key": "specific_data",
+      "label": "Transactions per year",
+      "key": "number_of_transactions",
       "format": {
+        "sigfigs": 3,
+        "magnitude": true,
         "type": "number"
       }
-    }]
+    }],
+    "x": {
+      "label": "Quarter",
+      "key": [
+        "_quarter_start_at",
+        "end_at"
+      ],
+      "format": "date"
+    }
   }
 }
