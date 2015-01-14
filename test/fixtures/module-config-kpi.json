@@ -1,0 +1,57 @@
+{
+  "moduleConfig": {
+    "title": "test",
+    "format": {
+      "type": "number"
+    },
+    "module-type": "kpi",
+    "value-attribute": "specific_data",
+    "data-source": {
+      "data-group": "transactional-services",
+      "data-type": "summaries",
+      "query-params": {
+        "sort_by": "_timestamp:descending",
+        "filter_by": [
+          "service_id:bis-accounts-filing",
+          "type:seasonally-adjusted"
+        ]
+      }
+    }
+  },
+  "dataSource": {
+    "data": [
+      {
+        "_quarter_start_at": "2013-07-01T00:00:00+00:00",
+        "_timestamp": "2013-07-01T00:00:00+00:00",
+        "end_at": "2014-07-01T00:00:00+00:00",
+        "specific_data": 1
+      },
+      {
+        "_quarter_start_at": "2013-04-01T00:00:00+00:00",
+        "_timestamp": "2013-07-01T00:00:00+00:00",
+        "end_at": "2014-07-01T00:00:00+00:00",
+        "specific_data": 2
+      },
+      {
+        "_quarter_start_at": "2013-01-01T00:00:00+00:00",
+        "_timestamp": "2013-07-01T00:00:00+00:00",
+        "end_at": "2014-07-01T00:00:00+00:00",
+        "specific_data": 1
+      }
+    ]
+  },
+  "axes": {
+    "x": {
+      "label": "Quarter",
+      "key": ["_quarter_start_at", "end_at"],
+      "format": "date"
+    },
+    "y": [{
+      "label": "test",
+      "key": "specific_data",
+      "format": {
+        "type": "number"
+      }
+    }]
+  }
+}
