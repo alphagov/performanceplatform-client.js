@@ -1,4 +1,5 @@
 var Delta = require('../../lib/views/Delta');
+
 var moduleData = {
   moduleConfig: {
     'title': 'test',
@@ -58,11 +59,8 @@ var moduleData = {
 };
 
 describe('Delta', function () {
-  var delta;
 
-  beforeEach(function () {
-    delta = new Delta(moduleData);
-  });
+  var delta;
 
   describe('init', function () {
 
@@ -88,6 +86,12 @@ describe('Delta', function () {
   });
 
   describe('createDeltas()', function () {
+
+    var delta;
+
+    beforeEach(function () {
+      delta = new Delta(moduleData);
+    });
 
     it('should add extra formatting keys', function () {
       delta.data[0].should.have.keys(
@@ -224,4 +228,83 @@ describe('Delta', function () {
     });
   });
 
+  describe('period calculation', function () {
+
+    it('sets period key', function () {
+      moduleData = {
+        'moduleConfig': {
+          'info': ['Datasource: Ministry of Justice'],
+          'value-attribute': 'date_sla',
+          'description': '',
+          'module-type': 'kpi',
+          'format': {'sigfigs': 3, 'magnitude': true, 'type': 'number'},
+          'axes': {'x': {'format': 'date', 'key': ['_month_start_at', 'end_at'], 'label': 'Date'}},
+          'modules': [],
+          'classes': 'cols3',
+          'title': 'Days to process 85% of applications',
+          'slug': 'days-to-process-85-percent-of-applications',
+          'data-source': {
+            'data-group': 'legal-aid',
+            'data-type': 'processing-target-metrics',
+            'query-params': {
+              'sort_by': '_timestamp:descending',
+              'filter_by': ['service:legal-aid-civil-claims', 'transaction:applications'],
+              'flatten': true,
+              'limit': 2
+            }
+          }
+        },
+        'dataSource': {
+          'options': {
+            'json': true,
+            'backdrop': 'https://www.performance.service.gov.uk/',
+            'url': 'https://www.performance.service.gov.uk/data/legal-aid/processing-target-met'
+          },
+          'data': [{
+            '_day_start_at': '2014-11-01T00:00:00+00:00',
+            '_hour_start_at': '2014-11-01T00:00:00+00:00',
+            '_id': 'MjAxNC0xMS0wMVQwMDowMDowMFoubW9udGguM',
+            '_month_start_at': '2014-11-01T00:00:00+00:00',
+            '_quarter_start_at': '2014-10-01T00:00:00+00:00',
+            '_timestamp': '2014-11-01T00:00:00+00:00',
+            '_updated_at': '2015-01-06T09:19:58.207000+00:00',
+            '_week_start_at': '2014-10-27T00:00:00+00:00',
+            '_year_start_at': '2014-01-01T00:00:00+00:00',
+            'date_sla': 13,
+            'end_at': '2014-12-01T00:00:00Z',
+            'period': 'month',
+            'service': 'legal-aid-civil-claims',
+            'transaction': 'applications',
+            'volume_sla': 0.97
+          }, {
+            '_day_start_at': '2014-10-01T00:00:00+00:00',
+            '_hour_start_at': '2014-10-01T00:00:00+00:00',
+            '_id': 'MjAxNC0xMC0wMVQwMDowMDowMFoubW9udGguMjAxNC0xMS',
+            '_month_start_at': '2014-10-01T00:00:00+00:00',
+            '_quarter_start_at': '2014-10-01T00:00:00+00:00',
+            '_timestamp': '2014-10-01T00:00:00+00:00',
+            '_updated_at': '2015-01-06T09:19:58.201000+00:00',
+            '_week_start_at': '2014-09-29T00:00:00+00:00',
+            '_year_start_at': '2014-01-01T00:00:00+00:00',
+            'date_sla': 12,
+            'end_at': '2014-11-01T00:00:00Z',
+            'period': 'month',
+            'service': 'legal-aid-civil-claims',
+            'transaction': 'applications',
+            'volume_sla': 0.97
+          }]
+        },
+        'axes': {
+          'x': {'label': 'Date', 'key': ['_month_start_at', 'end_at'], 'format': 'date'},
+          'y': [{
+            'label': 'Days to process 85% of applications',
+            'key': 'date_sla',
+            'format': {'sigfigs': 3, 'magnitude': true, 'type': 'number'}
+          }]
+        }
+      };
+      delta = new Delta(moduleData);
+      delta.data[0].period.should.equal('month');
+    });
+  });
 });
