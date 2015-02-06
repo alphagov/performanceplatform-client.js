@@ -1,0 +1,324 @@
+{
+  "moduleConfig": {
+    "category": "channel",
+    "info": [
+      "Data source: DVLA database",
+      "Shows the number of successful applications to renew a tax disc, broken into <span class='group0'>digital</span>, <span class='group1'>Post Office</span> and <span class='group2'>DVLA centre</span> applications",
+      "Digital and automated phone: applications made online or using the automated telephone service",
+      "Post Office: applications made at a Post Office branch",
+      "DVLA centre: applications made at local DVLA centres"
+    ],
+    "value-attribute": "volume:sum",
+    "description": "Vehicle tax renewals per month broken into <span class='group0'>digital</span>, <span class='group1'>Post Office</span> and <span class='group2'>DVLA centre</span> applications",
+    "module-type": "single_timeseries",
+    "title": "Renewals breakdown",
+    "axes": {
+      "y": [
+        // still array?
+        {
+          "format": "integer",
+          "groupId": "assisted-digital",
+          "label": "Post Office"
+        }
+      ]
+    },
+    "modules": [],
+    "use_stack": true,
+    "show-line-labels": true,
+    "slug": "volumetrics",
+    "data-source": {
+      "data-group": "vehicle-licensing",
+      "data-type": "volumetrics",
+      "query-params": {
+        "collect": ["volume:sum"],
+        "group_by": ["channel"],
+        "period": "month",
+        "filter_by": ["service:tax-disc"],
+        "flatten": true,
+        "duration": 12
+        // going to need further params?
+      }
+    }
+  },
+  "dataSource": {
+    "options": {
+      "json": true,
+      "backdrop": "https://www.performance.service.gov.uk/",
+      //with additional filter?
+      "url": "https://www.performance.service.gov.uk/data/vehicle-licensing/volumetrics?collect=volume%3Asum&group_by=channel&period=month&filter_by=service%3Atax-disc&flatten=true&duration=12"
+    },
+    "data": [
+      //with stuff filtered out
+      {
+        "_count": 4,
+        "_end_at": "2014-02-01T00:00:00+00:00",
+        "_start_at": "2014-01-01T00:00:00+00:00",
+        "channel": "manual",
+        "volume:sum": 13603
+      },
+      {
+        "_count": 2,
+        "_end_at": "2014-02-01T00:00:00+00:00",
+        "_start_at": "2014-01-01T00:00:00+00:00",
+        "channel": "assisted-digital",
+        "volume:sum": 1306292
+      },
+      {
+        "_count": 4,
+        "_end_at": "2014-02-01T00:00:00+00:00",
+        "_start_at": "2014-01-01T00:00:00+00:00",
+        "channel": "fully-digital",
+        "volume:sum": 1863942
+      },
+      {
+        "_count": 4,
+        "_end_at": "2014-03-01T00:00:00+00:00",
+        "_start_at": "2014-02-01T00:00:00+00:00",
+        "channel": "manual",
+        "volume:sum": 12219
+      },
+      {
+        "_count": 2,
+        "_end_at": "2014-03-01T00:00:00+00:00",
+        "_start_at": "2014-02-01T00:00:00+00:00",
+        "channel": "assisted-digital",
+        "volume:sum": 1637752
+      },
+      {
+        "_count": 4,
+        "_end_at": "2014-03-01T00:00:00+00:00",
+        "_start_at": "2014-02-01T00:00:00+00:00",
+        "channel": "fully-digital",
+        "volume:sum": 2514166
+      },
+      {
+        "_count": 4,
+        "_end_at": "2014-04-01T00:00:00+00:00",
+        "_start_at": "2014-03-01T00:00:00+00:00",
+        "channel": "manual",
+        "volume:sum": 13969
+      },
+      {
+        "_count": 2,
+        "_end_at": "2014-04-01T00:00:00+00:00",
+        "_start_at": "2014-03-01T00:00:00+00:00",
+        "channel": "assisted-digital",
+        "volume:sum": 1831597
+      },
+      {
+        "_count": 4,
+        "_end_at": "2014-04-01T00:00:00+00:00",
+        "_start_at": "2014-03-01T00:00:00+00:00",
+        "channel": "fully-digital",
+        "volume:sum": 2167084
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-05-01T00:00:00+00:00",
+        "_start_at": "2014-04-01T00:00:00+00:00",
+        "channel": "manual",
+        "volume:sum": 17099
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-05-01T00:00:00+00:00",
+        "_start_at": "2014-04-01T00:00:00+00:00",
+        "channel": "assisted-digital",
+        "volume:sum": 1676081
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-05-01T00:00:00+00:00",
+        "_start_at": "2014-04-01T00:00:00+00:00",
+        "channel": "fully-digital",
+        "volume:sum": 2376142
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-06-01T00:00:00+00:00",
+        "_start_at": "2014-05-01T00:00:00+00:00",
+        "channel": "manual",
+        "volume:sum": 12469
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-06-01T00:00:00+00:00",
+        "_start_at": "2014-05-01T00:00:00+00:00",
+        "channel": "assisted-digital",
+        "volume:sum": 1595154
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-06-01T00:00:00+00:00",
+        "_start_at": "2014-05-01T00:00:00+00:00",
+        "channel": "fully-digital",
+        "volume:sum": 2115132
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-07-01T00:00:00+00:00",
+        "_start_at": "2014-06-01T00:00:00+00:00",
+        "channel": "manual",
+        "volume:sum": 16535
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-07-01T00:00:00+00:00",
+        "_start_at": "2014-06-01T00:00:00+00:00",
+        "channel": "assisted-digital",
+        "volume:sum": 1547805
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-07-01T00:00:00+00:00",
+        "_start_at": "2014-06-01T00:00:00+00:00",
+        "channel": "fully-digital",
+        "volume:sum": 2032933
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-08-01T00:00:00+00:00",
+        "_start_at": "2014-07-01T00:00:00+00:00",
+        "channel": "manual",
+        "volume:sum": 15062
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-08-01T00:00:00+00:00",
+        "_start_at": "2014-07-01T00:00:00+00:00",
+        "channel": "assisted-digital",
+        "volume:sum": 1777596
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-08-01T00:00:00+00:00",
+        "_start_at": "2014-07-01T00:00:00+00:00",
+        "channel": "fully-digital",
+        "volume:sum": 2207387
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-09-01T00:00:00+00:00",
+        "_start_at": "2014-08-01T00:00:00+00:00",
+        "channel": "manual",
+        "volume:sum": 13483
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-09-01T00:00:00+00:00",
+        "_start_at": "2014-08-01T00:00:00+00:00",
+        "channel": "assisted-digital",
+        "volume:sum": 1595125
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-09-01T00:00:00+00:00",
+        "_start_at": "2014-08-01T00:00:00+00:00",
+        "channel": "fully-digital",
+        "volume:sum": 2189767
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-10-01T00:00:00+00:00",
+        "_start_at": "2014-09-01T00:00:00+00:00",
+        "channel": "manual",
+        "volume:sum": 16998
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-10-01T00:00:00+00:00",
+        "_start_at": "2014-09-01T00:00:00+00:00",
+        "channel": "assisted-digital",
+        "volume:sum": 1809877
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-10-01T00:00:00+00:00",
+        "_start_at": "2014-09-01T00:00:00+00:00",
+        "channel": "fully-digital",
+        "volume:sum": 2855389
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-11-01T00:00:00+00:00",
+        "_start_at": "2014-10-01T00:00:00+00:00",
+        "channel": "manual",
+        "volume:sum": 14085
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-11-01T00:00:00+00:00",
+        "_start_at": "2014-10-01T00:00:00+00:00",
+        "channel": "assisted-digital",
+        "volume:sum": 1360341
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-11-01T00:00:00+00:00",
+        "_start_at": "2014-10-01T00:00:00+00:00",
+        "channel": "fully-digital",
+        "volume:sum": 2646536
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-12-01T00:00:00+00:00",
+        "_start_at": "2014-11-01T00:00:00+00:00",
+        "channel": "manual",
+        "volume:sum": 13720
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-12-01T00:00:00+00:00",
+        "_start_at": "2014-11-01T00:00:00+00:00",
+        "channel": "assisted-digital",
+        "volume:sum": 988061
+      },
+      {
+        "_count": 1,
+        "_end_at": "2014-12-01T00:00:00+00:00",
+        "_start_at": "2014-11-01T00:00:00+00:00",
+        "channel": "fully-digital",
+        "volume:sum": 2157160
+      },
+      {
+        "_count": 1,
+        "_end_at": "2015-01-01T00:00:00+00:00",
+        "_start_at": "2014-12-01T00:00:00+00:00",
+        "channel": "manual",
+        "volume:sum": 13033
+      },
+      {
+        "_count": 1,
+        "_end_at": "2015-01-01T00:00:00+00:00",
+        "_start_at": "2014-12-01T00:00:00+00:00",
+        "channel": "assisted-digital",
+        "volume:sum": 1062692
+      },
+      {
+        "_count": 1,
+        "_end_at": "2015-01-01T00:00:00+00:00",
+        "_start_at": "2014-12-01T00:00:00+00:00",
+        "channel": "fully-digital",
+        "volume:sum": 2629544
+      }
+    ]
+  },
+  "axes": {
+    "x": {
+      "label": "Date",
+      "key": "_start_at",
+      "format": {
+        "type": "date",
+        "format": "MMMM YYYY"
+      }
+    },
+    // still array?
+    "y": [
+      {
+        "format": "integer",
+        "groupId": "assisted-digital",
+        "label": "Post Office"
+      }
+    ]
+  }
+}
