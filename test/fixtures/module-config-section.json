@@ -1,0 +1,258 @@
+{
+  "moduleConfig": {
+    "info": [],
+    "description": "Performance metrics for the public facing digital booking service",
+    "module-type": "section",
+    "title": "Public digital service",
+    "slug": "public-digital-service"
+  },
+  "modules": [
+    {
+      "moduleConfig": {
+        "trim": false,
+        "migrated": true,
+        "value-attribute": "score",
+        "axis-period": "month",
+        "description": "Average score of satisfied responses",
+        "module-type": "user_satisfaction_graph",
+        "title": "User satisfaction",
+        "axes": {
+          "y": [
+            {
+              "format": "percent",
+              "key": "score",
+              "label": "User satisfaction"
+            },
+            {
+              "format": "integer",
+              "key": "rating_1",
+              "label": "Very dissatisfied"
+            },
+            {
+              "format": "integer",
+              "key": "rating_2",
+              "label": "Dissatisfied"
+            },
+            {
+              "format": "integer",
+              "key": "rating_3",
+              "label": "Neither satisfied or dissatisfied"
+            },
+            {
+              "format": "integer",
+              "key": "rating_4",
+              "label": "Satisfied"
+            },
+            {
+              "format": "integer",
+              "key": "rating_5",
+              "label": "Very satisfied"
+            }
+          ],
+          "x": {
+            "format": "date",
+            "key": "_start_at",
+            "label": "Date"
+          }
+        },
+        "modules": [],
+        "info": [
+          "Data source: GOV.UK user feedback database",
+          "<a href='/service-manual/measurement/user-satisfaction' rel='external'>User satisfaction</a> is measured by surveying users at the point of transaction completion. It is measured on a five-point scale, from most satisfied to least satisfied. The mean of these responses is converted to a percentage for display purposes."
+        ],
+        "total-attribute": "num_responses",
+        "slug": "user-satisfaction",
+        "data-source": {
+          "data-group": "book-driving-test",
+          "data-type": "user-satisfaction-score",
+          "query-params": {
+            "sort_by": "_timestamp:descending",
+            "flatten": true,
+            "limit": 2
+          }
+        }
+      },
+      "options": {"backdrop": "https://www.performance.service.gov.uk/"},
+      "axes": {
+        "y": [
+          {
+            "format": "percent",
+            "key": "score",
+            "label": "User satisfaction"
+          },
+          {
+            "format": "integer",
+            "key": "rating_1",
+            "label": "Very dissatisfied"
+          },
+          {
+            "format": "integer",
+            "key": "rating_2",
+            "label": "Dissatisfied"
+          },
+          {
+            "format": "integer",
+            "key": "rating_3",
+            "label": "Neither satisfied or dissatisfied"
+          },
+          {
+            "format": "integer",
+            "key": "rating_4",
+            "label": "Satisfied"
+          },
+          {
+            "format": "integer",
+            "key": "rating_5",
+            "label": "Very satisfied"
+          }
+        ],
+        "x": {
+          "format": "date",
+          "key": "_start_at",
+          "label": "Date"
+        }
+      },
+      "dataSource": {
+        "options": {
+          "json": true,
+          "backdrop": "https://www.performance.service.gov.uk/",
+          "url": "https://www.performance.service.gov.uk/data/book-driving-test/user-satisfaction-score?sort_by=_timestamp%3Adescending&flatten=true&limit=2"
+        },
+        "data": [
+          {
+            "_day_start_at": "2015-02-09T00:00:00+00:00",
+            "_end_at": "2015-02-16T00:00:00+00:00",
+            "_hour_start_at": "2015-02-09T00:00:00+00:00",
+            "_id": "MjAxNS0wMi0wOVQwMDowMDowMCswMDowMF8yMDE1LTAyLTE2VDAwOjAwOjAwKzAwOjAw",
+            "_month_start_at": "2015-02-01T00:00:00+00:00",
+            "_quarter_start_at": "2015-01-01T00:00:00+00:00",
+            "_start_at": "2015-02-09T00:00:00+00:00",
+            "_timestamp": "2015-02-09T00:00:00+00:00",
+            "_updated_at": "2015-02-16T00:34:30.108000+00:00",
+            "_week_start_at": "2015-02-09T00:00:00+00:00",
+            "_year_start_at": "2015-01-01T00:00:00+00:00",
+            "num_responses": 8923,
+            "rating_1": 148,
+            "rating_2": 76,
+            "rating_3": 382,
+            "rating_4": 2633,
+            "rating_5": 5684,
+            "score": 0.8818502745713326
+          },
+          {
+            "_day_start_at": "2015-02-02T00:00:00+00:00",
+            "_end_at": "2015-02-09T00:00:00+00:00",
+            "_hour_start_at": "2015-02-02T00:00:00+00:00",
+            "_id": "MjAxNS0wMi0wMlQwMDowMDowMCswMDowMF8yMDE1LTAyLTA5VDAwOjAwOjAwKzAwOjAw",
+            "_month_start_at": "2015-02-01T00:00:00+00:00",
+            "_quarter_start_at": "2015-01-01T00:00:00+00:00",
+            "_start_at": "2015-02-02T00:00:00+00:00",
+            "_timestamp": "2015-02-02T00:00:00+00:00",
+            "_updated_at": "2015-02-09T00:33:37.897000+00:00",
+            "_week_start_at": "2015-02-02T00:00:00+00:00",
+            "_year_start_at": "2015-01-01T00:00:00+00:00",
+            "num_responses": 9087,
+            "rating_1": 171,
+            "rating_2": 93,
+            "rating_3": 440,
+            "rating_4": 2702,
+            "rating_5": 5681,
+            "score": 0.8749587322548695
+          }
+        ],
+        "warning": "Warning: This data-set is unpublished. Data may be subject to change or be inaccurate."
+      }
+    },
+    {
+      "moduleConfig": {
+        "info": ["Data source: Google Analytics"],
+        "value-attribute": "avgSessionDuration:sum",
+        "description": "",
+        "module-type": "single_timeseries",
+        "title": "Average time to complete a booking",
+        "axes": {
+          "y": [
+            {
+              "label": "Average session time",
+              "format": {
+                "type": "duration",
+                "unit": "m"
+              },
+              "key": "avgSessionDuration:sum"
+            }
+          ],
+          "x": {
+            "format": "date",
+            "key": [
+              "_start_at",
+              "_end_at"
+            ],
+            "label": "Date"
+          }
+        },
+        "modules": [],
+        "format-options": {
+          "type": "duration",
+          "unit": "m"
+        },
+        "slug": "time-to-complete-booking",
+        "data-source": {
+          "data-group": "driving-test-practical-public",
+          "data-type": "time-to-complete-by-event",
+          "query-params": {
+            "duration": 52,
+            "collect": ["avgSessionDuration:sum"],
+            "period": "week",
+            "filter_by": ["eventAction:booking-complete"],
+            "flatten": true
+          }
+        }
+      },
+      "options": {"backdrop": "https://www.performance.service.gov.uk/"},
+      "axes": {
+        "y": [
+          {
+            "label": "Average session time",
+            "format": {
+              "type": "duration",
+              "unit": "m"
+            },
+            "key": "avgSessionDuration:sum"
+          }
+        ],
+        "x": {
+          "format": "date",
+          "key": [
+            "_start_at",
+            "_end_at"
+          ],
+          "label": "Date"
+        }
+      },
+      "dataSource": {
+        "options": {
+          "json": true,
+          "backdrop": "https://www.performance.service.gov.uk/",
+          "url": "https://www.performance.service.gov.uk/data/driving-test-practical-public/t…on%3Asum&period=week&filter_by=eventAction%3Abooking-complete&flatten=true"
+        },
+        "data": [
+          {
+            "_count": 1,
+            "_end_at": "2015-02-09T00:00:00+00:00",
+            "_start_at": "2015-02-02T00:00:00+00:00",
+            "avgSessionDuration:sum": 1026424.4538161524
+          },
+          {
+            "_count": 1,
+            "_end_at": "2015-02-16T00:00:00+00:00",
+            "_start_at": "2015-02-09T00:00:00+00:00",
+            "avgSessionDuration:sum": 1003774.4788787357
+          }
+        ],
+        "warning": "Warning: This data-set is unpublished. Data may be subject to change or be inaccurate."
+      }
+    }
+  ],
+  "options": {"backdrop": "https://www.performance.service.gov.uk/"}
+}
+

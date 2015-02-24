@@ -1,0 +1,148 @@
+{
+  "business-model": "Fees and charges",
+  "customer-type": "Individuals",
+  "description": "Before you can drive on public roads, you need to show you can drive safely by passing the practical driving test and the driving theory test.<br><br>More performance information for the <strong>practical driving test</strong> can be found <a href='/performance/practical-driving-test'>here</a>. The performance dashboard for the <strong>Practical driving test changes and cancellations</strong> service can be found <a href='/performance/change-practical-driving-test'>here</a>",
+  "title": "Practical driving test bookings",
+  "tagline": "",
+  "agency": {
+    "abbr": "DVSA",
+    "title": "Driver and Vehicle Standards Agency"
+  },
+  "modules": [
+    {
+      "info": [],
+      "description": "Performance metrics for the public facing digital booking service",
+      "module-type": "section",
+      "title": "Public digital service",
+      "modules": [
+        {
+          "trim": false,
+          "migrated": true,
+          "value-attribute": "score",
+          "axis-period": "month",
+          "description": "Average score of satisfied responses",
+          "module-type": "user_satisfaction_graph",
+          "title": "User satisfaction",
+          "axes": {
+            "y": [
+              {
+                "format": "percent",
+                "key": "score",
+                "label": "User satisfaction"
+              },
+              {
+                "format": "integer",
+                "key": "rating_1",
+                "label": "Very dissatisfied"
+              },
+              {
+                "format": "integer",
+                "key": "rating_2",
+                "label": "Dissatisfied"
+              },
+              {
+                "format": "integer",
+                "key": "rating_3",
+                "label": "Neither satisfied or dissatisfied"
+              },
+              {
+                "format": "integer",
+                "key": "rating_4",
+                "label": "Satisfied"
+              },
+              {
+                "format": "integer",
+                "key": "rating_5",
+                "label": "Very satisfied"
+              }
+            ],
+            "x": {
+              "format": "date",
+              "key": "_start_at",
+              "label": "Date"
+            }
+          },
+          "info": [
+            "Data source: GOV.UK user feedback database",
+            "<a href='/service-manual/measurement/user-satisfaction' rel='external'>User satisfaction</a> is measured by surveying users at the point of transaction completion. It is measured on a five-point scale, from most satisfied to least satisfied. The mean of these responses is converted to a percentage for display purposes."
+          ],
+          "total-attribute": "num_responses",
+          "slug": "user-satisfaction",
+          "data-source": {
+            "data-group": "book-driving-test",
+            "data-type": "user-satisfaction-score",
+            "query-params": {
+              "sort_by": "_timestamp:ascending"
+            }
+          }
+        },
+        {
+          "info": [
+            "Data source: Google Analytics"
+          ],
+          "value-attribute": "avgSessionDuration:sum",
+          "description": "",
+          "module-type": "single_timeseries",
+          "title": "Average time to complete a booking",
+          "axes": {
+            "y": [
+              {
+                "label": "Average session time"
+              }
+            ],
+            "x": {
+              "format": "date",
+              "key": [
+                "_start_at",
+                "_end_at"
+              ],
+              "label": "Date"
+            }
+          },
+          "format-options": {
+            "type": "duration",
+            "unit": "m"
+          },
+          "slug": "time-to-complete-booking",
+          "data-source": {
+            "data-group": "driving-test-practical-public",
+            "data-type": "time-to-complete-by-event",
+            "query-params": {
+              "duration": 52,
+              "collect": [
+                "avgSessionDuration:sum"
+              ],
+              "period": "week",
+              "filter_by": [
+                "eventAction:booking-complete"
+              ]
+            }
+          }
+        }
+      ],
+      "slug": "public-digital-service"
+    }
+  ],
+  "slug": "book-practical-driving-test",
+  "description-extra": "",
+  "costs": "",
+  "strapline": "Dashboard",
+  "published": true,
+  "department": {
+    "abbr": "DFT",
+    "title": "Department for Transport"
+  },
+  "page-type": "dashboard",
+  "other-notes": "",
+  "relatedPages": {
+    "improve-dashboard-message": true,
+    "transaction": {
+      "url": "https://www.gov.uk/book-practical-driving-test",
+      "type": "transaction",
+      "title": "Book your official practical driving or riding test"
+    },
+    "other": []
+  },
+  "dashboard-type": "transaction"
+}
+
