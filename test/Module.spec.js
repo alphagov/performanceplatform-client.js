@@ -69,10 +69,6 @@ describe('Module', function () {
       mod.moduleConfig.should.eql(moduleConfig);
     });
 
-    it('sets a datasource for the module', function () {
-      mod.dataSource.should.be.instanceOf(Datasource);
-    });
-
     describe('module axes', function () {
 
       it('should return with axes data for the KPI module', function () {
@@ -187,6 +183,11 @@ describe('Module', function () {
   });
 
   describe('getData', function () {
+
+    it('sets a datasource for the module', function () {
+      mod.getData();
+      mod.dataSource.should.be.instanceOf(Datasource);
+    });
 
     it('calls getData on the dataSource', function () {
       mod.getData();
