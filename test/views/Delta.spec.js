@@ -1,4 +1,5 @@
 var Delta = require('../../lib/views/Delta');
+var groupedTimeSeriesData = require('../fixtures/module-config-grouped-time-series.json');
 
 var moduleData = {
   moduleConfig: {
@@ -197,7 +198,7 @@ describe('Delta', function () {
             'query-params': {
               'duration': 52,
               'collect': ['avgSessionDuration:sum'],
-              'group_by': 'stage',
+              'group_by': ['stage'],
               'period': 'week',
               'filter_by': ['stage:thank-you']
             }
@@ -225,6 +226,61 @@ describe('Delta', function () {
         delta.data[1]._end_at.should.equal('2013-12-23T00:00:00+00:00');
       });
 
+    });
+
+    describe('using groupedTimeSeriesData', function () {
+      beforeEach(function () {
+        delta = new Delta(groupedTimeSeriesData);
+      });
+
+      it('should group the data with the group_by', function () {
+        delta.data.should.have.keys(['fully-digital', 'assisted-digital', 'manual']);
+      });
+
+      it('creates deltas for each series', function () {
+        delta.data['fully-digital'][0].should.have.keys(
+          [
+            '_count',
+            '_end_at',
+            '_start_at',
+            'channel',
+            'formatted_end_at',
+            'formatted_start_at',
+            'formatted_value',
+            'period',
+            'volume:sum',
+            'formatted_change_from_previous'
+          ]
+        );
+        delta.data['assisted-digital'][0].should.have.keys(
+          [
+            '_count',
+            '_end_at',
+            '_start_at',
+            'channel',
+            'formatted_end_at',
+            'formatted_start_at',
+            'formatted_value',
+            'period',
+            'volume:sum',
+            'formatted_change_from_previous'
+          ]
+        );
+        delta.data['manual'][0].should.have.keys(
+          [
+            '_count',
+            '_end_at',
+            '_start_at',
+            'channel',
+            'formatted_end_at',
+            'formatted_start_at',
+            'formatted_value',
+            'period',
+            'volume:sum',
+            'formatted_change_from_previous'
+          ]
+        );
+      });
     });
   });
 
