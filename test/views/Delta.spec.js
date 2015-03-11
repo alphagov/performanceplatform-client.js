@@ -1,5 +1,7 @@
 var Delta = require('../../lib/views/Delta');
 var groupedTimeSeriesData = require('../fixtures/module-config-grouped-time-series.json');
+var groupedTimeSeriesDataMultipleGroupBy =
+  require('../fixtures/module-config-grouped-time-series-multiple-group-by.json');
 
 var moduleData = {
   moduleConfig: {
@@ -278,6 +280,126 @@ describe('Delta', function () {
             'period',
             'volume:sum',
             'formatted_change_from_previous'
+          ]
+        );
+      });
+    });
+
+    describe('multiple group_by', function () {
+
+      beforeEach(function () {
+        delta = new Delta(groupedTimeSeriesDataMultipleGroupBy);
+      });
+
+      it('should group the data with the group_by', function () {
+        delta.data.should.have.keys(
+          [
+            '2013/14:started',
+            '2013/14:submitted',
+            '2014/15:started',
+            '2014/15:submitted',
+            '2015/16:started',
+            '2015/16:submitted'
+          ]
+        );
+      });
+
+      it('creates deltas for each series', function () {
+        delta.data['2013/14:started'][0].should.have.keys(
+          [
+            '_count',
+            '_end_at',
+            '_start_at',
+            'academic_year',
+            'formatted_end_at',
+            'formatted_start_at',
+            'formatted_value',
+            'period',
+            'count:sum',
+            'formatted_change_from_previous',
+            'formatted_date_range',
+            'stage'
+          ]
+        );
+
+        delta.data['2013/14:submitted'][0].should.have.keys(
+          [
+            '_count',
+            '_end_at',
+            '_start_at',
+            'academic_year',
+            'formatted_end_at',
+            'formatted_start_at',
+            'formatted_value',
+            'period',
+            'count:sum',
+            'formatted_change_from_previous',
+            'formatted_date_range',
+            'stage'
+          ]
+        );
+        delta.data['2014/15:started'][0].should.have.keys(
+          [
+            '_count',
+            '_end_at',
+            '_start_at',
+            'academic_year',
+            'formatted_end_at',
+            'formatted_start_at',
+            'formatted_value',
+            'period',
+            'count:sum',
+            'formatted_change_from_previous',
+            'formatted_date_range',
+            'stage'
+          ]
+        );
+        delta.data['2014/15:submitted'][0].should.have.keys(
+          [
+            '_count',
+            '_end_at',
+            '_start_at',
+            'academic_year',
+            'formatted_end_at',
+            'formatted_start_at',
+            'formatted_value',
+            'period',
+            'count:sum',
+            'formatted_change_from_previous',
+            'formatted_date_range',
+            'stage'
+          ]
+        );
+        delta.data['2015/16:started'][0].should.have.keys(
+          [
+            '_count',
+            '_end_at',
+            '_start_at',
+            'academic_year',
+            'formatted_end_at',
+            'formatted_start_at',
+            'formatted_value',
+            'period',
+            'count:sum',
+            'formatted_change_from_previous',
+            'formatted_date_range',
+            'stage'
+          ]
+        );
+        delta.data['2015/16:submitted'][0].should.have.keys(
+          [
+            '_count',
+            '_end_at',
+            '_start_at',
+            'academic_year',
+            'formatted_end_at',
+            'formatted_start_at',
+            'formatted_value',
+            'period',
+            'count:sum',
+            'formatted_change_from_previous',
+            'formatted_date_range',
+            'stage'
           ]
         );
       });

@@ -142,7 +142,7 @@
         "_end_at": "2013-12-16T00:00:00+00:00",
         "_start_at": "2013-12-09T00:00:00+00:00",
         "academic_year": "2014/15",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -150,7 +150,7 @@
         "_end_at": "2013-12-16T00:00:00+00:00",
         "_start_at": "2013-12-09T00:00:00+00:00",
         "academic_year": "2014/15",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -174,7 +174,7 @@
         "_end_at": "2013-12-16T00:00:00+00:00",
         "_start_at": "2013-12-09T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -182,7 +182,7 @@
         "_end_at": "2013-12-16T00:00:00+00:00",
         "_start_at": "2013-12-09T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -190,7 +190,7 @@
         "_end_at": "2013-12-23T00:00:00+00:00",
         "_start_at": "2013-12-16T00:00:00+00:00",
         "academic_year": "2014/15",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -198,7 +198,7 @@
         "_end_at": "2013-12-23T00:00:00+00:00",
         "_start_at": "2013-12-16T00:00:00+00:00",
         "academic_year": "2014/15",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -222,7 +222,7 @@
         "_end_at": "2013-12-23T00:00:00+00:00",
         "_start_at": "2013-12-16T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -230,7 +230,7 @@
         "_end_at": "2013-12-23T00:00:00+00:00",
         "_start_at": "2013-12-16T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -238,7 +238,7 @@
         "_end_at": "2013-12-30T00:00:00+00:00",
         "_start_at": "2013-12-23T00:00:00+00:00",
         "academic_year": "2014/15",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -246,7 +246,7 @@
         "_end_at": "2013-12-30T00:00:00+00:00",
         "_start_at": "2013-12-23T00:00:00+00:00",
         "academic_year": "2014/15",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -270,7 +270,7 @@
         "_end_at": "2013-12-30T00:00:00+00:00",
         "_start_at": "2013-12-23T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -278,7 +278,7 @@
         "_end_at": "2013-12-30T00:00:00+00:00",
         "_start_at": "2013-12-23T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -286,7 +286,7 @@
         "_end_at": "2014-01-06T00:00:00+00:00",
         "_start_at": "2013-12-30T00:00:00+00:00",
         "academic_year": "2014/15",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -294,7 +294,7 @@
         "_end_at": "2014-01-06T00:00:00+00:00",
         "_start_at": "2013-12-30T00:00:00+00:00",
         "academic_year": "2014/15",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -318,7 +318,7 @@
         "_end_at": "2014-01-06T00:00:00+00:00",
         "_start_at": "2013-12-30T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -326,7 +326,7 @@
         "_end_at": "2014-01-06T00:00:00+00:00",
         "_start_at": "2013-12-30T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -334,7 +334,7 @@
         "_end_at": "2014-01-13T00:00:00+00:00",
         "_start_at": "2014-01-06T00:00:00+00:00",
         "academic_year": "2014/15",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -342,7 +342,7 @@
         "_end_at": "2014-01-13T00:00:00+00:00",
         "_start_at": "2014-01-06T00:00:00+00:00",
         "academic_year": "2014/15",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -366,7 +366,7 @@
         "_end_at": "2014-01-13T00:00:00+00:00",
         "_start_at": "2014-01-06T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -374,7 +374,7 @@
         "_end_at": "2014-01-13T00:00:00+00:00",
         "_start_at": "2014-01-06T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -414,7 +414,7 @@
         "_end_at": "2014-01-20T00:00:00+00:00",
         "_start_at": "2014-01-13T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -422,7 +422,7 @@
         "_end_at": "2014-01-20T00:00:00+00:00",
         "_start_at": "2014-01-13T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -462,7 +462,7 @@
         "_end_at": "2014-01-27T00:00:00+00:00",
         "_start_at": "2014-01-20T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -470,7 +470,7 @@
         "_end_at": "2014-01-27T00:00:00+00:00",
         "_start_at": "2014-01-20T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -510,7 +510,7 @@
         "_end_at": "2014-02-03T00:00:00+00:00",
         "_start_at": "2014-01-27T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -518,7 +518,7 @@
         "_end_at": "2014-02-03T00:00:00+00:00",
         "_start_at": "2014-01-27T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -558,7 +558,7 @@
         "_end_at": "2014-02-10T00:00:00+00:00",
         "_start_at": "2014-02-03T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -566,7 +566,7 @@
         "_end_at": "2014-02-10T00:00:00+00:00",
         "_start_at": "2014-02-03T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -606,7 +606,7 @@
         "_end_at": "2014-02-17T00:00:00+00:00",
         "_start_at": "2014-02-10T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -614,7 +614,7 @@
         "_end_at": "2014-02-17T00:00:00+00:00",
         "_start_at": "2014-02-10T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -654,7 +654,7 @@
         "_end_at": "2014-02-24T00:00:00+00:00",
         "_start_at": "2014-02-17T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -662,7 +662,7 @@
         "_end_at": "2014-02-24T00:00:00+00:00",
         "_start_at": "2014-02-17T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -702,7 +702,7 @@
         "_end_at": "2014-03-03T00:00:00+00:00",
         "_start_at": "2014-02-24T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -710,7 +710,7 @@
         "_end_at": "2014-03-03T00:00:00+00:00",
         "_start_at": "2014-02-24T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -750,7 +750,7 @@
         "_end_at": "2014-03-10T00:00:00+00:00",
         "_start_at": "2014-03-03T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -758,7 +758,7 @@
         "_end_at": "2014-03-10T00:00:00+00:00",
         "_start_at": "2014-03-03T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -798,7 +798,7 @@
         "_end_at": "2014-03-17T00:00:00+00:00",
         "_start_at": "2014-03-10T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -806,7 +806,7 @@
         "_end_at": "2014-03-17T00:00:00+00:00",
         "_start_at": "2014-03-10T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -846,7 +846,7 @@
         "_end_at": "2014-03-24T00:00:00+00:00",
         "_start_at": "2014-03-17T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -854,7 +854,7 @@
         "_end_at": "2014-03-24T00:00:00+00:00",
         "_start_at": "2014-03-17T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -894,7 +894,7 @@
         "_end_at": "2014-03-31T00:00:00+00:00",
         "_start_at": "2014-03-24T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -902,7 +902,7 @@
         "_end_at": "2014-03-31T00:00:00+00:00",
         "_start_at": "2014-03-24T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -942,7 +942,7 @@
         "_end_at": "2014-04-07T00:00:00+00:00",
         "_start_at": "2014-03-31T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -950,7 +950,7 @@
         "_end_at": "2014-04-07T00:00:00+00:00",
         "_start_at": "2014-03-31T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -990,7 +990,7 @@
         "_end_at": "2014-04-14T00:00:00+00:00",
         "_start_at": "2014-04-07T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -998,7 +998,7 @@
         "_end_at": "2014-04-14T00:00:00+00:00",
         "_start_at": "2014-04-07T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -1038,7 +1038,7 @@
         "_end_at": "2014-04-21T00:00:00+00:00",
         "_start_at": "2014-04-14T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -1046,7 +1046,7 @@
         "_end_at": "2014-04-21T00:00:00+00:00",
         "_start_at": "2014-04-14T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -1086,7 +1086,7 @@
         "_end_at": "2014-04-28T00:00:00+00:00",
         "_start_at": "2014-04-21T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -1094,7 +1094,7 @@
         "_end_at": "2014-04-28T00:00:00+00:00",
         "_start_at": "2014-04-21T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -1134,7 +1134,7 @@
         "_end_at": "2014-05-05T00:00:00+00:00",
         "_start_at": "2014-04-28T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -1142,7 +1142,7 @@
         "_end_at": "2014-05-05T00:00:00+00:00",
         "_start_at": "2014-04-28T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -1182,7 +1182,7 @@
         "_end_at": "2014-05-12T00:00:00+00:00",
         "_start_at": "2014-05-05T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -1190,7 +1190,7 @@
         "_end_at": "2014-05-12T00:00:00+00:00",
         "_start_at": "2014-05-05T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -1230,7 +1230,7 @@
         "_end_at": "2014-05-19T00:00:00+00:00",
         "_start_at": "2014-05-12T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -1238,7 +1238,7 @@
         "_end_at": "2014-05-19T00:00:00+00:00",
         "_start_at": "2014-05-12T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -1278,7 +1278,7 @@
         "_end_at": "2014-05-26T00:00:00+00:00",
         "_start_at": "2014-05-19T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -1286,7 +1286,7 @@
         "_end_at": "2014-05-26T00:00:00+00:00",
         "_start_at": "2014-05-19T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -1326,7 +1326,7 @@
         "_end_at": "2014-06-02T00:00:00+00:00",
         "_start_at": "2014-05-26T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -1334,7 +1334,7 @@
         "_end_at": "2014-06-02T00:00:00+00:00",
         "_start_at": "2014-05-26T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -1374,7 +1374,7 @@
         "_end_at": "2014-06-09T00:00:00+00:00",
         "_start_at": "2014-06-02T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -1382,7 +1382,7 @@
         "_end_at": "2014-06-09T00:00:00+00:00",
         "_start_at": "2014-06-02T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -1422,7 +1422,7 @@
         "_end_at": "2014-06-16T00:00:00+00:00",
         "_start_at": "2014-06-09T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -1430,7 +1430,7 @@
         "_end_at": "2014-06-16T00:00:00+00:00",
         "_start_at": "2014-06-09T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -1470,7 +1470,7 @@
         "_end_at": "2014-06-23T00:00:00+00:00",
         "_start_at": "2014-06-16T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -1478,7 +1478,7 @@
         "_end_at": "2014-06-23T00:00:00+00:00",
         "_start_at": "2014-06-16T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -1518,7 +1518,7 @@
         "_end_at": "2014-06-30T00:00:00+00:00",
         "_start_at": "2014-06-23T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -1526,7 +1526,7 @@
         "_end_at": "2014-06-30T00:00:00+00:00",
         "_start_at": "2014-06-23T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -1566,7 +1566,7 @@
         "_end_at": "2014-07-07T00:00:00+00:00",
         "_start_at": "2014-06-30T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -1574,7 +1574,7 @@
         "_end_at": "2014-07-07T00:00:00+00:00",
         "_start_at": "2014-06-30T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -1614,7 +1614,7 @@
         "_end_at": "2014-07-14T00:00:00+00:00",
         "_start_at": "2014-07-07T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -1622,7 +1622,7 @@
         "_end_at": "2014-07-14T00:00:00+00:00",
         "_start_at": "2014-07-07T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -1662,7 +1662,7 @@
         "_end_at": "2014-07-21T00:00:00+00:00",
         "_start_at": "2014-07-14T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -1670,7 +1670,7 @@
         "_end_at": "2014-07-21T00:00:00+00:00",
         "_start_at": "2014-07-14T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -1710,7 +1710,7 @@
         "_end_at": "2014-07-28T00:00:00+00:00",
         "_start_at": "2014-07-21T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -1718,7 +1718,7 @@
         "_end_at": "2014-07-28T00:00:00+00:00",
         "_start_at": "2014-07-21T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -1758,7 +1758,7 @@
         "_end_at": "2014-08-04T00:00:00+00:00",
         "_start_at": "2014-07-28T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -1766,7 +1766,7 @@
         "_end_at": "2014-08-04T00:00:00+00:00",
         "_start_at": "2014-07-28T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -1806,7 +1806,7 @@
         "_end_at": "2014-08-11T00:00:00+00:00",
         "_start_at": "2014-08-04T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -1814,7 +1814,7 @@
         "_end_at": "2014-08-11T00:00:00+00:00",
         "_start_at": "2014-08-04T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -1854,7 +1854,7 @@
         "_end_at": "2014-08-18T00:00:00+00:00",
         "_start_at": "2014-08-11T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -1862,7 +1862,7 @@
         "_end_at": "2014-08-18T00:00:00+00:00",
         "_start_at": "2014-08-11T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -1902,7 +1902,7 @@
         "_end_at": "2014-08-25T00:00:00+00:00",
         "_start_at": "2014-08-18T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -1910,7 +1910,7 @@
         "_end_at": "2014-08-25T00:00:00+00:00",
         "_start_at": "2014-08-18T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -1950,7 +1950,7 @@
         "_end_at": "2014-09-01T00:00:00+00:00",
         "_start_at": "2014-08-25T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -1958,7 +1958,7 @@
         "_end_at": "2014-09-01T00:00:00+00:00",
         "_start_at": "2014-08-25T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -1998,7 +1998,7 @@
         "_end_at": "2014-09-08T00:00:00+00:00",
         "_start_at": "2014-09-01T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -2006,7 +2006,7 @@
         "_end_at": "2014-09-08T00:00:00+00:00",
         "_start_at": "2014-09-01T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -2046,7 +2046,7 @@
         "_end_at": "2014-09-15T00:00:00+00:00",
         "_start_at": "2014-09-08T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -2054,7 +2054,7 @@
         "_end_at": "2014-09-15T00:00:00+00:00",
         "_start_at": "2014-09-08T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -2094,7 +2094,7 @@
         "_end_at": "2014-09-22T00:00:00+00:00",
         "_start_at": "2014-09-15T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -2102,7 +2102,7 @@
         "_end_at": "2014-09-22T00:00:00+00:00",
         "_start_at": "2014-09-15T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -2142,7 +2142,7 @@
         "_end_at": "2014-09-29T00:00:00+00:00",
         "_start_at": "2014-09-22T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -2150,7 +2150,7 @@
         "_end_at": "2014-09-29T00:00:00+00:00",
         "_start_at": "2014-09-22T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -2190,7 +2190,7 @@
         "_end_at": "2014-10-06T00:00:00+00:00",
         "_start_at": "2014-09-29T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -2198,7 +2198,7 @@
         "_end_at": "2014-10-06T00:00:00+00:00",
         "_start_at": "2014-09-29T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -2238,7 +2238,7 @@
         "_end_at": "2014-10-13T00:00:00+00:00",
         "_start_at": "2014-10-06T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -2246,7 +2246,7 @@
         "_end_at": "2014-10-13T00:00:00+00:00",
         "_start_at": "2014-10-06T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -2286,7 +2286,7 @@
         "_end_at": "2014-10-20T00:00:00+00:00",
         "_start_at": "2014-10-13T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -2294,7 +2294,7 @@
         "_end_at": "2014-10-20T00:00:00+00:00",
         "_start_at": "2014-10-13T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -2334,7 +2334,7 @@
         "_end_at": "2014-10-27T00:00:00+00:00",
         "_start_at": "2014-10-20T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -2342,7 +2342,7 @@
         "_end_at": "2014-10-27T00:00:00+00:00",
         "_start_at": "2014-10-20T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -2382,7 +2382,7 @@
         "_end_at": "2014-11-03T00:00:00+00:00",
         "_start_at": "2014-10-27T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -2390,7 +2390,7 @@
         "_end_at": "2014-11-03T00:00:00+00:00",
         "_start_at": "2014-10-27T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -2430,7 +2430,7 @@
         "_end_at": "2014-11-10T00:00:00+00:00",
         "_start_at": "2014-11-03T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -2438,7 +2438,7 @@
         "_end_at": "2014-11-10T00:00:00+00:00",
         "_start_at": "2014-11-03T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -2478,7 +2478,7 @@
         "_end_at": "2014-11-17T00:00:00+00:00",
         "_start_at": "2014-11-10T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -2486,7 +2486,7 @@
         "_end_at": "2014-11-17T00:00:00+00:00",
         "_start_at": "2014-11-10T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -2526,7 +2526,7 @@
         "_end_at": "2014-11-24T00:00:00+00:00",
         "_start_at": "2014-11-17T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -2534,7 +2534,7 @@
         "_end_at": "2014-11-24T00:00:00+00:00",
         "_start_at": "2014-11-17T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -2574,7 +2574,7 @@
         "_end_at": "2014-12-01T00:00:00+00:00",
         "_start_at": "2014-11-24T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -2582,7 +2582,7 @@
         "_end_at": "2014-12-01T00:00:00+00:00",
         "_start_at": "2014-11-24T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -2622,7 +2622,7 @@
         "_end_at": "2014-12-08T00:00:00+00:00",
         "_start_at": "2014-12-01T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -2630,7 +2630,7 @@
         "_end_at": "2014-12-08T00:00:00+00:00",
         "_start_at": "2014-12-01T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -2670,7 +2670,7 @@
         "_end_at": "2014-12-15T00:00:00+00:00",
         "_start_at": "2014-12-08T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -2678,7 +2678,7 @@
         "_end_at": "2014-12-15T00:00:00+00:00",
         "_start_at": "2014-12-08T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -2718,7 +2718,7 @@
         "_end_at": "2014-12-22T00:00:00+00:00",
         "_start_at": "2014-12-15T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -2726,7 +2726,7 @@
         "_end_at": "2014-12-22T00:00:00+00:00",
         "_start_at": "2014-12-15T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -2766,7 +2766,7 @@
         "_end_at": "2014-12-29T00:00:00+00:00",
         "_start_at": "2014-12-22T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -2774,7 +2774,7 @@
         "_end_at": "2014-12-29T00:00:00+00:00",
         "_start_at": "2014-12-22T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -2814,7 +2814,7 @@
         "_end_at": "2015-01-05T00:00:00+00:00",
         "_start_at": "2014-12-29T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -2822,7 +2822,7 @@
         "_end_at": "2015-01-05T00:00:00+00:00",
         "_start_at": "2014-12-29T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -2862,7 +2862,7 @@
         "_end_at": "2015-01-12T00:00:00+00:00",
         "_start_at": "2015-01-05T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -2870,7 +2870,7 @@
         "_end_at": "2015-01-12T00:00:00+00:00",
         "_start_at": "2015-01-05T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -2910,7 +2910,7 @@
         "_end_at": "2015-01-19T00:00:00+00:00",
         "_start_at": "2015-01-12T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -2918,7 +2918,7 @@
         "_end_at": "2015-01-19T00:00:00+00:00",
         "_start_at": "2015-01-12T00:00:00+00:00",
         "academic_year": "2015/16",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -2990,7 +2990,7 @@
         "_end_at": "2015-02-02T00:00:00+00:00",
         "_start_at": "2015-01-26T00:00:00+00:00",
         "academic_year": "2013/14",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -2998,7 +2998,7 @@
         "_end_at": "2015-02-02T00:00:00+00:00",
         "_start_at": "2015-01-26T00:00:00+00:00",
         "academic_year": "2013/14",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -3038,7 +3038,7 @@
         "_end_at": "2015-02-09T00:00:00+00:00",
         "_start_at": "2015-02-02T00:00:00+00:00",
         "academic_year": "2013/14",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -3046,7 +3046,7 @@
         "_end_at": "2015-02-09T00:00:00+00:00",
         "_start_at": "2015-02-02T00:00:00+00:00",
         "academic_year": "2013/14",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -3086,7 +3086,7 @@
         "_end_at": "2015-02-16T00:00:00+00:00",
         "_start_at": "2015-02-09T00:00:00+00:00",
         "academic_year": "2013/14",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -3094,7 +3094,7 @@
         "_end_at": "2015-02-16T00:00:00+00:00",
         "_start_at": "2015-02-09T00:00:00+00:00",
         "academic_year": "2013/14",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -3134,7 +3134,7 @@
         "_end_at": "2015-02-23T00:00:00+00:00",
         "_start_at": "2015-02-16T00:00:00+00:00",
         "academic_year": "2013/14",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -3142,7 +3142,7 @@
         "_end_at": "2015-02-23T00:00:00+00:00",
         "_start_at": "2015-02-16T00:00:00+00:00",
         "academic_year": "2013/14",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -3182,7 +3182,7 @@
         "_end_at": "2015-03-02T00:00:00+00:00",
         "_start_at": "2015-02-23T00:00:00+00:00",
         "academic_year": "2013/14",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -3190,7 +3190,7 @@
         "_end_at": "2015-03-02T00:00:00+00:00",
         "_start_at": "2015-02-23T00:00:00+00:00",
         "academic_year": "2013/14",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
@@ -3230,7 +3230,7 @@
         "_end_at": "2015-03-09T00:00:00+00:00",
         "_start_at": "2015-03-02T00:00:00+00:00",
         "academic_year": "2013/14",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "started"
       },
       {
@@ -3238,7 +3238,7 @@
         "_end_at": "2015-03-09T00:00:00+00:00",
         "_start_at": "2015-03-02T00:00:00+00:00",
         "academic_year": "2013/14",
-        "count:sum": null,
+        "count:sum": 1000,
         "stage": "submitted"
       },
       {
