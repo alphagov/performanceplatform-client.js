@@ -282,6 +282,57 @@ describe('Delta', function () {
             'formatted_change_from_previous'
           ]
         );
+        delta.data['fully-digital'][0].should.eql(
+          {
+            '_count': 1,
+            '_end_at': '2015-01-01T00:00:00+00:00',
+            '_start_at': '2014-12-01T00:00:00+00:00',
+            'channel': 'fully-digital',
+            'volume:sum': 2629544,
+            'formatted_change_from_previous': {
+              'change': '+21.90%',
+              'trend': 'increase'
+            },
+            'formatted_value': 2629544,
+            'formatted_start_at': '1 December 2014',
+            'formatted_end_at': '31 December 2014',
+            'period': 'a month'
+          }
+        );
+        delta.data['assisted-digital'][0].should.eql(
+          {
+            '_count': 1,
+            '_end_at': '2015-01-01T00:00:00+00:00',
+            '_start_at': '2014-12-01T00:00:00+00:00',
+            'channel': 'assisted-digital',
+            'volume:sum': 1062692,
+            'formatted_change_from_previous': {
+              'change': '+7.55%',
+              'trend': 'increase'
+            },
+            'formatted_value': 1062692,
+            'formatted_start_at': '1 December 2014',
+            'formatted_end_at': '31 December 2014',
+            'period': 'a month'
+          }
+        );
+        delta.data['manual'][0].should.eql(
+          {
+            '_count': 1,
+            '_end_at': '2015-01-01T00:00:00+00:00',
+            '_start_at': '2014-12-01T00:00:00+00:00',
+            'channel': 'manual',
+            'volume:sum': 13033,
+            'formatted_change_from_previous': {
+              'change': '−5.01%',
+              'trend': 'decrease'
+            },
+            'formatted_value': 13033,
+            'formatted_start_at': '1 December 2014',
+            'formatted_end_at': '31 December 2014',
+            'period': 'a month'
+          }
+        );
       });
     });
 
@@ -401,6 +452,126 @@ describe('Delta', function () {
             'formatted_date_range',
             'stage'
           ]
+        );
+
+        delta.data['2013/14:started'][0].should.eql(
+          {
+            '_count': 0,
+            '_end_at': '2015-03-09T00:00:00+00:00',
+            '_start_at': '2015-03-02T00:00:00+00:00',
+            'academic_year': '2013/14',
+            'count:sum': 1000,
+            'stage': 'started',
+            'formatted_change_from_previous': {
+              'change': '0%',
+              'trend': 'no-change'
+            },
+            'formatted_value': 1000,
+            'formatted_date_range': '2 to 8 March 2015',
+            'formatted_start_at': '2 March 2015',
+            'formatted_end_at': '8 March 2015',
+            'period': '7 days'
+          }
+        );
+
+        delta.data['2013/14:submitted'][0].should.eql(
+          {
+            '_count': 0,
+            '_end_at': '2015-03-09T00:00:00+00:00',
+            '_start_at': '2015-03-02T00:00:00+00:00',
+            'academic_year': '2013/14',
+            'count:sum': 1000,
+            'stage': 'submitted',
+            'formatted_change_from_previous': {
+              'change': '0%',
+              'trend': 'no-change'
+            },
+            'formatted_value': 1000,
+            'formatted_date_range': '2 to 8 March 2015',
+            'formatted_start_at': '2 March 2015',
+            'formatted_end_at': '8 March 2015',
+            'period': '7 days'
+          }
+        );
+
+        delta.data['2014/15:started'][0].should.eql(
+          {
+            '_count': 51,
+            '_end_at': '2015-03-09T00:00:00+00:00',
+            '_start_at': '2015-03-02T00:00:00+00:00',
+            'academic_year': '2014/15',
+            'count:sum': 874,
+            'stage': 'started',
+            'formatted_change_from_previous': {
+              'change': '−1.91%',
+              'trend': 'decrease'
+            },
+            'formatted_value': 874,
+            'formatted_date_range': '2 to 8 March 2015',
+            'formatted_start_at': '2 March 2015',
+            'formatted_end_at': '8 March 2015',
+            'period': '7 days'
+          }
+        );
+
+        delta.data['2014/15:submitted'][0].should.eql(
+          {
+            '_count': 49,
+            '_end_at': '2015-03-09T00:00:00+00:00',
+            '_start_at': '2015-03-02T00:00:00+00:00',
+            'academic_year': '2014/15',
+            'count:sum': 774,
+            'stage': 'submitted',
+            'formatted_change_from_previous': {
+              'change': '−6.52%',
+              'trend': 'decrease'
+            },
+            'formatted_value': 774,
+            'formatted_date_range': '2 to 8 March 2015',
+            'formatted_start_at': '2 March 2015',
+            'formatted_end_at': '8 March 2015',
+            'period': '7 days'
+          }
+        );
+
+        delta.data['2015/16:started'][0].should.eql(
+          {
+            '_count': 102,
+            '_end_at': '2015-03-09T00:00:00+00:00',
+            '_start_at': '2015-03-02T00:00:00+00:00',
+            'academic_year': '2015/16',
+            'count:sum': 38693,
+            'stage': 'started',
+            'formatted_change_from_previous': {
+              'change': '+92.20%',
+              'trend': 'increase'
+            },
+            'formatted_value': 38693,
+            'formatted_date_range': '2 to 8 March 2015',
+            'formatted_start_at': '2 March 2015',
+            'formatted_end_at': '8 March 2015',
+            'period': '7 days'
+          }
+        );
+
+        delta.data['2015/16:submitted'][0].should.eql(
+          {
+            '_count': 101,
+            '_end_at': '2015-03-09T00:00:00+00:00',
+            '_start_at': '2015-03-02T00:00:00+00:00',
+            'academic_year': '2015/16',
+            'count:sum': 34132,
+            'stage': 'submitted',
+            'formatted_change_from_previous': {
+              'change': '+87.13%',
+              'trend': 'increase'
+            },
+            'formatted_value': 34132,
+            'formatted_date_range': '2 to 8 March 2015',
+            'formatted_start_at': '2 March 2015',
+            'formatted_end_at': '8 March 2015',
+            'period': '7 days'
+          }
         );
       });
     });
