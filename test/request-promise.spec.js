@@ -65,25 +65,6 @@ describe('Request-Promise', function () {
 
     requestOptions.should.eql({
       foo: 'bar',
-      headers: {
-        'user-agent': require('../package.json')['name'] + '/' +
-          require('../package.json')['version']
-      },
-      json: true,
-      url: 'http://baseurl.com/path'
-    });
-  });
-
-  it('should respect a user-agent override in the request', function () {
-    requestPromise({url: 'http://baseurl.com/path', foo: 'bar', json: true,
-      headers:{ 'user-agent':'Something else'}});
-    var requestOptions = stub.getCall(0).args[0];
-
-    requestOptions.should.eql({
-      foo: 'bar',
-      headers: {
-        'user-agent': 'Something else'
-      },
       json: true,
       url: 'http://baseurl.com/path'
     });
