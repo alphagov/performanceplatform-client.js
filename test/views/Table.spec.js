@@ -106,7 +106,6 @@ describe('Table View', function () {
         ]
       ]);
     });
-
   });
 
   describe('render()', function () {
@@ -1350,6 +1349,71 @@ describe('Table View', function () {
           ]
         ]);
       });
+    });
+  });
+
+  describe('limits', function () {
+    var grouped;
+    beforeEach(function () {
+      grouped = _.cloneDeep(require('../fixtures/module-config-grouped-time-series.json'));
+    });
+
+    it('will limit the rowns of a table', function () {
+      table = new Table(grouped, {rowsLimit: 1});
+
+      table.data.should.eql([
+        [ 'Date', 'January 2014' ],
+        [ 'Digital and automated phone', 1863942 ],
+        [ 'Post Office', 1306292 ],
+        [ 'DVLA centre', 13603 ],
+        [ 'Totals', 3183837 ]
+      ]);
+    });
+    it('will limit the columns of a table', function () {
+      table = new Table(grouped, {colsLimit: 1});
+
+      table.data.should.eql([
+        [ 'Date',
+          'January 2014',
+          'February 2014',
+          'March 2014',
+          'April 2014',
+          'May 2014',
+          'June 2014',
+          'July 2014',
+          'August 2014',
+          'September 2014',
+          'October 2014',
+          'November 2014',
+          'December 2014'
+        ],
+        [ 'Digital and automated phone',
+          1863942,
+          2514166,
+          2167084,
+          2376142,
+          2115132,
+          2032933,
+          2207387,
+          2189767,
+          2855389,
+          2646536,
+          2157160,
+          2629544
+        ]
+      ]);
+    });
+    it('will limit both cols and rows', function () {
+      table = new Table(grouped, {
+        colsLimit: 2,
+        rowsLimit: 2
+      });
+
+      table.data.should.eql([
+        [ 'Date', 'January 2014', 'February 2014' ],
+        [ 'Digital and automated phone', 1863942, 2514166 ],
+        [ 'Post Office', 1306292, 1637752 ]
+      ]);
     });
   });
 
