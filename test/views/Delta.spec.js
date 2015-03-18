@@ -296,7 +296,7 @@ describe('Delta', function () {
             'formatted_value': 2629544,
             'formatted_start_at': '1 December 2014',
             'formatted_end_at': '31 December 2014',
-            'period': 'a month'
+            'period': 'month'
           }
         );
         delta.data['assisted-digital'][0].should.eql(
@@ -313,7 +313,7 @@ describe('Delta', function () {
             'formatted_value': 1062692,
             'formatted_start_at': '1 December 2014',
             'formatted_end_at': '31 December 2014',
-            'period': 'a month'
+            'period': 'month'
           }
         );
         delta.data['manual'][0].should.eql(
@@ -330,7 +330,7 @@ describe('Delta', function () {
             'formatted_value': 13033,
             'formatted_start_at': '1 December 2014',
             'formatted_end_at': '31 December 2014',
-            'period': 'a month'
+            'period': 'month'
           }
         );
       });
