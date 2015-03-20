@@ -2,6 +2,7 @@ var Delta = require('../../lib/views/Delta');
 var groupedTimeSeriesData = require('../fixtures/module-config-grouped-time-series.json');
 var groupedTimeSeriesDataMultipleGroupBy =
   require('../fixtures/module-config-grouped-time-series-multiple-group-by.json');
+var _ = require('lodash');
 
 var moduleData = {
   moduleConfig: {
@@ -232,7 +233,7 @@ describe('Delta', function () {
 
     describe('using groupedTimeSeriesData', function () {
       beforeEach(function () {
-        delta = new Delta(groupedTimeSeriesData);
+        delta = new Delta(_.cloneDeep(groupedTimeSeriesData));
       });
 
       it('should group the data with the group_by', function () {
@@ -333,6 +334,34 @@ describe('Delta', function () {
             'period': 'month'
           }
         );
+      });
+    });
+
+    describe('show-total-lines', function () {
+      beforeEach(function () {
+        var totalLines = _.cloneDeep(groupedTimeSeriesData);
+
+        totalLines.moduleConfig['show-total-lines'] = true;
+        totalLines.axes.y.push({
+          'format': 'integer',
+          'groupId': 'total',
+          'label': 'Totals'
+        });
+
+        delta = new Delta(totalLines);
+      });
+
+      it('will create a new total series', function () {
+        delta.data.should.have.keys(['fully-digital', 'assisted-digital', 'manual', 'total']);
+      });
+
+      it('will sum up all series into a total series', function () {
+        delta.data['fully-digital'][0]['volume:sum'].should.eql(2629544);
+        delta.data['assisted-digital'][0]['volume:sum'].should.eql(1062692);
+        delta.data['manual'][0]['volume:sum'].should.eql(13033);
+
+        //sums the above together
+        delta.data['total'][0]['volume:sum'].should.eql(3705269);
       });
     });
 
