@@ -77,12 +77,6 @@ describe('Delta', function () {
       Delta.prototype.createDeltas.restore();
     });
 
-    it('should set config, data and axes from the module', function () {
-      delta.moduleConfig.should.eql(moduleData.moduleConfig);
-      delta.data.should.eql(moduleData.dataSource.data);
-      delta.axes.should.eql(moduleData.axes);
-    });
-
     it('should call createDeltas()', function () {
       Delta.prototype.createDeltas.should.have.been.called;
     });
@@ -236,10 +230,6 @@ describe('Delta', function () {
         delta = new Delta(_.cloneDeep(groupedTimeSeriesData));
       });
 
-      it('should group the data with the group_by', function () {
-        delta.data.should.have.keys(['fully-digital', 'assisted-digital', 'manual']);
-      });
-
       it('creates deltas for each series', function () {
         delta.data['fully-digital'][0].should.have.keys(
           [
@@ -337,51 +327,10 @@ describe('Delta', function () {
       });
     });
 
-    describe('show-total-lines', function () {
-      beforeEach(function () {
-        var totalLines = _.cloneDeep(groupedTimeSeriesData);
-
-        totalLines.moduleConfig['show-total-lines'] = true;
-        totalLines.axes.y.push({
-          'format': 'integer',
-          'groupId': 'total',
-          'label': 'Totals'
-        });
-
-        delta = new Delta(totalLines);
-      });
-
-      it('will create a new total series', function () {
-        delta.data.should.have.keys(['fully-digital', 'assisted-digital', 'manual', 'total']);
-      });
-
-      it('will sum up all series into a total series', function () {
-        delta.data['fully-digital'][0]['volume:sum'].should.eql(2629544);
-        delta.data['assisted-digital'][0]['volume:sum'].should.eql(1062692);
-        delta.data['manual'][0]['volume:sum'].should.eql(13033);
-
-        //sums the above together
-        delta.data['total'][0]['volume:sum'].should.eql(3705269);
-      });
-    });
-
     describe('multiple group_by', function () {
 
       beforeEach(function () {
         delta = new Delta(groupedTimeSeriesDataMultipleGroupBy);
-      });
-
-      it('should group the data with the group_by', function () {
-        delta.data.should.have.keys(
-          [
-            '2013/14:started',
-            '2013/14:submitted',
-            '2014/15:started',
-            '2014/15:submitted',
-            '2015/16:started',
-            '2015/16:submitted'
-          ]
-        );
       });
 
       it('creates deltas for each series', function () {

@@ -72,12 +72,6 @@ describe('Table View', function () {
       Table.prototype.tabularise.restore();
     });
 
-    it('should set config, data and axes from the module', function () {
-      table.moduleConfig.should.eql(moduleData.moduleConfig);
-      table.data.should.eql(moduleData.dataSource.data);
-      table.axes.should.eql(moduleData.axes);
-    });
-
     it('should call tabularise()', function () {
       Table.prototype.tabularise.should.have.been.called;
     });
