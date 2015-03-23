@@ -2,6 +2,7 @@ var Delta = require('../../lib/views/Delta');
 var groupedTimeSeriesData = require('../fixtures/module-config-grouped-time-series.json');
 var groupedTimeSeriesDataMultipleGroupBy =
   require('../fixtures/module-config-grouped-time-series-multiple-group-by.json');
+var _ = require('lodash');
 
 var moduleData = {
   moduleConfig: {
@@ -74,12 +75,6 @@ describe('Delta', function () {
 
     afterEach(function () {
       Delta.prototype.createDeltas.restore();
-    });
-
-    it('should set config, data and axes from the module', function () {
-      delta.moduleConfig.should.eql(moduleData.moduleConfig);
-      delta.data.should.eql(moduleData.dataSource.data);
-      delta.axes.should.eql(moduleData.axes);
     });
 
     it('should call createDeltas()', function () {
@@ -232,11 +227,7 @@ describe('Delta', function () {
 
     describe('using groupedTimeSeriesData', function () {
       beforeEach(function () {
-        delta = new Delta(groupedTimeSeriesData);
-      });
-
-      it('should group the data with the group_by', function () {
-        delta.data.should.have.keys(['fully-digital', 'assisted-digital', 'manual']);
+        delta = new Delta(_.cloneDeep(groupedTimeSeriesData));
       });
 
       it('creates deltas for each series', function () {
@@ -340,19 +331,6 @@ describe('Delta', function () {
 
       beforeEach(function () {
         delta = new Delta(groupedTimeSeriesDataMultipleGroupBy);
-      });
-
-      it('should group the data with the group_by', function () {
-        delta.data.should.have.keys(
-          [
-            '2013/14:started',
-            '2013/14:submitted',
-            '2014/15:started',
-            '2014/15:submitted',
-            '2015/16:started',
-            '2015/16:submitted'
-          ]
-        );
       });
 
       it('creates deltas for each series', function () {
