@@ -1,0 +1,167 @@
+{
+  "moduleConfig": {
+    "info": [
+      "Data source: Google analytics"
+    ],
+    "description": "",
+    "module-type": "table",
+    "title": "100 most viewed pages on the Performance Platform",
+    "axes": {
+      "y": [
+        {
+          "format": {
+            "type": "date",
+            "format": "MMM YYYY"
+          },
+          "key": "_timestamp",
+          "label": "Date"
+        },
+        {
+          "format": "integer",
+          "key": "pageviews",
+          "label": "Pageviews"
+        },
+        {
+          "format": "integer",
+          "key": "uniquepageviews",
+          "label": "Unique pageviews"
+        }
+      ],
+      "x": {
+        "key": "pagepath",
+        "label": "Url"
+      }
+    },
+    "modules": [],
+    "sort-order": "descending",
+    "sort-by": "pageviews",
+    "slug": "traffic-to-pages",
+    "data-source": {
+      "data-group": "performance-platform",
+      "data-type": "dashboard-stats",
+      "query-params": {
+        "start_at": "2015-01-01T00:00:00Z",
+        "flatten": true,
+        "sort_by": "_timestamp:descending",
+        "end_at": "2015-03-24T15:56:57Z",
+        "limit": 5
+      }
+    }
+  },
+  "options": {},
+  "axes": {
+    "y": [
+      {
+        "format": {
+          "type": "date",
+          "format": "MMM YYYY"
+        },
+        "key": "_timestamp",
+        "label": "Date"
+      },
+      {
+        "format": "integer",
+        "key": "pageviews",
+        "label": "Pageviews"
+      },
+      {
+        "format": "integer",
+        "key": "uniquepageviews",
+        "label": "Unique pageviews"
+      }
+    ],
+    "x": {
+      "key": "pagepath",
+      "label": "Url"
+    }
+  },
+  "dataSource": {
+    "options": {
+      "json": true,
+      "backdrop": "https://www.performance.service.gov.uk/",
+      "url": "https://www.performance.service.gov.uk/data/performance-platform/dashboard-stats?start_at=2015-01-01T00%3A00%3A00Z&flatten=true&sort_by=_timestamp%3Adescending&end_at=2015-03-24T15%3A56%3A57Z&limit=5"
+    },
+    "data": [
+      {
+        "_day_start_at": "2015-01-01T00:00:00+00:00",
+        "_hour_start_at": "2015-01-01T00:00:00+00:00",
+        "_id": "MjAxNS0wMS0wMVQwMDowMDowMC5tb250aC4vcGVyZm9ybWFuY2UvZGZ0LXJlbmV3LWRyaXZpbmctbGljZW5jZQ==",
+        "_month_start_at": "2015-01-01T00:00:00+00:00",
+        "_quarter_start_at": "2015-01-01T00:00:00+00:00",
+        "_timestamp": "2015-01-01T00:00:00+00:00",
+        "_updated_at": "2015-02-02T12:35:48.420000+00:00",
+        "_week_start_at": "2014-12-29T00:00:00+00:00",
+        "_year_start_at": "2015-01-01T00:00:00+00:00",
+        "avetimeonpage": 259.4728434504792,
+        "pagepath": "/performance/dft-renew-driving-licence",
+        "pageviews": 4764,
+        "period": "month",
+        "uniquepageviews": 4165
+      },
+      {
+        "_day_start_at": "2015-01-01T00:00:00+00:00",
+        "_hour_start_at": "2015-01-01T00:00:00+00:00",
+        "_id": "MjAxNS0wMS0wMVQwMDowMDowMC5tb250aC4vcGVyZm9ybWFuY2UvdGF4LWRpc2M=",
+        "_month_start_at": "2015-01-01T00:00:00+00:00",
+        "_quarter_start_at": "2015-01-01T00:00:00+00:00",
+        "_timestamp": "2015-01-01T00:00:00+00:00",
+        "_updated_at": "2015-02-02T12:35:48.421000+00:00",
+        "_week_start_at": "2014-12-29T00:00:00+00:00",
+        "_year_start_at": "2015-01-01T00:00:00+00:00",
+        "avetimeonpage": 123.41935483870968,
+        "pagepath": "/performance/tax-disc",
+        "pageviews": 4242,
+        "period": "month",
+        "uniquepageviews": 3626
+      },
+      {
+        "_day_start_at": "2015-01-01T00:00:00+00:00",
+        "_hour_start_at": "2015-01-01T00:00:00+00:00",
+        "_id": "MjAxNS0wMS0wMVQwMDowMDowMC5tb250aC4vcGVyZm9ybWFuY2U=",
+        "_month_start_at": "2015-01-01T00:00:00+00:00",
+        "_quarter_start_at": "2015-01-01T00:00:00+00:00",
+        "_timestamp": "2015-01-01T00:00:00+00:00",
+        "_updated_at": "2015-02-02T12:35:48.421000+00:00",
+        "_week_start_at": "2014-12-29T00:00:00+00:00",
+        "_year_start_at": "2015-01-01T00:00:00+00:00",
+        "avetimeonpage": 47.664899257688226,
+        "pagepath": "/performance",
+        "pageviews": 3697,
+        "period": "month",
+        "uniquepageviews": 2082
+      },
+      {
+        "_day_start_at": "2015-01-01T00:00:00+00:00",
+        "_hour_start_at": "2015-01-01T00:00:00+00:00",
+        "_id": "MjAxNS0wMS0wMVQwMDowMDowMC5tb250aC4vcGVyZm9ybWFuY2UvZHdwLWpvYnNlZWtlcnMtYWxsb3dhbmNlLWpzYS1uZXctY2xhaW1z",
+        "_month_start_at": "2015-01-01T00:00:00+00:00",
+        "_quarter_start_at": "2015-01-01T00:00:00+00:00",
+        "_timestamp": "2015-01-01T00:00:00+00:00",
+        "_updated_at": "2015-02-02T12:35:48.422000+00:00",
+        "_week_start_at": "2014-12-29T00:00:00+00:00",
+        "_year_start_at": "2015-01-01T00:00:00+00:00",
+        "avetimeonpage": 173.35562310030394,
+        "pagepath": "/performance/dwp-jobseekers-allowance-jsa-new-claims",
+        "pageviews": 1306,
+        "period": "month",
+        "uniquepageviews": 989
+      },
+      {
+        "_day_start_at": "2015-01-01T00:00:00+00:00",
+        "_hour_start_at": "2015-01-01T00:00:00+00:00",
+        "_id": "MjAxNS0wMS0wMVQwMDowMDowMC5tb250aC4vcGVyZm9ybWFuY2UvcmVnaXN0ZXItdG8tdm90ZQ==",
+        "_month_start_at": "2015-01-01T00:00:00+00:00",
+        "_quarter_start_at": "2015-01-01T00:00:00+00:00",
+        "_timestamp": "2015-01-01T00:00:00+00:00",
+        "_updated_at": "2015-02-02T12:35:48.423000+00:00",
+        "_week_start_at": "2014-12-29T00:00:00+00:00",
+        "_year_start_at": "2015-01-01T00:00:00+00:00",
+        "avetimeonpage": 205.52320675105486,
+        "pagepath": "/performance/register-to-vote",
+        "pageviews": 962,
+        "period": "month",
+        "uniquepageviews": 789
+      }
+    ]
+  }
+}
