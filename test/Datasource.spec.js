@@ -62,7 +62,7 @@ describe('Datasource', function () {
             'type:seasonally-adjusted'
           ],
           flatten: true,
-          limit: 2,
+          limit: 5,
           sort_by: '_timestamp:descending'
         },
         url: 'https://www.performance.service.gov.uk/data/transactional-services/summaries',
@@ -96,7 +96,7 @@ describe('Datasource', function () {
         dataSource.options.qs.duration.should.equal(9);
       });
 
-      it('limits results to 2 if period is not present', function () {
+      it('limits results to 5 if period is not present', function () {
         dataSourceConfig = {
           'data-group': 'student-finance',
           'data-type': 'site-traffic',
@@ -108,7 +108,7 @@ describe('Datasource', function () {
 
         dataSource = new Datasource(dataSourceConfig);
 
-        dataSource.options.qs.limit.should.equal(2);
+        dataSource.options.qs.limit.should.equal(5);
       });
 
     });
