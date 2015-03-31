@@ -32,13 +32,13 @@ var moduleData = {
         '_quarter_start_at': '2013-04-01T00:00:00+00:00',
         '_timestamp': '2013-07-01T00:00:00+00:00',
         'end_at': '2014-07-01T00:00:00+00:00',
-        'specific_data': 2
+        'specific_data': 15
       },
       {
         '_quarter_start_at': '2013-01-01T00:00:00+00:00',
         '_timestamp': '2013-07-01T00:00:00+00:00',
         'end_at': '2014-07-01T00:00:00+00:00',
-        'specific_data': 1
+        'specific_data': 2
       }
     ]
   },
@@ -65,7 +65,7 @@ describe('Table View', function () {
 
     beforeEach(function () {
       sinon.stub(Table.prototype, 'tabularise');
-      table = new Table(moduleData);
+      table = new Table(_.cloneDeep(moduleData));
     });
 
     afterEach(function () {
@@ -81,7 +81,7 @@ describe('Table View', function () {
   describe('tabularise()', function () {
 
     beforeEach(function () {
-      table = new Table(moduleData);
+      table = new Table(_.cloneDeep(moduleData));
     });
 
     it('creates a tabular view of the data', function () {
@@ -95,17 +95,66 @@ describe('Table View', function () {
         [
           'test',
           1,
-          2,
-          1
+          15,
+          2
         ]
       ]);
+    });
+
+    describe('sorting data in tables', function () {
+      var sortedTable;
+      var sortedModuleData = _.cloneDeep(moduleData);
+
+      beforeEach(function () {
+
+        sortedModuleData.moduleConfig['sort-by'] = 'specific_data';
+        sortedTable = new Table(sortedModuleData);
+      });
+
+      it('sorts the data with the sort-by key and the sort-order key (defaults to descending)',
+        function () {
+          sortedTable.data.should.eql([
+            [
+              'Quarter',
+              '1 April 2013 to 30 June 2014',
+              '1 January 2013 to 30 June 2014',
+              '1 July 2013 to 30 June 2014'
+            ],
+            [
+              'test',
+              15,
+              2,
+              1
+            ]
+          ]);
+        });
+
+      it('sorts the data with the sort-by key and the sort-order key', function () {
+        sortedModuleData.moduleConfig['sort-order'] = 'ascending';
+        sortedTable = new Table(sortedModuleData);
+
+        sortedTable.data.should.eql([
+          [
+            'Quarter',
+            '1 July 2013 to 30 June 2014',
+            '1 January 2013 to 30 June 2014',
+            '1 April 2013 to 30 June 2014'
+          ],
+          [
+            'test',
+            1,
+            2,
+            15
+          ]
+        ]);
+      });
     });
   });
 
   describe('render()', function () {
 
     beforeEach(function () {
-      table = new Table(moduleData);
+      table = new Table(_.cloneDeep(moduleData));
     });
 
     it('formats the values', function () {
@@ -119,8 +168,8 @@ describe('Table View', function () {
         [
           'test',
           '1',
-          '2',
-          '1'
+          '15',
+          '2'
         ]
       ]);
     });
@@ -220,7 +269,7 @@ describe('Table View', function () {
         ]
       };
 
-      table = new Table(moduleData);
+      table = new Table(_.cloneDeep(moduleData));
     });
 
     describe('tabularise()', function () {
