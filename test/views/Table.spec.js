@@ -101,6 +101,25 @@ describe('Table View', function () {
       ]);
     });
 
+    it('doesnt format the dates when the formatDates is set to false', function () {
+      table = new Table(_.cloneDeep(moduleData), {formatDates: false});
+
+      table.data.should.eql([
+        [
+          'Quarter',
+          '2013-07-01T00:00:00+00:00',
+          '2013-04-01T00:00:00+00:00',
+          '2013-01-01T00:00:00+00:00'
+        ],
+        [
+          'test',
+          1,
+          15,
+          2
+        ]
+      ]);
+    });
+
     describe('sorting data in tables', function () {
       var sortedTable;
       var sortedModuleData = _.cloneDeep(moduleData);
