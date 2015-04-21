@@ -65,17 +65,16 @@ describe('Datasource', function () {
           limit: 5,
           sort_by: '_timestamp:descending'
         },
-        url: 'https://www.performance.service.gov.uk/data/transactional-services/summaries',
-        backdrop: 'https://www.performance.service.gov.uk/'
+        url: 'https://www.performance.service.gov.uk/data/transactional-services/summaries'
       });
     });
 
     it('allows optional options', function () {
       dataSource = new Datasource(dataSourceConfig, {
-        backdrop: 'test.com'
+        url: 'test.com/'
       });
 
-      dataSource.options.backdrop.should.equal('test.com');
+      dataSource.options.url.should.equal('test.com/data/transactional-services/summaries');
     });
 
     describe('querystring', function () {
@@ -109,6 +108,25 @@ describe('Datasource', function () {
         dataSource = new Datasource(dataSourceConfig);
 
         dataSource.options.qs.limit.should.equal(5);
+      });
+
+      it('change the limit if present', function () {
+        dataSourceConfig = {
+          'data-group': 'student-finance',
+          'data-type': 'site-traffic',
+          'query-params': {
+            'collect': ['users:sum'],
+            'group_by': 'dataType'
+          }
+        };
+
+        dataSource = new Datasource(dataSourceConfig, {
+          qs: {
+            limit: 2
+          }
+        });
+
+        dataSource.options.qs.limit.should.equal(2);
       });
 
     });
