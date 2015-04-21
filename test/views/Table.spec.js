@@ -12,7 +12,6 @@ var moduleData = {
       'data-group': 'transactional-services',
       'data-type': 'summaries',
       'query-params': {
-        'sort_by': '_timestamp:descending',
         'filter_by': [
           'service_id:bis-accounts-filing',
           'type:seasonally-adjusted'
@@ -164,6 +163,28 @@ describe('Table View', function () {
             1,
             2,
             15
+          ]
+        ]);
+      });
+
+      it('it reverses the data for sort_by when the value is _timestamp:descending', function () {
+        delete sortedModuleData.moduleConfig['sort-by'];
+        sortedModuleData.moduleConfig['data-source']['query-params']['sort_by'] =
+          '_timestamp:descending';
+        console.log(sortedModuleData.moduleConfig['data-source']);
+        sortedTable = new Table(sortedModuleData);
+        sortedTable.data.should.eql([
+          [
+            'Quarter',
+            '1 January 2013 to 30 June 2014',
+            '1 April 2013 to 30 June 2014',
+            '1 July 2013 to 30 June 2014'
+          ],
+          [
+            'test',
+            2,
+            15,
+            1
           ]
         ]);
       });
