@@ -131,8 +131,12 @@ describe('Dashboard', function () {
       dashboard.options.should.eql({
         json: true,
         slug: 'test-slug',
-        backdrop: 'https://www.performance.service.gov.uk/',
-        stagecraft: 'https://stagecraft.production.performance.service.gov.uk/'
+        backdrop: {
+          url: 'https://www.performance.service.gov.uk/'
+        },
+        stagecraft: {
+          url: 'https://stagecraft.production.performance.service.gov.uk/'
+        }
       });
     });
 
@@ -169,8 +173,12 @@ describe('Dashboard', function () {
               testSlug,
               json: true,
               slug: 'test-dashboard-slug',
-              backdrop: 'https://www.performance.service.gov.uk/',
-              stagecraft: 'https://stagecraft.production.performance.service.gov.uk/'
+              backdrop: {
+                url: 'https://www.performance.service.gov.uk/'
+              },
+              stagecraft: {
+                url: 'https://stagecraft.production.performance.service.gov.uk/'
+              }
             });
 
           dashboardConfig.should.equal(dashboardResponse);
