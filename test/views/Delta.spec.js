@@ -284,7 +284,7 @@ describe('Delta', function () {
               'change': '+21.90%',
               'trend': 'increase'
             },
-            'formatted_value': 2629544,
+            'formatted_value': '2.63m',
             'formatted_start_at': '1 December 2014',
             'formatted_end_at': '31 December 2014',
             'period': 'month'
@@ -301,7 +301,7 @@ describe('Delta', function () {
               'change': '+7.55%',
               'trend': 'increase'
             },
-            'formatted_value': 1062692,
+            'formatted_value': '1.06m',
             'formatted_start_at': '1 December 2014',
             'formatted_end_at': '31 December 2014',
             'period': 'month'
@@ -318,7 +318,7 @@ describe('Delta', function () {
               'change': '−5.01%',
               'trend': 'decrease'
             },
-            'formatted_value': 13033,
+            'formatted_value': '13.0k',
             'formatted_start_at': '1 December 2014',
             'formatted_end_at': '31 December 2014',
             'period': 'month'
@@ -444,7 +444,7 @@ describe('Delta', function () {
               'change': '0%',
               'trend': 'no-change'
             },
-            'formatted_value': 1000,
+            'formatted_value': '1,000',
             'formatted_date_range': '2 to 8 March 2015',
             'formatted_start_at': '2 March 2015',
             'formatted_end_at': '8 March 2015',
@@ -464,7 +464,7 @@ describe('Delta', function () {
               'change': '0%',
               'trend': 'no-change'
             },
-            'formatted_value': 1000,
+            'formatted_value': '1,000',
             'formatted_date_range': '2 to 8 March 2015',
             'formatted_start_at': '2 March 2015',
             'formatted_end_at': '8 March 2015',
@@ -484,7 +484,7 @@ describe('Delta', function () {
               'change': '−1.91%',
               'trend': 'decrease'
             },
-            'formatted_value': 874,
+            'formatted_value': '874',
             'formatted_date_range': '2 to 8 March 2015',
             'formatted_start_at': '2 March 2015',
             'formatted_end_at': '8 March 2015',
@@ -504,7 +504,7 @@ describe('Delta', function () {
               'change': '−6.52%',
               'trend': 'decrease'
             },
-            'formatted_value': 774,
+            'formatted_value': '774',
             'formatted_date_range': '2 to 8 March 2015',
             'formatted_start_at': '2 March 2015',
             'formatted_end_at': '8 March 2015',
@@ -524,7 +524,7 @@ describe('Delta', function () {
               'change': '+92.20%',
               'trend': 'increase'
             },
-            'formatted_value': 38693,
+            'formatted_value': '38.7k',
             'formatted_date_range': '2 to 8 March 2015',
             'formatted_start_at': '2 March 2015',
             'formatted_end_at': '8 March 2015',
@@ -544,7 +544,7 @@ describe('Delta', function () {
               'change': '+87.13%',
               'trend': 'increase'
             },
-            'formatted_value': 34132,
+            'formatted_value': '34.1k',
             'formatted_date_range': '2 to 8 March 2015',
             'formatted_start_at': '2 March 2015',
             'formatted_end_at': '8 March 2015',
