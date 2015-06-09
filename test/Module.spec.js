@@ -96,7 +96,7 @@ describe('Module', function () {
           }
         };
         moduleConfig['module-type'] = 'single_timeseries';
-        moduleConfig['format-options'] = {
+        moduleConfig['format'] = {
           'type': 'number'
         };
 
@@ -117,12 +117,11 @@ describe('Module', function () {
       });
 
       it('should assume axis unit is integer if not specified', function () {
+        delete moduleConfig.format;
+        delete moduleConfig['value-attribute'];
+
         moduleConfig.axes = {
-          'y': [{
-            'label': 'User satisfaction',
-            'key': 'satisfaction:sum',
-            'format': 'percent'
-          }, {'key': 'respondents', 'label': 'Number of respondents'}],
+          'y': [{'key': 'respondents', 'label': 'Number of respondents'}],
           'x': {'label': 'Date', 'key': ['_start_at', '_end_at'], 'format': 'date'}
         };
         moduleConfig['module-type'] = 'single_timeseries';
@@ -131,15 +130,10 @@ describe('Module', function () {
 
         mod.axes.y.should.eql([
           {
-            'label': 'User satisfaction',
-            'key': 'specific_data',
-            'format': 'percent'
-          },
-          {
             'key': 'respondents',
             'label': 'Number of respondents',
             'format': {
-              type: 'integer'
+              'type': 'integer'
             }
           }
         ]);
