@@ -163,6 +163,93 @@ describe('Module', function () {
         }]);
       });
 
+      describe('BAR_CHART_WITH_NUMBER', function () {
+        it('should return with axes data for the module (DEFAULTS)', function () {
+          moduleConfig = {
+            'title': 'test',
+            'module-type': 'bar_chart_with_number'
+          };
+          mod = new Module(moduleConfig);
+
+          mod.axes.x.should.eql({
+            'format': 'date',
+            'key': [
+              '_start_at',
+              'end_at'
+            ],
+            'label': 'Dates'
+          });
+
+          mod.axes.y.should.eql([{
+            'format': {
+            'magnitude': true,
+            'pad': true,
+            'sigfigs': 3,
+            'type': 'integer'
+            },
+            'key': 'uniqueEvents:sum',
+            'label': 'Number of applications'
+          }]);
+        });
+
+      });
+
+      it('should return axes data for the module when value-attribute is set', function () {
+        moduleConfig = {
+          'title': 'test',
+          'module-type': 'bar_chart_with_number',
+          'value-attribute': 'specific_data'
+        };
+        mod = new Module(moduleConfig);
+
+        mod.axes.x.should.eql({
+          'format': 'date',
+          'key': [
+            '_start_at',
+            'end_at'
+          ],
+          'label': 'Dates'
+        });
+
+        mod.axes.y.should.eql([{
+          'format': {
+          'type': 'integer',
+          'magnitude': true,
+          'pad': true,
+          'sigfigs': 3
+          },
+          'key': 'specific_data',
+          'label': 'Number of applications'
+        }]);
+
+      });
+
+      it('should return axes data for the module when format is set', function () {
+        moduleConfig = {
+          'title': 'test',
+          'module-type': 'bar_chart_with_number',
+          'format': { type: 'integer', magnitude: false }
+        };
+        mod = new Module(moduleConfig);
+
+        mod.axes.x.should.eql({
+          'format': 'date',
+          'key': [
+            '_start_at',
+            'end_at'
+          ],
+          'label': 'Dates'
+        });
+
+        mod.axes.y.should.eql([{
+          'format': {
+            'type': 'integer',
+            'magnitude': false
+          },
+          'key': 'uniqueEvents:sum',
+          'label': 'Number of applications'
+        }]);
+      });
     });
 
   });

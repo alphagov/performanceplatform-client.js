@@ -62,7 +62,7 @@ describe('Datasource', function () {
             'type:seasonally-adjusted'
           ],
           flatten: true,
-          limit: 5,
+          limit: 6,
           sort_by: '_timestamp:descending'
         },
         url: 'https://www.performance.service.gov.uk/data/transactional-services/summaries'
@@ -107,7 +107,7 @@ describe('Datasource', function () {
 
         dataSource = new Datasource(dataSourceConfig);
 
-        dataSource.options.qs.limit.should.equal(5);
+        dataSource.options.qs.limit.should.equal(6);
       });
 
       it('change the limit if present', function () {
