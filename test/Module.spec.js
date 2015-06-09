@@ -174,7 +174,7 @@ describe('Module', function () {
           mod.axes.x.should.eql({
             'format': 'date',
             'key': [
-              '_start_at',
+              '_quarter_start_at',
               'end_at'
             ],
             'label': 'Dates'
@@ -182,10 +182,10 @@ describe('Module', function () {
 
           mod.axes.y.should.eql([{
             'format': {
-            'magnitude': true,
-            'pad': true,
-            'sigfigs': 3,
-            'type': 'integer'
+              'magnitude': true,
+              'pad': true,
+              'sigfigs': 3,
+              'type': 'integer'
             },
             'key': 'uniqueEvents:sum',
             'label': 'Number of applications'
@@ -205,7 +205,7 @@ describe('Module', function () {
         mod.axes.x.should.eql({
           'format': 'date',
           'key': [
-            '_start_at',
+            '_quarter_start_at',
             'end_at'
           ],
           'label': 'Dates'
@@ -213,10 +213,10 @@ describe('Module', function () {
 
         mod.axes.y.should.eql([{
           'format': {
-          'type': 'integer',
-          'magnitude': true,
-          'pad': true,
-          'sigfigs': 3
+            'type': 'integer',
+            'magnitude': true,
+            'pad': true,
+            'sigfigs': 3
           },
           'key': 'specific_data',
           'label': 'Number of applications'
@@ -235,7 +235,7 @@ describe('Module', function () {
         mod.axes.x.should.eql({
           'format': 'date',
           'key': [
-            '_start_at',
+            '_quarter_start_at',
             'end_at'
           ],
           'label': 'Dates'
