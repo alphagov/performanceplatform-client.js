@@ -18,10 +18,6 @@
           "type:seasonally-adjusted"
         ]
       }
-    },
-    "format-options": {
-      "type": "duration",
-      "unit": "m"
     }
   },
   "dataSource": {

@@ -29,7 +29,7 @@
       }
     },
     "modules": [],
-    "format-options": {"type": "percent"},
+    "format": {"type": "percent"},
     "slug": "user-satisfaction",
     "data-source": {
       "data-group": "student-finance",

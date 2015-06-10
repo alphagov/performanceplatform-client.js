@@ -99,7 +99,7 @@
               "label": "Date"
             }
           },
-          "format-options": {
+          "format": {
             "type": "duration",
             "unit": "m"
           },
