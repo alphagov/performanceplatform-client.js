@@ -171,7 +171,6 @@ describe('Table View', function () {
         delete sortedModuleData.moduleConfig['sort-by'];
         sortedModuleData.moduleConfig['data-source']['query-params']['sort_by'] =
           '_timestamp:descending';
-        console.log(sortedModuleData.moduleConfig['data-source']);
         sortedTable = new Table(sortedModuleData);
         sortedTable.data.should.eql([
           [
