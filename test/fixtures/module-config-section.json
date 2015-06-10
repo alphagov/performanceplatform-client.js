@@ -191,7 +191,7 @@
           }
         },
         "modules": [],
-        "format-options": {
+        "format": {
           "type": "duration",
           "unit": "m"
         },
