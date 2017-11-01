@@ -26,9 +26,9 @@
     "browser-request": "0.3.3",
     "lodash": "2.4.1",
     "moment-timezone": "0.4.0",
-    "q": "1.1.2",
-    "qs": "2.3.3",
-    "request": "2.48.0"
+    "q": "1.5.1",
+    "qs": "6.5.1",
+    "request": "2.83.0"
   },
   "devDependencies": {
     "brfs": "1.2.0",
@@ -45,7 +45,7 @@
     "karma-sinon": "1.0.3",
     "karma-spec-reporter": "0.0.13",
     "mocha": "2.0.1",
-    "phantomjs": "1.9.12",
+    "phantomjs": "1.9.16",
     "proxyquire": "1.1.0",
     "require-subvert": "0.1.0",
     "sinon": "1.12.1",
